@@ -1,0 +1,83 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do multiple_detector_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity multiple_detector
+# -- Compiling architecture a_multiple_detector of multiple_detector
+# 
+vcom -reportprogress 300 -work work {D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector_tb.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling entity multiple_detector_tb
+# -- Compiling architecture a_multiple_detector_tb of multiple_detector_tb
+vsim +altera -do multiple_detector_run_msim_rtl_vhdl.do -l msim_transcript -gui work.multiple_detector_tb
+# vsim +altera -do multiple_detector_run_msim_rtl_vhdl.do -l msim_transcript -gui work.multiple_detector_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading work.multiple_detector_tb(a_multiple_detector_tb)
+# Loading ieee.numeric_std(body)
+# Loading work.multiple_detector(a_multiple_detector)
+# ** Fatal: (vsim-3348) Port length (5) does not match actual length (4) for port '/multiple_detector_tb/uut/a'.
+#    Time: 0 ps  Iteration: 0  Instance: /multiple_detector_tb/uut File: D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector.vhd Line: 10
+# FATAL ERROR while loading design
+# Error loading design
+cd {D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector}
+# reading C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini
+vlib work
+vcom -reportprogress 300 -work work {D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector_tb.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling entity multiple_detector_tb
+# -- Compiling architecture a_multiple_detector_tb of multiple_detector_tb
+# Load canceled
+vlib work
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+vmap work work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# Error: Access is denied.
+# 
+# 
+#        Unable to replace existing ini file (modelsim.ini).  File can not be renamed.
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+vlib work
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+vcom -reportprogress 300 -work work {D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector_tb.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling entity multiple_detector_tb
+# -- Compiling architecture a_multiple_detector_tb of multiple_detector_tb
+# Load canceled
+vlib rtl_work
+vmap rtl_work rtl_work
+# Modifying modelsim.ini
+vmap rtl_work rtl_work
+# Modifying modelsim.ini

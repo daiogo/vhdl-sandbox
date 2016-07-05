@@ -1,0 +1,79 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Dropbox\2-2015\Lógica Reconfigurável\prova2\multiple_detector\simulation\modelsim
+Emultiple_detector
+Z1 w1444416606
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dD:\Dropbox\2-2015\Lógica Reconfigurável\prova2\multiple_detector\simulation\modelsim
+Z6 8D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector.vhd
+Z7 FD:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector.vhd
+l0
+L7
+VdRhIHm<EHD1_@hiaFP@1E3
+Z8 OV;C;10.1d;51
+32
+Z9 !s108 1444417292.109000
+Z10 !s90 -reportprogress|300|-work|work|D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector.vhd|
+Z11 !s107 D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector.vhd|
+Z12 o-work work -O0
+Z13 tExplicit 1
+!s100 mBJJ0>C=z;zdXS;oMPH7c1
+!i10b 1
+Aa_multiple_detector
+R2
+R3
+R4
+DEx4 work 17 multiple_detector 0 22 dRhIHm<EHD1_@hiaFP@1E3
+l24
+L19
+VeC4FgAVoc^`ECCImM:aOB1
+R8
+32
+R9
+R10
+R11
+R12
+R13
+!s100 E[87^_bPW0`oQ3G_HeZK=3
+!i10b 1
+Emultiple_detector_tb
+Z14 w1444417116
+Z15 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+R3
+R4
+R5
+Z16 8D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector_tb.vhd
+Z17 FD:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector_tb.vhd
+l0
+L5
+VX:@m1gDOAl0W45LM;k3U31
+!s100 Vm[^kFcU5_O;]D1E`MeeF0
+R8
+32
+!i10b 1
+Z18 !s108 1444417292.959000
+Z19 !s90 -reportprogress|300|-work|work|D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector_tb.vhd|
+Z20 !s107 D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector_tb.vhd|
+R12
+R13
+Aa_multiple_detector_tb
+R15
+R3
+R4
+DEx4 work 20 multiple_detector_tb 0 22 X:@m1gDOAl0W45LM;k3U31
+l24
+L9
+VOdRFHJLN>;o?^nhd5?O[D0
+!s100 OFo[oZhBcbJ_oU@:ZcS>X2
+R8
+32
+!i10b 1
+R18
+R19
+R20
+R12
+R13

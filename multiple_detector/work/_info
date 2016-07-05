@@ -1,0 +1,42 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Dropbox\2-2015\Lógica Reconfigurável\prova2\multiple_detector
+Emultiple_detector_tb
+Z1 w1444417116
+Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dD:\Dropbox\2-2015\Lógica Reconfigurável\prova2\multiple_detector
+Z6 8D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector_tb.vhd
+Z7 FD:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector_tb.vhd
+l0
+L5
+VX:@m1gDOAl0W45LM;k3U31
+!s100 Vm[^kFcU5_O;]D1E`MeeF0
+Z8 OV;C;10.1d;51
+32
+!i10b 1
+Z9 !s108 1444418166.722000
+Z10 !s90 -reportprogress|300|-work|work|D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector_tb.vhd|
+Z11 !s107 D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector_tb.vhd|
+Z12 o-work work -O0
+Z13 tExplicit 1
+Aa_multiple_detector_tb
+R2
+R3
+R4
+Z14 DEx4 work 20 multiple_detector_tb 0 22 X:@m1gDOAl0W45LM;k3U31
+l24
+L9
+Z15 VOdRFHJLN>;o?^nhd5?O[D0
+Z16 !s100 OFo[oZhBcbJ_oU@:ZcS>X2
+R8
+32
+!i10b 1
+R9
+R10
+R11
+R12
+R13

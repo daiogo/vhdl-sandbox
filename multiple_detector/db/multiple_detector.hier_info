@@ -1,0 +1,29 @@
+|multiple_detector
+a[0] => Mod0.IN7
+a[1] => Mod0.IN6
+a[2] => Mod0.IN5
+a[3] => Mod0.IN4
+a[4] => Mod0.IN3
+a[5] => Mod0.IN2
+a[6] => Mod0.IN1
+a[7] => Mod0.IN0
+b[0] => Mod0.IN15
+b[0] => Equal0.IN7
+b[1] => Mod0.IN14
+b[1] => Equal0.IN6
+b[2] => Mod0.IN13
+b[2] => Equal0.IN5
+b[3] => Mod0.IN12
+b[3] => Equal0.IN4
+b[4] => Mod0.IN11
+b[4] => Equal0.IN3
+b[5] => Mod0.IN10
+b[5] => Equal0.IN2
+b[6] => Mod0.IN9
+b[6] => Equal0.IN1
+b[7] => Mod0.IN8
+b[7] => Equal0.IN0
+multiple <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+invalid_input <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
