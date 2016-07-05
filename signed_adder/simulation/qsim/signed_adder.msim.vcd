@@ -1,0 +1,312 @@
+$comment
+	File created using the following command:
+		vcd file signed_adder.msim.vcd -direction
+$end
+$date
+	Wed Jun 22 15:31:48 2016
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module signed_adder_vlg_vec_tst $end
+$var reg 4 ! a [3:0] $end
+$var reg 4 " b [3:0] $end
+$var reg 1 # cin $end
+$var wire 1 $ cout $end
+$var wire 1 % sum [3] $end
+$var wire 1 & sum [2] $end
+$var wire 1 ' sum [1] $end
+$var wire 1 ( sum [0] $end
+$var wire 1 ) sampler $end
+$scope module i1 $end
+$var wire 1 * gnd $end
+$var wire 1 + vcc $end
+$var wire 1 , unknown $end
+$var tri1 1 - devclrn $end
+$var tri1 1 . devpor $end
+$var tri1 1 / devoe $end
+$var wire 1 0 sum[0]~output_o $end
+$var wire 1 1 sum[1]~output_o $end
+$var wire 1 2 sum[2]~output_o $end
+$var wire 1 3 sum[3]~output_o $end
+$var wire 1 4 cout~output_o $end
+$var wire 1 5 a[0]~input_o $end
+$var wire 1 6 b[0]~input_o $end
+$var wire 1 7 cin~input_o $end
+$var wire 1 8 Add0~1_cout $end
+$var wire 1 9 Add0~2_combout $end
+$var wire 1 : b[1]~input_o $end
+$var wire 1 ; a[1]~input_o $end
+$var wire 1 < Add0~3 $end
+$var wire 1 = Add0~4_combout $end
+$var wire 1 > b[2]~input_o $end
+$var wire 1 ? a[2]~input_o $end
+$var wire 1 @ Add0~5 $end
+$var wire 1 A Add0~6_combout $end
+$var wire 1 B b[3]~input_o $end
+$var wire 1 C a[3]~input_o $end
+$var wire 1 D Add0~7 $end
+$var wire 1 E Add0~8_combout $end
+$var wire 1 F Add0~9 $end
+$var wire 1 G Add0~10_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1000 !
+b1000 "
+0#
+x$
+x(
+x'
+x&
+x%
+x)
+0*
+1+
+x,
+1-
+1.
+1/
+x0
+x1
+x2
+x3
+x4
+05
+06
+07
+x8
+x9
+0:
+0;
+x<
+x=
+0>
+0?
+x@
+xA
+1B
+1C
+xD
+xE
+xF
+xG
+$end
+#3066
+08
+#3266
+1F
+#3387
+0@
+#3487
+1D
+#3499
+1<
+#3503
+09
+#3721
+1G
+#3824
+0A
+#3924
+0E
+#3936
+0=
+#6368
+00
+0(
+#6409
+02
+0&
+#6511
+01
+0'
+#6543
+14
+1$
+#6731
+03
+0%
+#80000
+b0 "
+0)
+#80896
+0B
+#84326
+0F
+#84365
+1E
+#87188
+13
+1%
+#160000
+b100 "
+b110 "
+b111 "
+1)
+#160725
+1>
+1:
+16
+#163841
+1=
+#163878
+1A
+#163893
+19
+#166423
+11
+1'
+#166469
+12
+1&
+#166739
+10
+1(
+#240000
+b0 !
+b100 !
+b101 !
+1#
+b1111 "
+b1011 "
+b1001 "
+b1000 "
+0)
+#240725
+1?
+15
+#240735
+1B
+17
+#240886
+0>
+0:
+06
+#240896
+0C
+#243674
+18
+#243839
+0D
+#243855
+0<
+#243897
+1F
+#243901
+0A
+#244276
+0E
+#244286
+1A
+#244311
+09
+#244334
+0G
+#244351
+1D
+#244409
+0F
+#244806
+1E
+#244864
+1G
+#247176
+00
+0(
+#320000
+b0 "
+1)
+#320896
+0B
+#324360
+0E
+#324380
+0G
+#327167
+03
+0%
+#327185
+04
+0$
+#400000
+b100 "
+b110 "
+b111 "
+0)
+#400725
+1>
+1:
+16
+#403822
+0D
+#403836
+0=
+#403883
+0A
+#403893
+19
+#403923
+1@
+#404277
+1E
+#404378
+1A
+#406411
+01
+0'
+#406739
+10
+1(
+#407100
+13
+1%
+#480000
+b1 !
+b0 !
+0#
+b11 "
+b1 "
+b0 "
+1)
+#480886
+0?
+05
+0>
+0:
+06
+#480896
+07
+#483962
+08
+#484213
+0@
+#484252
+1=
+#484373
+1D
+#484385
+1<
+#484399
+09
+#484650
+0A
+#484810
+0E
+#484822
+0=
+#487235
+02
+0&
+#487264
+00
+0(
+#487617
+03
+0%
+#1000000

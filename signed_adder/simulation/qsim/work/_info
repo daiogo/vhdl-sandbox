@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\Dropbox\1-2016\Lógica Programável e VHDL\signed_adder\simulation\qsim
+vsigned_adder
+Z1 I4E0J6h>_oOlSIDH7YJJ<83
+Z2 VE^>LB[Mi026Jg4cY7Zc3h0
+Z3 dE:\Dropbox\1-2016\Lógica Programável e VHDL\signed_adder\simulation\qsim
+Z4 w1466620298
+Z5 8signed_adder.vo
+Z6 Fsigned_adder.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|signed_adder.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 N^hWS6Z]j[5`zc1cKa_Uh2
+!s85 0
+Z11 !s108 1466620305.203000
+Z12 !s107 signed_adder.vo|
+!s101 -O0
+vsigned_adder_vlg_check_tst
+!i10b 1
+Z13 !s100 iF:AKEibB`3`0]S9SC^6F1
+Z14 IYdl:1Jj<2amUn=:5?3^za1
+Z15 Vd5IVO]cn]Wl44LGg@7X:;1
+R3
+Z16 w1466620297
+Z17 8signed_adder.vt
+Z18 Fsigned_adder.vt
+L0 61
+R7
+r1
+!s85 0
+31
+Z19 !s108 1466620305.658000
+Z20 !s107 signed_adder.vt|
+Z21 !s90 -work|work|signed_adder.vt|
+!s101 -O0
+R9
+vsigned_adder_vlg_sample_tst
+!i10b 1
+Z22 !s100 Y1i8XkQTYBBaX_Q_lnN0z2
+Z23 IYXV:D1V4b1138>796BR>Y2
+Z24 V?6OaDW9=HPSYn?Kg0GYcL2
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+vsigned_adder_vlg_vec_tst
+!i10b 1
+Z25 !s100 T`SKc`6YS_8ZXMPb3edhP2
+Z26 I755?S_]XA5nnYIgTZdlT_0
+Z27 VZ5HZ[JGcAjH0eeJ:6Ze7k2
+R3
+R16
+R17
+R18
+Z28 L0 236
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
