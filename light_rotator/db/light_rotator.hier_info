@@ -1,0 +1,98 @@
+|light_rotator
+clk => frequency_divider:lr_freq_divider.clk_in
+clk => debouncer:lr_debouncer.clk
+rst => frequency_divider:lr_freq_divider.rst
+rst => t[0].ACLR
+rst => t[1].ACLR
+rst => prev_state~3.DATAIN
+stop => debouncer:lr_debouncer.x
+ssd_display[0] <= <VCC>
+ssd_display[1] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+ssd_display[2] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+ssd_display[3] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+ssd_display[4] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+ssd_display[5] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+ssd_display[6] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|light_rotator|frequency_divider:lr_freq_divider
+clk_in => counter[0].CLK
+clk_in => counter[1].CLK
+clk_in => counter[2].CLK
+clk_in => counter[3].CLK
+clk_in => counter[4].CLK
+clk_in => counter[5].CLK
+clk_in => counter[6].CLK
+clk_in => counter[7].CLK
+clk_in => counter[8].CLK
+clk_in => counter[9].CLK
+clk_in => counter[10].CLK
+clk_in => counter[11].CLK
+clk_in => counter[12].CLK
+clk_in => counter[13].CLK
+clk_in => counter[14].CLK
+clk_in => counter[15].CLK
+clk_in => counter[16].CLK
+clk_in => counter[17].CLK
+clk_in => counter[18].CLK
+clk_in => counter[19].CLK
+clk_in => counter[20].CLK
+clk_in => counter[21].CLK
+clk_in => counter[22].CLK
+clk_in => counter[23].CLK
+clk_in => state.CLK
+rst => counter[0].ACLR
+rst => counter[1].ACLR
+rst => counter[2].ACLR
+rst => counter[3].ACLR
+rst => counter[4].ACLR
+rst => counter[5].ACLR
+rst => counter[6].ACLR
+rst => counter[7].ACLR
+rst => counter[8].ACLR
+rst => counter[9].ACLR
+rst => counter[10].ACLR
+rst => counter[11].ACLR
+rst => counter[12].ACLR
+rst => counter[13].ACLR
+rst => counter[14].ACLR
+rst => counter[15].ACLR
+rst => counter[16].ACLR
+rst => counter[17].ACLR
+rst => counter[18].ACLR
+rst => counter[19].ACLR
+rst => counter[20].ACLR
+rst => counter[21].ACLR
+rst => counter[22].ACLR
+rst => counter[23].ACLR
+rst => state.ACLR
+clk_out <= state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|light_rotator|debouncer:lr_debouncer
+clk => y~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => count[16].CLK
+clk => count[17].CLK
+clk => count[18].CLK
+clk => count[19].CLK
+x => process_0.IN1
+x => y.DATAB
+y <= y~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

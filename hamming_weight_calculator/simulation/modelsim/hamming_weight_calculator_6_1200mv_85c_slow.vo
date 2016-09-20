@@ -1,0 +1,628 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II 64-Bit"
+// VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
+
+// DATE "07/06/2016 09:54:37"
+
+// 
+// Device: Altera EP3C16F484C6 Package FBGA484
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module hamming_weight_calculator (
+	hwc_in,
+	hwc_led_out,
+	hwc_ssd_out);
+input 	[6:0] hwc_in;
+output 	[2:0] hwc_led_out;
+output 	[6:0] hwc_ssd_out;
+
+// Design Ports Information
+// hwc_led_out[0]	=>  Location: PIN_J1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// hwc_led_out[1]	=>  Location: PIN_J2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// hwc_led_out[2]	=>  Location: PIN_J3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// hwc_ssd_out[0]	=>  Location: PIN_F13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// hwc_ssd_out[1]	=>  Location: PIN_F12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// hwc_ssd_out[2]	=>  Location: PIN_G12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// hwc_ssd_out[3]	=>  Location: PIN_H13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// hwc_ssd_out[4]	=>  Location: PIN_H12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// hwc_ssd_out[5]	=>  Location: PIN_F11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// hwc_ssd_out[6]	=>  Location: PIN_E11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// hwc_in[6]	=>  Location: PIN_H7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// hwc_in[5]	=>  Location: PIN_J7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// hwc_in[4]	=>  Location: PIN_G5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// hwc_in[0]	=>  Location: PIN_J6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// hwc_in[1]	=>  Location: PIN_H5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// hwc_in[2]	=>  Location: PIN_H6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// hwc_in[3]	=>  Location: PIN_G4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("hamming_weight_calculator_6_1200mv_85c_v_slow.sdo");
+// synopsys translate_on
+
+wire \hwc_calculator|ones[4][2]~4_combout ;
+wire \hwc_in[3]~input_o ;
+wire \hwc_led_out[0]~output_o ;
+wire \hwc_led_out[1]~output_o ;
+wire \hwc_led_out[2]~output_o ;
+wire \hwc_ssd_out[0]~output_o ;
+wire \hwc_ssd_out[1]~output_o ;
+wire \hwc_ssd_out[2]~output_o ;
+wire \hwc_ssd_out[3]~output_o ;
+wire \hwc_ssd_out[4]~output_o ;
+wire \hwc_ssd_out[5]~output_o ;
+wire \hwc_ssd_out[6]~output_o ;
+wire \hwc_in[6]~input_o ;
+wire \hwc_in[5]~input_o ;
+wire \hwc_in[4]~input_o ;
+wire \hwc_in[0]~input_o ;
+wire \hwc_in[2]~input_o ;
+wire \hwc_in[1]~input_o ;
+wire \hwc_calculator|ones[3][0]~0_combout ;
+wire \hwc_calculator|integer_out[0]~0_combout ;
+wire \hwc_calculator|ones[5][1]~2_combout ;
+wire \hwc_calculator|ones[5][0]~3_combout ;
+wire \hwc_calculator|integer_out[1]~1_combout ;
+wire \hwc_calculator|ones[5][2]~5_combout ;
+wire \hwc_calculator|ones[3][1]~1_combout ;
+wire \hwc_calculator|ones[5][2]~6_combout ;
+wire \hwc_calculator|integer_out[2]~2_combout ;
+wire \hwc_ssd|decimal_out[0]~0_combout ;
+wire \hwc_ssd|decimal_out[1]~1_combout ;
+wire \hwc_ssd|decimal_out[2]~2_combout ;
+wire \hwc_ssd|decimal_out[3]~3_combout ;
+wire \hwc_ssd|decimal_out[4]~4_combout ;
+wire \hwc_ssd|decimal_out[5]~5_combout ;
+wire \hwc_ssd|decimal_out[6]~6_combout ;
+
+
+// Location: LCCOMB_X1_Y24_N12
+cycloneiii_lcell_comb \hwc_calculator|ones[4][2]~4 (
+// Equation(s):
+// \hwc_calculator|ones[4][2]~4_combout  = (\hwc_in[3]~input_o  & (\hwc_in[0]~input_o  & (\hwc_in[2]~input_o  & \hwc_in[1]~input_o )))
+
+	.dataa(\hwc_in[3]~input_o ),
+	.datab(\hwc_in[0]~input_o ),
+	.datac(\hwc_in[2]~input_o ),
+	.datad(\hwc_in[1]~input_o ),
+	.cin(gnd),
+	.combout(\hwc_calculator|ones[4][2]~4_combout ),
+	.cout());
+// synopsys translate_off
+defparam \hwc_calculator|ones[4][2]~4 .lut_mask = 16'h8000;
+defparam \hwc_calculator|ones[4][2]~4 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y23_N8
+cycloneiii_io_ibuf \hwc_in[3]~input (
+	.i(hwc_in[3]),
+	.ibar(gnd),
+	.o(\hwc_in[3]~input_o ));
+// synopsys translate_off
+defparam \hwc_in[3]~input .bus_hold = "false";
+defparam \hwc_in[3]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y20_N9
+cycloneiii_io_obuf \hwc_led_out[0]~output (
+	.i(\hwc_calculator|integer_out[0]~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\hwc_led_out[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \hwc_led_out[0]~output .bus_hold = "false";
+defparam \hwc_led_out[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y20_N2
+cycloneiii_io_obuf \hwc_led_out[1]~output (
+	.i(\hwc_calculator|integer_out[1]~1_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\hwc_led_out[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \hwc_led_out[1]~output .bus_hold = "false";
+defparam \hwc_led_out[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y21_N23
+cycloneiii_io_obuf \hwc_led_out[2]~output (
+	.i(\hwc_calculator|integer_out[2]~2_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\hwc_led_out[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \hwc_led_out[2]~output .bus_hold = "false";
+defparam \hwc_led_out[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X26_Y29_N16
+cycloneiii_io_obuf \hwc_ssd_out[0]~output (
+	.i(!\hwc_ssd|decimal_out[0]~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\hwc_ssd_out[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \hwc_ssd_out[0]~output .bus_hold = "false";
+defparam \hwc_ssd_out[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X28_Y29_N23
+cycloneiii_io_obuf \hwc_ssd_out[1]~output (
+	.i(\hwc_ssd|decimal_out[1]~1_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\hwc_ssd_out[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \hwc_ssd_out[1]~output .bus_hold = "false";
+defparam \hwc_ssd_out[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X26_Y29_N9
+cycloneiii_io_obuf \hwc_ssd_out[2]~output (
+	.i(\hwc_ssd|decimal_out[2]~2_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\hwc_ssd_out[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \hwc_ssd_out[2]~output .bus_hold = "false";
+defparam \hwc_ssd_out[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X28_Y29_N30
+cycloneiii_io_obuf \hwc_ssd_out[3]~output (
+	.i(\hwc_ssd|decimal_out[3]~3_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\hwc_ssd_out[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \hwc_ssd_out[3]~output .bus_hold = "false";
+defparam \hwc_ssd_out[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X26_Y29_N2
+cycloneiii_io_obuf \hwc_ssd_out[4]~output (
+	.i(\hwc_ssd|decimal_out[4]~4_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\hwc_ssd_out[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \hwc_ssd_out[4]~output .bus_hold = "false";
+defparam \hwc_ssd_out[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X21_Y29_N30
+cycloneiii_io_obuf \hwc_ssd_out[5]~output (
+	.i(\hwc_ssd|decimal_out[5]~5_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\hwc_ssd_out[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \hwc_ssd_out[5]~output .bus_hold = "false";
+defparam \hwc_ssd_out[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X21_Y29_N23
+cycloneiii_io_obuf \hwc_ssd_out[6]~output (
+	.i(\hwc_ssd|decimal_out[6]~6_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\hwc_ssd_out[6]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \hwc_ssd_out[6]~output .bus_hold = "false";
+defparam \hwc_ssd_out[6]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y25_N15
+cycloneiii_io_ibuf \hwc_in[6]~input (
+	.i(hwc_in[6]),
+	.ibar(gnd),
+	.o(\hwc_in[6]~input_o ));
+// synopsys translate_off
+defparam \hwc_in[6]~input .bus_hold = "false";
+defparam \hwc_in[6]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y22_N15
+cycloneiii_io_ibuf \hwc_in[5]~input (
+	.i(hwc_in[5]),
+	.ibar(gnd),
+	.o(\hwc_in[5]~input_o ));
+// synopsys translate_off
+defparam \hwc_in[5]~input .bus_hold = "false";
+defparam \hwc_in[5]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y27_N22
+cycloneiii_io_ibuf \hwc_in[4]~input (
+	.i(hwc_in[4]),
+	.ibar(gnd),
+	.o(\hwc_in[4]~input_o ));
+// synopsys translate_off
+defparam \hwc_in[4]~input .bus_hold = "false";
+defparam \hwc_in[4]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y24_N1
+cycloneiii_io_ibuf \hwc_in[0]~input (
+	.i(hwc_in[0]),
+	.ibar(gnd),
+	.o(\hwc_in[0]~input_o ));
+// synopsys translate_off
+defparam \hwc_in[0]~input .bus_hold = "false";
+defparam \hwc_in[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y25_N22
+cycloneiii_io_ibuf \hwc_in[2]~input (
+	.i(hwc_in[2]),
+	.ibar(gnd),
+	.o(\hwc_in[2]~input_o ));
+// synopsys translate_off
+defparam \hwc_in[2]~input .bus_hold = "false";
+defparam \hwc_in[2]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y27_N1
+cycloneiii_io_ibuf \hwc_in[1]~input (
+	.i(hwc_in[1]),
+	.ibar(gnd),
+	.o(\hwc_in[1]~input_o ));
+// synopsys translate_off
+defparam \hwc_in[1]~input .bus_hold = "false";
+defparam \hwc_in[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y24_N0
+cycloneiii_lcell_comb \hwc_calculator|ones[3][0]~0 (
+// Equation(s):
+// \hwc_calculator|ones[3][0]~0_combout  = \hwc_in[3]~input_o  $ (\hwc_in[0]~input_o  $ (\hwc_in[2]~input_o  $ (\hwc_in[1]~input_o )))
+
+	.dataa(\hwc_in[3]~input_o ),
+	.datab(\hwc_in[0]~input_o ),
+	.datac(\hwc_in[2]~input_o ),
+	.datad(\hwc_in[1]~input_o ),
+	.cin(gnd),
+	.combout(\hwc_calculator|ones[3][0]~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \hwc_calculator|ones[3][0]~0 .lut_mask = 16'h6996;
+defparam \hwc_calculator|ones[3][0]~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y25_N8
+cycloneiii_lcell_comb \hwc_calculator|integer_out[0]~0 (
+// Equation(s):
+// \hwc_calculator|integer_out[0]~0_combout  = \hwc_in[6]~input_o  $ (\hwc_in[5]~input_o  $ (\hwc_in[4]~input_o  $ (\hwc_calculator|ones[3][0]~0_combout )))
+
+	.dataa(\hwc_in[6]~input_o ),
+	.datab(\hwc_in[5]~input_o ),
+	.datac(\hwc_in[4]~input_o ),
+	.datad(\hwc_calculator|ones[3][0]~0_combout ),
+	.cin(gnd),
+	.combout(\hwc_calculator|integer_out[0]~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \hwc_calculator|integer_out[0]~0 .lut_mask = 16'h6996;
+defparam \hwc_calculator|integer_out[0]~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y25_N18
+cycloneiii_lcell_comb \hwc_calculator|ones[5][1]~2 (
+// Equation(s):
+// \hwc_calculator|ones[5][1]~2_combout  = \hwc_calculator|ones[3][1]~1_combout  $ (((\hwc_in[5]~input_o  & ((\hwc_in[4]~input_o ) # (\hwc_calculator|ones[3][0]~0_combout ))) # (!\hwc_in[5]~input_o  & (\hwc_in[4]~input_o  & 
+// \hwc_calculator|ones[3][0]~0_combout ))))
+
+	.dataa(\hwc_calculator|ones[3][1]~1_combout ),
+	.datab(\hwc_in[5]~input_o ),
+	.datac(\hwc_in[4]~input_o ),
+	.datad(\hwc_calculator|ones[3][0]~0_combout ),
+	.cin(gnd),
+	.combout(\hwc_calculator|ones[5][1]~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \hwc_calculator|ones[5][1]~2 .lut_mask = 16'h566A;
+defparam \hwc_calculator|ones[5][1]~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y25_N28
+cycloneiii_lcell_comb \hwc_calculator|ones[5][0]~3 (
+// Equation(s):
+// \hwc_calculator|ones[5][0]~3_combout  = \hwc_in[5]~input_o  $ (\hwc_in[4]~input_o  $ (\hwc_calculator|ones[3][0]~0_combout ))
+
+	.dataa(gnd),
+	.datab(\hwc_in[5]~input_o ),
+	.datac(\hwc_in[4]~input_o ),
+	.datad(\hwc_calculator|ones[3][0]~0_combout ),
+	.cin(gnd),
+	.combout(\hwc_calculator|ones[5][0]~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \hwc_calculator|ones[5][0]~3 .lut_mask = 16'hC33C;
+defparam \hwc_calculator|ones[5][0]~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y25_N30
+cycloneiii_lcell_comb \hwc_calculator|integer_out[1]~1 (
+// Equation(s):
+// \hwc_calculator|integer_out[1]~1_combout  = \hwc_calculator|ones[5][1]~2_combout  $ (((\hwc_in[6]~input_o  & \hwc_calculator|ones[5][0]~3_combout )))
+
+	.dataa(\hwc_in[6]~input_o ),
+	.datab(\hwc_calculator|ones[5][1]~2_combout ),
+	.datac(gnd),
+	.datad(\hwc_calculator|ones[5][0]~3_combout ),
+	.cin(gnd),
+	.combout(\hwc_calculator|integer_out[1]~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \hwc_calculator|integer_out[1]~1 .lut_mask = 16'h66CC;
+defparam \hwc_calculator|integer_out[1]~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y25_N0
+cycloneiii_lcell_comb \hwc_calculator|ones[5][2]~5 (
+// Equation(s):
+// \hwc_calculator|ones[5][2]~5_combout  = (\hwc_in[5]~input_o  & ((\hwc_in[4]~input_o ) # (\hwc_calculator|ones[3][0]~0_combout ))) # (!\hwc_in[5]~input_o  & (\hwc_in[4]~input_o  & \hwc_calculator|ones[3][0]~0_combout ))
+
+	.dataa(gnd),
+	.datab(\hwc_in[5]~input_o ),
+	.datac(\hwc_in[4]~input_o ),
+	.datad(\hwc_calculator|ones[3][0]~0_combout ),
+	.cin(gnd),
+	.combout(\hwc_calculator|ones[5][2]~5_combout ),
+	.cout());
+// synopsys translate_off
+defparam \hwc_calculator|ones[5][2]~5 .lut_mask = 16'hFCC0;
+defparam \hwc_calculator|ones[5][2]~5 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y24_N10
+cycloneiii_lcell_comb \hwc_calculator|ones[3][1]~1 (
+// Equation(s):
+// \hwc_calculator|ones[3][1]~1_combout  = (\hwc_in[3]~input_o  & ((\hwc_in[0]~input_o  & ((!\hwc_in[1]~input_o ) # (!\hwc_in[2]~input_o ))) # (!\hwc_in[0]~input_o  & ((\hwc_in[2]~input_o ) # (\hwc_in[1]~input_o ))))) # (!\hwc_in[3]~input_o  & 
+// ((\hwc_in[0]~input_o  & ((\hwc_in[2]~input_o ) # (\hwc_in[1]~input_o ))) # (!\hwc_in[0]~input_o  & (\hwc_in[2]~input_o  & \hwc_in[1]~input_o ))))
+
+	.dataa(\hwc_in[3]~input_o ),
+	.datab(\hwc_in[0]~input_o ),
+	.datac(\hwc_in[2]~input_o ),
+	.datad(\hwc_in[1]~input_o ),
+	.cin(gnd),
+	.combout(\hwc_calculator|ones[3][1]~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \hwc_calculator|ones[3][1]~1 .lut_mask = 16'h7EE8;
+defparam \hwc_calculator|ones[3][1]~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y25_N2
+cycloneiii_lcell_comb \hwc_calculator|ones[5][2]~6 (
+// Equation(s):
+// \hwc_calculator|ones[5][2]~6_combout  = \hwc_calculator|ones[4][2]~4_combout  $ (((\hwc_calculator|ones[5][2]~5_combout  & \hwc_calculator|ones[3][1]~1_combout )))
+
+	.dataa(\hwc_calculator|ones[4][2]~4_combout ),
+	.datab(\hwc_calculator|ones[5][2]~5_combout ),
+	.datac(gnd),
+	.datad(\hwc_calculator|ones[3][1]~1_combout ),
+	.cin(gnd),
+	.combout(\hwc_calculator|ones[5][2]~6_combout ),
+	.cout());
+// synopsys translate_off
+defparam \hwc_calculator|ones[5][2]~6 .lut_mask = 16'h66AA;
+defparam \hwc_calculator|ones[5][2]~6 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y25_N20
+cycloneiii_lcell_comb \hwc_calculator|integer_out[2]~2 (
+// Equation(s):
+// \hwc_calculator|integer_out[2]~2_combout  = \hwc_calculator|ones[5][2]~6_combout  $ (((\hwc_in[6]~input_o  & (\hwc_calculator|ones[5][0]~3_combout  & \hwc_calculator|ones[5][1]~2_combout ))))
+
+	.dataa(\hwc_in[6]~input_o ),
+	.datab(\hwc_calculator|ones[5][0]~3_combout ),
+	.datac(\hwc_calculator|ones[5][1]~2_combout ),
+	.datad(\hwc_calculator|ones[5][2]~6_combout ),
+	.cin(gnd),
+	.combout(\hwc_calculator|integer_out[2]~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \hwc_calculator|integer_out[2]~2 .lut_mask = 16'h7F80;
+defparam \hwc_calculator|integer_out[2]~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y25_N14
+cycloneiii_lcell_comb \hwc_ssd|decimal_out[0]~0 (
+// Equation(s):
+// \hwc_ssd|decimal_out[0]~0_combout  = (\hwc_calculator|ones[5][1]~2_combout  & ((\hwc_in[6]~input_o  $ (!\hwc_calculator|ones[5][0]~3_combout )) # (!\hwc_calculator|ones[5][2]~6_combout ))) # (!\hwc_calculator|ones[5][1]~2_combout  & 
+// ((\hwc_calculator|ones[5][2]~6_combout ) # ((\hwc_in[6]~input_o  & \hwc_calculator|ones[5][0]~3_combout ))))
+
+	.dataa(\hwc_in[6]~input_o ),
+	.datab(\hwc_calculator|ones[5][0]~3_combout ),
+	.datac(\hwc_calculator|ones[5][1]~2_combout ),
+	.datad(\hwc_calculator|ones[5][2]~6_combout ),
+	.cin(gnd),
+	.combout(\hwc_ssd|decimal_out[0]~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \hwc_ssd|decimal_out[0]~0 .lut_mask = 16'h9FF8;
+defparam \hwc_ssd|decimal_out[0]~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y25_N24
+cycloneiii_lcell_comb \hwc_ssd|decimal_out[1]~1 (
+// Equation(s):
+// \hwc_ssd|decimal_out[1]~1_combout  = (\hwc_calculator|ones[5][1]~2_combout  & ((\hwc_in[6]~input_o  & (!\hwc_calculator|ones[5][0]~3_combout )) # (!\hwc_in[6]~input_o  & ((\hwc_calculator|ones[5][0]~3_combout ) # (!\hwc_calculator|ones[5][2]~6_combout 
+// ))))) # (!\hwc_calculator|ones[5][1]~2_combout  & (!\hwc_calculator|ones[5][2]~6_combout  & ((\hwc_in[6]~input_o ) # (\hwc_calculator|ones[5][0]~3_combout ))))
+
+	.dataa(\hwc_in[6]~input_o ),
+	.datab(\hwc_calculator|ones[5][0]~3_combout ),
+	.datac(\hwc_calculator|ones[5][1]~2_combout ),
+	.datad(\hwc_calculator|ones[5][2]~6_combout ),
+	.cin(gnd),
+	.combout(\hwc_ssd|decimal_out[1]~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \hwc_ssd|decimal_out[1]~1 .lut_mask = 16'h607E;
+defparam \hwc_ssd|decimal_out[1]~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y25_N26
+cycloneiii_lcell_comb \hwc_ssd|decimal_out[2]~2 (
+// Equation(s):
+// \hwc_ssd|decimal_out[2]~2_combout  = (\hwc_in[6]~input_o  & (((\hwc_calculator|ones[5][1]~2_combout  & !\hwc_calculator|ones[5][2]~6_combout )) # (!\hwc_calculator|ones[5][0]~3_combout ))) # (!\hwc_in[6]~input_o  & ((\hwc_calculator|ones[5][0]~3_combout ) 
+// # ((!\hwc_calculator|ones[5][1]~2_combout  & \hwc_calculator|ones[5][2]~6_combout ))))
+
+	.dataa(\hwc_in[6]~input_o ),
+	.datab(\hwc_calculator|ones[5][0]~3_combout ),
+	.datac(\hwc_calculator|ones[5][1]~2_combout ),
+	.datad(\hwc_calculator|ones[5][2]~6_combout ),
+	.cin(gnd),
+	.combout(\hwc_ssd|decimal_out[2]~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \hwc_ssd|decimal_out[2]~2 .lut_mask = 16'h67E6;
+defparam \hwc_ssd|decimal_out[2]~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y25_N12
+cycloneiii_lcell_comb \hwc_ssd|decimal_out[3]~3 (
+// Equation(s):
+// \hwc_ssd|decimal_out[3]~3_combout  = (\hwc_in[6]~input_o  & ((\hwc_calculator|ones[5][0]~3_combout  & (\hwc_calculator|ones[5][1]~2_combout  & !\hwc_calculator|ones[5][2]~6_combout )) # (!\hwc_calculator|ones[5][0]~3_combout  & 
+// (\hwc_calculator|ones[5][1]~2_combout  $ (!\hwc_calculator|ones[5][2]~6_combout ))))) # (!\hwc_in[6]~input_o  & ((\hwc_calculator|ones[5][0]~3_combout  & (\hwc_calculator|ones[5][1]~2_combout  $ (!\hwc_calculator|ones[5][2]~6_combout ))) # 
+// (!\hwc_calculator|ones[5][0]~3_combout  & (!\hwc_calculator|ones[5][1]~2_combout  & \hwc_calculator|ones[5][2]~6_combout ))))
+
+	.dataa(\hwc_in[6]~input_o ),
+	.datab(\hwc_calculator|ones[5][0]~3_combout ),
+	.datac(\hwc_calculator|ones[5][1]~2_combout ),
+	.datad(\hwc_calculator|ones[5][2]~6_combout ),
+	.cin(gnd),
+	.combout(\hwc_ssd|decimal_out[3]~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \hwc_ssd|decimal_out[3]~3 .lut_mask = 16'h6186;
+defparam \hwc_ssd|decimal_out[3]~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y25_N22
+cycloneiii_lcell_comb \hwc_ssd|decimal_out[4]~4 (
+// Equation(s):
+// \hwc_ssd|decimal_out[4]~4_combout  = (!\hwc_calculator|ones[5][2]~6_combout  & ((\hwc_in[6]~input_o  & (\hwc_calculator|ones[5][0]~3_combout  & !\hwc_calculator|ones[5][1]~2_combout )) # (!\hwc_in[6]~input_o  & (!\hwc_calculator|ones[5][0]~3_combout  & 
+// \hwc_calculator|ones[5][1]~2_combout ))))
+
+	.dataa(\hwc_in[6]~input_o ),
+	.datab(\hwc_calculator|ones[5][0]~3_combout ),
+	.datac(\hwc_calculator|ones[5][1]~2_combout ),
+	.datad(\hwc_calculator|ones[5][2]~6_combout ),
+	.cin(gnd),
+	.combout(\hwc_ssd|decimal_out[4]~4_combout ),
+	.cout());
+// synopsys translate_off
+defparam \hwc_ssd|decimal_out[4]~4 .lut_mask = 16'h0018;
+defparam \hwc_ssd|decimal_out[4]~4 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y25_N16
+cycloneiii_lcell_comb \hwc_ssd|decimal_out[5]~5 (
+// Equation(s):
+// \hwc_ssd|decimal_out[5]~5_combout  = (\hwc_calculator|ones[5][2]~6_combout  & (\hwc_calculator|ones[5][1]~2_combout  $ (((\hwc_in[6]~input_o ) # (\hwc_calculator|ones[5][0]~3_combout )))))
+
+	.dataa(\hwc_in[6]~input_o ),
+	.datab(\hwc_calculator|ones[5][0]~3_combout ),
+	.datac(\hwc_calculator|ones[5][1]~2_combout ),
+	.datad(\hwc_calculator|ones[5][2]~6_combout ),
+	.cin(gnd),
+	.combout(\hwc_ssd|decimal_out[5]~5_combout ),
+	.cout());
+// synopsys translate_off
+defparam \hwc_ssd|decimal_out[5]~5 .lut_mask = 16'h1E00;
+defparam \hwc_ssd|decimal_out[5]~5 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y25_N10
+cycloneiii_lcell_comb \hwc_ssd|decimal_out[6]~6 (
+// Equation(s):
+// \hwc_ssd|decimal_out[6]~6_combout  = (\hwc_in[6]~input_o  & (!\hwc_calculator|ones[5][2]~6_combout  & (\hwc_calculator|ones[5][0]~3_combout  $ (!\hwc_calculator|ones[5][1]~2_combout )))) # (!\hwc_in[6]~input_o  & (!\hwc_calculator|ones[5][1]~2_combout  & 
+// (\hwc_calculator|ones[5][0]~3_combout  $ (\hwc_calculator|ones[5][2]~6_combout ))))
+
+	.dataa(\hwc_in[6]~input_o ),
+	.datab(\hwc_calculator|ones[5][0]~3_combout ),
+	.datac(\hwc_calculator|ones[5][1]~2_combout ),
+	.datad(\hwc_calculator|ones[5][2]~6_combout ),
+	.cin(gnd),
+	.combout(\hwc_ssd|decimal_out[6]~6_combout ),
+	.cout());
+// synopsys translate_off
+defparam \hwc_ssd|decimal_out[6]~6 .lut_mask = 16'h0186;
+defparam \hwc_ssd|decimal_out[6]~6 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+assign hwc_led_out[0] = \hwc_led_out[0]~output_o ;
+
+assign hwc_led_out[1] = \hwc_led_out[1]~output_o ;
+
+assign hwc_led_out[2] = \hwc_led_out[2]~output_o ;
+
+assign hwc_ssd_out[0] = \hwc_ssd_out[0]~output_o ;
+
+assign hwc_ssd_out[1] = \hwc_ssd_out[1]~output_o ;
+
+assign hwc_ssd_out[2] = \hwc_ssd_out[2]~output_o ;
+
+assign hwc_ssd_out[3] = \hwc_ssd_out[3]~output_o ;
+
+assign hwc_ssd_out[4] = \hwc_ssd_out[4]~output_o ;
+
+assign hwc_ssd_out[5] = \hwc_ssd_out[5]~output_o ;
+
+assign hwc_ssd_out[6] = \hwc_ssd_out[6]~output_o ;
+
+endmodule

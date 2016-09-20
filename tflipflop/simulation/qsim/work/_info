@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\Dropbox\2-2016\Lógica Programável e VHDL\vhdl-playground\tflipflop\simulation\qsim
+vtflipflop
+Z1 I6Ui?Z]<73GZT;JYR<?XbC2
+Z2 V8Pao`6Q^1GWSE1lUAQ>eF1
+Z3 dE:\Dropbox\2-2016\Lógica Programável e VHDL\vhdl-playground\tflipflop\simulation\qsim
+Z4 w1472530524
+Z5 8tflipflop.vo
+Z6 Ftflipflop.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+!i10b 1
+Z9 !s100 7nm[zVEPFe6`hAADli<3n3
+!s85 0
+Z10 !s108 1472530527.306000
+Z11 !s107 tflipflop.vo|
+Z12 !s90 -work|work|tflipflop.vo|
+!s101 -O0
+vtflipflop_vlg_check_tst
+!i10b 1
+!s100 cNm<;LLRYgnm:lOAGLZ]<0
+Ii;ZBnENNigo>O@A<LgTRo1
+Vz3a?Bj7]GQzRXRQ5hPFYI2
+R3
+Z13 w1472530523
+Z14 8tflipflop.vt
+Z15 Ftflipflop.vt
+L0 61
+R7
+r1
+!s85 0
+31
+Z16 !s108 1472530527.728000
+Z17 !s107 tflipflop.vt|
+Z18 !s90 -work|work|tflipflop.vt|
+!s101 -O0
+R8
+vtflipflop_vlg_sample_tst
+!i10b 1
+!s100 :oa=OIdEgb?eEd7H=VTEP2
+Ihi1]>22DZUZ:fI9V?1boK0
+VYKg_oIMfX?[JD=2ZKCIXH1
+R3
+R13
+R14
+R15
+L0 29
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R8
+vtflipflop_vlg_vec_tst
+!i10b 1
+!s100 WcTZ_Tezf^bJSmjo[DVjK0
+INn[KE<@1eEbEI;FA97XTJ0
+VPdBF31@PTJabN4Qf6kB203
+R3
+R13
+R14
+R15
+L0 183
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R8

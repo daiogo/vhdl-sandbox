@@ -1,5 +1,5 @@
 Fitter report for multiple_detector
-Fri Oct 09 16:02:23 2015
+Wed Jul 06 01:09:44 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -14,30 +14,31 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   6. Incremental Compilation Preservation Summary
   7. Incremental Compilation Partition Settings
   8. Incremental Compilation Placement Preservation
-  9. Pin-Out File
- 10. Fitter Resource Usage Summary
- 11. Fitter Partition Statistics
- 12. Input Pins
- 13. Output Pins
- 14. Dual Purpose and Dedicated Pins
- 15. I/O Bank Usage
- 16. All Package Pins
- 17. Fitter Resource Utilization by Entity
- 18. Delay Chain Summary
- 19. Pad To Core Delay Chain Fanout
- 20. Non-Global High Fan-Out Signals
- 21. Other Routing Usage Summary
- 22. LAB Logic Elements
- 23. LAB Signals Sourced
- 24. LAB Signals Sourced Out
- 25. LAB Distinct Inputs
- 26. I/O Rules Summary
- 27. I/O Rules Details
- 28. I/O Rules Matrix
- 29. Fitter Device Options
- 30. Operating Settings and Conditions
- 31. Fitter Messages
- 32. Fitter Suppressed Messages
+  9. Fitter Equations
+ 10. Pin-Out File
+ 11. Fitter Resource Usage Summary
+ 12. Fitter Partition Statistics
+ 13. Input Pins
+ 14. Output Pins
+ 15. Dual Purpose and Dedicated Pins
+ 16. I/O Bank Usage
+ 17. All Package Pins
+ 18. Fitter Resource Utilization by Entity
+ 19. Delay Chain Summary
+ 20. Pad To Core Delay Chain Fanout
+ 21. Non-Global High Fan-Out Signals
+ 22. Other Routing Usage Summary
+ 23. LAB Logic Elements
+ 24. LAB Signals Sourced
+ 25. LAB Signals Sourced Out
+ 26. LAB Distinct Inputs
+ 27. I/O Rules Summary
+ 28. I/O Rules Details
+ 29. I/O Rules Matrix
+ 30. Fitter Device Options
+ 31. Operating Settings and Conditions
+ 32. Fitter Messages
+ 33. Fitter Suppressed Messages
 
 
 
@@ -63,7 +64,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Fri Oct 09 16:02:23 2015           ;
+; Fitter Status                      ; Successful - Wed Jul 06 01:09:44 2016           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; multiple_detector                               ;
 ; Top-level Entity Name              ; multiple_detector                               ;
@@ -199,10 +200,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
 
++------------------+
+; Fitter Equations ;
++------------------+
+The equations can be found in E:/Dropbox/1-2016/Lógica Programável e VHDL/vhdl-playground/multiple_detector/output_files/multiple_detector.fit.eqn.
+
+
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/output_files/multiple_detector.pin.
+The pin-out file can be found in E:/Dropbox/1-2016/Lógica Programável e VHDL/vhdl-playground/multiple_detector/output_files/multiple_detector.pin.
 
 
 +---------------------------------------------------------------------+
@@ -1296,23 +1303,23 @@ Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.19 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.11 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
-Info (144001): Generated suppressed messages file D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/output_files/multiple_detector.fit.smsg
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (144001): Generated suppressed messages file E:/Dropbox/1-2016/Lógica Programável e VHDL/vhdl-playground/multiple_detector/output_files/multiple_detector.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 668 megabytes
-    Info: Processing ended: Fri Oct 09 16:02:24 2015
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Peak virtual memory: 682 megabytes
+    Info: Processing ended: Wed Jul 06 01:09:45 2016
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:07
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/output_files/multiple_detector.fit.smsg.
+The suppressed messages can be found in E:/Dropbox/1-2016/Lógica Programável e VHDL/vhdl-playground/multiple_detector/output_files/multiple_detector.fit.smsg.
 
 

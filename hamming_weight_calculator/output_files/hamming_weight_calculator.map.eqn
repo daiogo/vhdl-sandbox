@@ -1,0 +1,153 @@
+-- Copyright (C) 1991-2013 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--hwc_led_out[0] is hwc_led_out[0]
+hwc_led_out[0] = OUTPUT(B1L1);
+
+
+--hwc_led_out[1] is hwc_led_out[1]
+hwc_led_out[1] = OUTPUT(B1L2);
+
+
+--hwc_led_out[2] is hwc_led_out[2]
+hwc_led_out[2] = OUTPUT(B1L3);
+
+
+--hwc_ssd_out[0] is hwc_ssd_out[0]
+hwc_ssd_out[0] = OUTPUT(C1L2);
+
+
+--hwc_ssd_out[1] is hwc_ssd_out[1]
+hwc_ssd_out[1] = OUTPUT(C1L3);
+
+
+--hwc_ssd_out[2] is hwc_ssd_out[2]
+hwc_ssd_out[2] = OUTPUT(C1L4);
+
+
+--hwc_ssd_out[3] is hwc_ssd_out[3]
+hwc_ssd_out[3] = OUTPUT(C1L5);
+
+
+--hwc_ssd_out[4] is hwc_ssd_out[4]
+hwc_ssd_out[4] = OUTPUT(C1L6);
+
+
+--hwc_ssd_out[5] is hwc_ssd_out[5]
+hwc_ssd_out[5] = OUTPUT(C1L7);
+
+
+--hwc_ssd_out[6] is hwc_ssd_out[6]
+hwc_ssd_out[6] = OUTPUT(C1L8);
+
+
+--hwc_in[6] is hwc_in[6]
+hwc_in[6] = INPUT();
+
+
+--hwc_in[5] is hwc_in[5]
+hwc_in[5] = INPUT();
+
+
+--hwc_in[4] is hwc_in[4]
+hwc_in[4] = INPUT();
+
+
+--hwc_in[0] is hwc_in[0]
+hwc_in[0] = INPUT();
+
+
+--hwc_in[1] is hwc_in[1]
+hwc_in[1] = INPUT();
+
+
+--hwc_in[2] is hwc_in[2]
+hwc_in[2] = INPUT();
+
+
+--hwc_in[3] is hwc_in[3]
+hwc_in[3] = INPUT();
+
+
+--B1L4 is hamming_calculator:hwc_calculator|ones[3][0]~0
+B1L4 = hwc_in[0] $ (hwc_in[1] $ (hwc_in[2] $ (hwc_in[3])));
+
+
+--B1L1 is hamming_calculator:hwc_calculator|integer_out[0]~0
+B1L1 = hwc_in[6] $ (hwc_in[5] $ (hwc_in[4] $ (B1L4)));
+
+
+--B1L5 is hamming_calculator:hwc_calculator|ones[3][1]~1
+B1L5 = (hwc_in[0] & ((hwc_in[1] & ((!hwc_in[3]) # (!hwc_in[2]))) # (!hwc_in[1] & ((hwc_in[2]) # (hwc_in[3]))))) # (!hwc_in[0] & ((hwc_in[1] & ((hwc_in[2]) # (hwc_in[3]))) # (!hwc_in[1] & (hwc_in[2] & hwc_in[3]))));
+
+
+--B1L8 is hamming_calculator:hwc_calculator|ones[5][1]~2
+B1L8 = B1L5 $ (((hwc_in[5] & ((hwc_in[4]) # (B1L4))) # (!hwc_in[5] & (hwc_in[4] & B1L4))));
+
+
+--B1L7 is hamming_calculator:hwc_calculator|ones[5][0]~3
+B1L7 = hwc_in[5] $ (hwc_in[4] $ (B1L4));
+
+
+--B1L2 is hamming_calculator:hwc_calculator|integer_out[1]~1
+B1L2 = B1L8 $ (((hwc_in[6] & B1L7)));
+
+
+--B1L6 is hamming_calculator:hwc_calculator|ones[4][2]~4
+B1L6 = (hwc_in[0] & (hwc_in[1] & (hwc_in[2] & hwc_in[3])));
+
+
+--B1L9 is hamming_calculator:hwc_calculator|ones[5][2]~5
+B1L9 = (hwc_in[4] & ((B1L4) # (hwc_in[5]))) # (!hwc_in[4] & (B1L4 & hwc_in[5]));
+
+
+--B1L10 is hamming_calculator:hwc_calculator|ones[5][2]~6
+B1L10 = B1L6 $ (((B1L5 & B1L9)));
+
+
+--B1L3 is hamming_calculator:hwc_calculator|integer_out[2]~2
+B1L3 = B1L10 $ (((hwc_in[6] & (B1L7 & B1L8))));
+
+
+--C1L1 is ssd_driver:hwc_ssd|decimal_out[0]~0
+C1L1 = (B1L8 & ((B1L7 $ (!hwc_in[6])) # (!B1L10))) # (!B1L8 & ((B1L10) # ((B1L7 & hwc_in[6]))));
+
+
+--C1L3 is ssd_driver:hwc_ssd|decimal_out[1]~1
+C1L3 = (B1L8 & ((hwc_in[6] & ((!B1L7))) # (!hwc_in[6] & ((B1L7) # (!B1L10))))) # (!B1L8 & (!B1L10 & ((hwc_in[6]) # (B1L7))));
+
+
+--C1L4 is ssd_driver:hwc_ssd|decimal_out[2]~2
+C1L4 = (B1L7 & (((B1L8 & !B1L10)) # (!hwc_in[6]))) # (!B1L7 & ((hwc_in[6]) # ((!B1L8 & B1L10))));
+
+
+--C1L5 is ssd_driver:hwc_ssd|decimal_out[3]~3
+C1L5 = (B1L8 & ((B1L7 & (B1L10 $ (hwc_in[6]))) # (!B1L7 & (B1L10 & hwc_in[6])))) # (!B1L8 & ((B1L7 & (!B1L10 & !hwc_in[6])) # (!B1L7 & (B1L10 $ (hwc_in[6])))));
+
+
+--C1L6 is ssd_driver:hwc_ssd|decimal_out[4]~4
+C1L6 = (!B1L10 & ((hwc_in[6] & (B1L7 & !B1L8)) # (!hwc_in[6] & (!B1L7 & B1L8))));
+
+
+--C1L7 is ssd_driver:hwc_ssd|decimal_out[5]~5
+C1L7 = (B1L10 & (B1L8 $ (((hwc_in[6]) # (B1L7)))));
+
+
+--C1L8 is ssd_driver:hwc_ssd|decimal_out[6]~6
+C1L8 = (B1L7 & (!B1L10 & (B1L8 $ (!hwc_in[6])))) # (!B1L7 & (!B1L8 & (B1L10 $ (hwc_in[6]))));
+
+
+--C1L2 is ssd_driver:hwc_ssd|decimal_out[0]~0_wirecell
+C1L2 = !C1L1;
+
+

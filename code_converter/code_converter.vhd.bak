@@ -1,0 +1,30 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.math_real.all;
+use ieee.numeric_std.all;
+
+----------------------------------------------------------------
+
+entity log2_calc is
+	generic (N: integer := 7); --number of bits on input
+	port(
+		x: in integer range 1 to 255;
+		y: out integer range 1 to 255
+	);
+end entity;
+
+----------------------------------------------------------------
+
+architecture a_log2_calc of log2_calc is
+
+	function log2 (n: integer) return integer is
+		constant y : real := real(n);
+		begin
+			--y := integer(ceil(log2(real(n))));
+		return integer(ceil(log2(real(n))));
+	end function;
+
+begin
+	y <= log2(x);
+end architecture;

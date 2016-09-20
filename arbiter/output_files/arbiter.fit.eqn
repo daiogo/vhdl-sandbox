@@ -1,0 +1,119 @@
+-- Copyright (C) 1991-2013 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--prev_state.p3 is prev_state.p3 at FF_X1_Y27_N17
+--register power-up is low
+
+prev_state.p3 = DFFEAS(A1L15, GLOBAL(A1L4), GLOBAL(A1L26),  ,  ,  ,  ,  ,  );
+
+
+--prev_state.idle is prev_state.idle at FF_X1_Y27_N3
+--register power-up is low
+
+prev_state.idle = DFFEAS(A1L13, GLOBAL(A1L4), GLOBAL(A1L26),  ,  ,  ,  ,  ,  );
+
+
+--A1L16 is process_1~0 at LCCOMB_X1_Y27_N0
+A1L16 = (A1L19 & (!A1L23 & (!A1L21 & !prev_state.idle)));
+
+
+--A1L15 is prev_state.p3~0 at LCCOMB_X1_Y27_N16
+A1L15 = (prev_state.p3) # (A1L16);
+
+
+--A1L13 is prev_state.idle~0 at LCCOMB_X1_Y27_N2
+A1L13 = (prev_state.idle) # ((A1L19 & (!A1L21 & !A1L23)));
+
+
+--A1L7 is g[0]~output at IOOBUF_X0_Y27_N16
+A1L7 = OUTPUT_BUFFER.O(.I(prev_state.p3), , , , , , , , , , , , , , , , , );
+
+
+--g[0] is g[0] at PIN_B1
+g[0] = OUTPUT();
+
+
+--A1L9 is g[1]~output at IOOBUF_X30_Y29_N9
+A1L9 = OUTPUT_BUFFER.O(.I(GND), , , , , , , , , , , , , , , , , );
+
+
+--g[1] is g[1] at PIN_G13
+g[1] = OUTPUT();
+
+
+--A1L11 is g[2]~output at IOOBUF_X41_Y3_N23
+A1L11 = OUTPUT_BUFFER.O(.I(GND), , , , , , , , , , , , , , , , , );
+
+
+--g[2] is g[2] at PIN_T18
+g[2] = OUTPUT();
+
+
+--A1L19 is r[0]~input at IOIBUF_X0_Y27_N8
+A1L19 = INPUT_BUFFER(.I(r[0]), );
+
+
+--r[0] is r[0] at PIN_B2
+r[0] = INPUT();
+
+
+--A1L21 is r[1]~input at IOIBUF_X0_Y27_N1
+A1L21 = INPUT_BUFFER(.I(r[1]), );
+
+
+--r[1] is r[1] at PIN_H5
+r[1] = INPUT();
+
+
+--A1L23 is r[2]~input at IOIBUF_X0_Y27_N22
+A1L23 = INPUT_BUFFER(.I(r[2]), );
+
+
+--r[2] is r[2] at PIN_G5
+r[2] = INPUT();
+
+
+--A1L3 is clk~input at IOIBUF_X0_Y14_N1
+A1L3 = INPUT_BUFFER(.I(clk), );
+
+
+--clk is clk at PIN_G2
+clk = INPUT();
+
+
+--A1L25 is rst~input at IOIBUF_X0_Y14_N8
+A1L25 = INPUT_BUFFER(.I(rst), );
+
+
+--rst is rst at PIN_G1
+rst = INPUT();
+
+
+
+
+
+
+
+
+
+
+
+
+--A1L4 is clk~inputclkctrl at CLKCTRL_G4
+A1L4 = cycloneiii_clkctrl(.INCLK[0] = A1L3) WITH (clock_type = "Global Clock", ena_register_mode = "none");
+
+
+--A1L26 is rst~inputclkctrl at CLKCTRL_G2
+A1L26 = cycloneiii_clkctrl(.INCLK[0] = A1L25) WITH (clock_type = "Global Clock", ena_register_mode = "none");
+
+

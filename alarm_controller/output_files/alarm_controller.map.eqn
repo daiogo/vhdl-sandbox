@@ -1,0 +1,663 @@
+-- Copyright (C) 1991-2013 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B1L1 is frequency_divider:freq_divider|Add0~0
+B1L1 = B1_counter[0] $ (VCC);
+
+--B1L2 is frequency_divider:freq_divider|Add0~1
+B1L2 = CARRY(B1_counter[0]);
+
+
+--B1L3 is frequency_divider:freq_divider|Add0~2
+B1L3 = (B1_counter[1] & (!B1L2)) # (!B1_counter[1] & ((B1L2) # (GND)));
+
+--B1L4 is frequency_divider:freq_divider|Add0~3
+B1L4 = CARRY((!B1L2) # (!B1_counter[1]));
+
+
+--B1L5 is frequency_divider:freq_divider|Add0~4
+B1L5 = (B1_counter[2] & (B1L4 $ (GND))) # (!B1_counter[2] & (!B1L4 & VCC));
+
+--B1L6 is frequency_divider:freq_divider|Add0~5
+B1L6 = CARRY((B1_counter[2] & !B1L4));
+
+
+--B1L7 is frequency_divider:freq_divider|Add0~6
+B1L7 = (B1_counter[3] & (!B1L6)) # (!B1_counter[3] & ((B1L6) # (GND)));
+
+--B1L8 is frequency_divider:freq_divider|Add0~7
+B1L8 = CARRY((!B1L6) # (!B1_counter[3]));
+
+
+--B1L9 is frequency_divider:freq_divider|Add0~8
+B1L9 = (B1_counter[4] & (B1L8 $ (GND))) # (!B1_counter[4] & (!B1L8 & VCC));
+
+--B1L10 is frequency_divider:freq_divider|Add0~9
+B1L10 = CARRY((B1_counter[4] & !B1L8));
+
+
+--B1L11 is frequency_divider:freq_divider|Add0~10
+B1L11 = (B1_counter[5] & (!B1L10)) # (!B1_counter[5] & ((B1L10) # (GND)));
+
+--B1L12 is frequency_divider:freq_divider|Add0~11
+B1L12 = CARRY((!B1L10) # (!B1_counter[5]));
+
+
+--B1L13 is frequency_divider:freq_divider|Add0~12
+B1L13 = (B1_counter[6] & (B1L12 $ (GND))) # (!B1_counter[6] & (!B1L12 & VCC));
+
+--B1L14 is frequency_divider:freq_divider|Add0~13
+B1L14 = CARRY((B1_counter[6] & !B1L12));
+
+
+--B1L15 is frequency_divider:freq_divider|Add0~14
+B1L15 = (B1_counter[7] & (!B1L14)) # (!B1_counter[7] & ((B1L14) # (GND)));
+
+--B1L16 is frequency_divider:freq_divider|Add0~15
+B1L16 = CARRY((!B1L14) # (!B1_counter[7]));
+
+
+--B1L17 is frequency_divider:freq_divider|Add0~16
+B1L17 = (B1_counter[8] & (B1L16 $ (GND))) # (!B1_counter[8] & (!B1L16 & VCC));
+
+--B1L18 is frequency_divider:freq_divider|Add0~17
+B1L18 = CARRY((B1_counter[8] & !B1L16));
+
+
+--B1L19 is frequency_divider:freq_divider|Add0~18
+B1L19 = (B1_counter[9] & (!B1L18)) # (!B1_counter[9] & ((B1L18) # (GND)));
+
+--B1L20 is frequency_divider:freq_divider|Add0~19
+B1L20 = CARRY((!B1L18) # (!B1_counter[9]));
+
+
+--B1L21 is frequency_divider:freq_divider|Add0~20
+B1L21 = (B1_counter[10] & (B1L20 $ (GND))) # (!B1_counter[10] & (!B1L20 & VCC));
+
+--B1L22 is frequency_divider:freq_divider|Add0~21
+B1L22 = CARRY((B1_counter[10] & !B1L20));
+
+
+--B1L23 is frequency_divider:freq_divider|Add0~22
+B1L23 = (B1_counter[11] & (!B1L22)) # (!B1_counter[11] & ((B1L22) # (GND)));
+
+--B1L24 is frequency_divider:freq_divider|Add0~23
+B1L24 = CARRY((!B1L22) # (!B1_counter[11]));
+
+
+--B1L25 is frequency_divider:freq_divider|Add0~24
+B1L25 = (B1_counter[12] & (B1L24 $ (GND))) # (!B1_counter[12] & (!B1L24 & VCC));
+
+--B1L26 is frequency_divider:freq_divider|Add0~25
+B1L26 = CARRY((B1_counter[12] & !B1L24));
+
+
+--B1L27 is frequency_divider:freq_divider|Add0~26
+B1L27 = (B1_counter[13] & (!B1L26)) # (!B1_counter[13] & ((B1L26) # (GND)));
+
+--B1L28 is frequency_divider:freq_divider|Add0~27
+B1L28 = CARRY((!B1L26) # (!B1_counter[13]));
+
+
+--B1L29 is frequency_divider:freq_divider|Add0~28
+B1L29 = (B1_counter[14] & (B1L28 $ (GND))) # (!B1_counter[14] & (!B1L28 & VCC));
+
+--B1L30 is frequency_divider:freq_divider|Add0~29
+B1L30 = CARRY((B1_counter[14] & !B1L28));
+
+
+--B1L31 is frequency_divider:freq_divider|Add0~30
+B1L31 = (B1_counter[15] & (!B1L30)) # (!B1_counter[15] & ((B1L30) # (GND)));
+
+--B1L32 is frequency_divider:freq_divider|Add0~31
+B1L32 = CARRY((!B1L30) # (!B1_counter[15]));
+
+
+--B1L33 is frequency_divider:freq_divider|Add0~32
+B1L33 = (B1_counter[16] & (B1L32 $ (GND))) # (!B1_counter[16] & (!B1L32 & VCC));
+
+--B1L34 is frequency_divider:freq_divider|Add0~33
+B1L34 = CARRY((B1_counter[16] & !B1L32));
+
+
+--B1L35 is frequency_divider:freq_divider|Add0~34
+B1L35 = (B1_counter[17] & (!B1L34)) # (!B1_counter[17] & ((B1L34) # (GND)));
+
+--B1L36 is frequency_divider:freq_divider|Add0~35
+B1L36 = CARRY((!B1L34) # (!B1_counter[17]));
+
+
+--B1L37 is frequency_divider:freq_divider|Add0~36
+B1L37 = (B1_counter[18] & (B1L36 $ (GND))) # (!B1_counter[18] & (!B1L36 & VCC));
+
+--B1L38 is frequency_divider:freq_divider|Add0~37
+B1L38 = CARRY((B1_counter[18] & !B1L36));
+
+
+--B1L39 is frequency_divider:freq_divider|Add0~38
+B1L39 = (B1_counter[19] & (!B1L38)) # (!B1_counter[19] & ((B1L38) # (GND)));
+
+--B1L40 is frequency_divider:freq_divider|Add0~39
+B1L40 = CARRY((!B1L38) # (!B1_counter[19]));
+
+
+--B1L41 is frequency_divider:freq_divider|Add0~40
+B1L41 = (B1_counter[20] & (B1L40 $ (GND))) # (!B1_counter[20] & (!B1L40 & VCC));
+
+--B1L42 is frequency_divider:freq_divider|Add0~41
+B1L42 = CARRY((B1_counter[20] & !B1L40));
+
+
+--B1L43 is frequency_divider:freq_divider|Add0~42
+B1L43 = (B1_counter[21] & (!B1L42)) # (!B1_counter[21] & ((B1L42) # (GND)));
+
+--B1L44 is frequency_divider:freq_divider|Add0~43
+B1L44 = CARRY((!B1L42) # (!B1_counter[21]));
+
+
+--B1L45 is frequency_divider:freq_divider|Add0~44
+B1L45 = (B1_counter[22] & (B1L44 $ (GND))) # (!B1_counter[22] & (!B1L44 & VCC));
+
+--B1L46 is frequency_divider:freq_divider|Add0~45
+B1L46 = CARRY((B1_counter[22] & !B1L44));
+
+
+--B1L47 is frequency_divider:freq_divider|Add0~46
+B1L47 = (B1_counter[23] & (!B1L46)) # (!B1_counter[23] & ((B1L46) # (GND)));
+
+--B1L48 is frequency_divider:freq_divider|Add0~47
+B1L48 = CARRY((!B1L46) # (!B1_counter[23]));
+
+
+--B1L49 is frequency_divider:freq_divider|Add0~48
+B1L49 = B1_counter[24] $ (!B1L48);
+
+
+--siren is siren
+siren = OUTPUT(prev_state.off);
+
+
+--state_disarmed is state_disarmed
+state_disarmed = OUTPUT(A1L6);
+
+
+--state_hold_arm is state_hold_arm
+state_hold_arm = OUTPUT(prev_state.hold_arm);
+
+
+--state_wait_out is state_wait_out
+state_wait_out = OUTPUT(prev_state.wait_out);
+
+
+--state_armed is state_armed
+state_armed = OUTPUT(prev_state.armed);
+
+
+--state_wait_in is state_wait_in
+state_wait_in = OUTPUT(prev_state.wait_in);
+
+
+--state_off is state_off
+state_off = OUTPUT(prev_state.off);
+
+
+--state_hold_disarm is state_hold_disarm
+state_hold_disarm = OUTPUT(prev_state.hold_disarm);
+
+
+--prev_state.off is prev_state.off
+--register power-up is low
+
+prev_state.off = DFFEAS(A1L27, B1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--prev_state.disarmed is prev_state.disarmed
+--register power-up is low
+
+prev_state.disarmed = DFFEAS(A1L16, B1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--prev_state.hold_arm is prev_state.hold_arm
+--register power-up is low
+
+prev_state.hold_arm = DFFEAS(A1L17, B1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--prev_state.wait_out is prev_state.wait_out
+--register power-up is low
+
+prev_state.wait_out = DFFEAS(A1L19, B1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--prev_state.armed is prev_state.armed
+--register power-up is low
+
+prev_state.armed = DFFEAS(A1L22, B1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--prev_state.wait_in is prev_state.wait_in
+--register power-up is low
+
+prev_state.wait_in = DFFEAS(A1L24, B1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--prev_state.hold_disarm is prev_state.hold_disarm
+--register power-up is low
+
+prev_state.hold_disarm = DFFEAS(A1L3, B1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--pwd is pwd
+pwd = INPUT();
+
+
+--A1L25 is Selector5~0
+A1L25 = (prev_state.hold_arm) # ((!pwd & ((prev_state.wait_out) # (prev_state.armed))));
+
+
+--sensorA is sensorA
+sensorA = INPUT();
+
+
+--t[3] is t[3]
+--register power-up is low
+
+t[3] = DFFEAS(A1L50, B1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--t[2] is t[2]
+--register power-up is low
+
+t[2] = DFFEAS(A1L44, B1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--t[1] is t[1]
+--register power-up is low
+
+t[1] = DFFEAS(A1L42, B1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--t[0] is t[0]
+--register power-up is low
+
+t[0] = DFFEAS(A1L40, B1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--A1L13 is process_2~0
+A1L13 = (t[3]) # ((t[2] & ((t[1]) # (t[0]))));
+
+
+--A1L26 is Selector5~1
+A1L26 = (prev_state.off) # ((prev_state.wait_in & ((sensorA) # (A1L13))));
+
+
+--A1L27 is Selector5~2
+A1L27 = (pwd & (A1L25 & (sensorA))) # (!pwd & ((A1L26) # ((A1L25 & sensorA))));
+
+
+--B1_state is frequency_divider:freq_divider|state
+--register power-up is low
+
+B1_state = DFFEAS(B1L99, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--rst is rst
+rst = INPUT();
+
+
+--A1L16 is Selector0~0
+A1L16 = (prev_state.disarmed & (((pwd) # (!prev_state.hold_disarm)))) # (!prev_state.disarmed & (!sensorA & ((pwd))));
+
+
+--A1L17 is Selector1~0
+A1L17 = (pwd & (!sensorA & ((prev_state.hold_arm) # (!prev_state.disarmed))));
+
+
+--A1L18 is Selector2~0
+A1L18 = (prev_state.wait_out & (((!t[2] & !t[1])) # (!t[3])));
+
+
+--A1L19 is Selector2~1
+A1L19 = (!pwd & (!sensorA & ((prev_state.hold_arm) # (A1L18))));
+
+
+--A1L20 is Selector2~2
+A1L20 = (!pwd & !sensorA);
+
+
+--A1L21 is Selector3~0
+A1L21 = (prev_state.wait_out & (t[3] & ((t[2]) # (t[1]))));
+
+
+--sensorB is sensorB
+sensorB = INPUT();
+
+
+--A1L22 is Selector3~1
+A1L22 = (A1L20 & ((A1L21) # ((prev_state.armed & !sensorB))));
+
+
+--A1L23 is Selector4~0
+A1L23 = (prev_state.wait_in & (!pwd & (!sensorA & !A1L13)));
+
+
+--A1L24 is Selector4~1
+A1L24 = (A1L23) # ((prev_state.armed & (A1L20 & sensorB)));
+
+
+--A1L3 is next_state.hold_disarm~0
+A1L3 = (prev_state.disarmed & (pwd & !prev_state.hold_arm));
+
+
+--A1L46 is t[3]~0
+A1L46 = (t[3] & (t[1] & !t[2]));
+
+
+--A1L52 is WideOr0~0
+A1L52 = (prev_state.off & ((prev_state.armed $ (A1L22)) # (!A1L27))) # (!prev_state.off & ((A1L27) # (prev_state.armed $ (A1L22))));
+
+
+--A1L12 is process_0~7
+A1L12 = prev_state.wait_out $ (((A1L20 & ((prev_state.hold_arm) # (A1L18)))));
+
+
+--A1L53 is WideOr0~1
+A1L53 = (prev_state.disarmed & ((prev_state.hold_arm $ (A1L17)) # (!A1L16))) # (!prev_state.disarmed & ((A1L16) # (prev_state.hold_arm $ (A1L17))));
+
+
+--A1L54 is WideOr0~2
+A1L54 = (A1L12) # ((A1L53) # (prev_state.hold_disarm $ (A1L3)));
+
+
+--A1L47 is t[3]~1
+A1L47 = (t[3] & (!t[0] & (prev_state.wait_in $ (!A1L24))));
+
+
+--A1L48 is t[3]~2
+A1L48 = (A1L46 & (!A1L52 & (!A1L54 & A1L47)));
+
+
+--A1L1 is Add0~0
+A1L1 = t[3] $ (((t[2] & (t[1] & t[0]))));
+
+
+--WideOr0 is WideOr0
+WideOr0 = (A1L52) # ((A1L54) # (prev_state.wait_in $ (A1L24)));
+
+
+--A1L49 is t[3]~3
+A1L49 = (!WideOr0 & ((t[0]) # (!A1L46)));
+
+
+--A1L50 is t[3]~4
+A1L50 = (A1L48) # ((A1L1 & A1L49));
+
+
+--A1L44 is t[2]~5
+A1L44 = (A1L49 & (t[2] $ (((t[1] & t[0])))));
+
+
+--A1L42 is t[1]~6
+A1L42 = (!WideOr0 & (t[1] $ (t[0])));
+
+
+--A1L40 is t[0]~7
+A1L40 = (!t[0] & (!WideOr0 & !A1L46));
+
+
+--B1_counter[24] is frequency_divider:freq_divider|counter[24]
+--register power-up is low
+
+B1_counter[24] = DFFEAS(B1L77, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[22] is frequency_divider:freq_divider|counter[22]
+--register power-up is low
+
+B1_counter[22] = DFFEAS(B1L78, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[0] is frequency_divider:freq_divider|counter[0]
+--register power-up is low
+
+B1_counter[0] = DFFEAS(B1L79, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[23] is frequency_divider:freq_divider|counter[23]
+--register power-up is low
+
+B1_counter[23] = DFFEAS(B1L47, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1L90 is frequency_divider:freq_divider|Equal0~0
+B1L90 = (B1_counter[24] & (B1_counter[22] & (!B1_counter[0] & !B1_counter[23])));
+
+
+--B1_counter[21] is frequency_divider:freq_divider|counter[21]
+--register power-up is low
+
+B1_counter[21] = DFFEAS(B1L80, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[20] is frequency_divider:freq_divider|counter[20]
+--register power-up is low
+
+B1_counter[20] = DFFEAS(B1L81, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[19] is frequency_divider:freq_divider|counter[19]
+--register power-up is low
+
+B1_counter[19] = DFFEAS(B1L82, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[18] is frequency_divider:freq_divider|counter[18]
+--register power-up is low
+
+B1_counter[18] = DFFEAS(B1L83, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1L91 is frequency_divider:freq_divider|Equal0~1
+B1L91 = (B1_counter[21] & (B1_counter[20] & (B1_counter[19] & B1_counter[18])));
+
+
+--B1_counter[16] is frequency_divider:freq_divider|counter[16]
+--register power-up is low
+
+B1_counter[16] = DFFEAS(B1L84, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[14] is frequency_divider:freq_divider|counter[14]
+--register power-up is low
+
+B1_counter[14] = DFFEAS(B1L85, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[17] is frequency_divider:freq_divider|counter[17]
+--register power-up is low
+
+B1_counter[17] = DFFEAS(B1L35, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[15] is frequency_divider:freq_divider|counter[15]
+--register power-up is low
+
+B1_counter[15] = DFFEAS(B1L31, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1L92 is frequency_divider:freq_divider|Equal0~2
+B1L92 = (B1_counter[16] & (B1_counter[14] & (!B1_counter[17] & !B1_counter[15])));
+
+
+--B1_counter[13] is frequency_divider:freq_divider|counter[13]
+--register power-up is low
+
+B1_counter[13] = DFFEAS(B1L86, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[12] is frequency_divider:freq_divider|counter[12]
+--register power-up is low
+
+B1_counter[12] = DFFEAS(B1L87, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[11] is frequency_divider:freq_divider|counter[11]
+--register power-up is low
+
+B1_counter[11] = DFFEAS(B1L88, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[10] is frequency_divider:freq_divider|counter[10]
+--register power-up is low
+
+B1_counter[10] = DFFEAS(B1L21, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1L93 is frequency_divider:freq_divider|Equal0~3
+B1L93 = (B1_counter[13] & (B1_counter[12] & (B1_counter[11] & !B1_counter[10])));
+
+
+--B1L94 is frequency_divider:freq_divider|Equal0~4
+B1L94 = (B1L90 & (B1L91 & (B1L92 & B1L93)));
+
+
+--B1_counter[6] is frequency_divider:freq_divider|counter[6]
+--register power-up is low
+
+B1_counter[6] = DFFEAS(B1L89, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[9] is frequency_divider:freq_divider|counter[9]
+--register power-up is low
+
+B1_counter[9] = DFFEAS(B1L19, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[8] is frequency_divider:freq_divider|counter[8]
+--register power-up is low
+
+B1_counter[8] = DFFEAS(B1L17, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[7] is frequency_divider:freq_divider|counter[7]
+--register power-up is low
+
+B1_counter[7] = DFFEAS(B1L15, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1L95 is frequency_divider:freq_divider|Equal0~5
+B1L95 = (B1_counter[6] & (!B1_counter[9] & (!B1_counter[8] & !B1_counter[7])));
+
+
+--B1_counter[5] is frequency_divider:freq_divider|counter[5]
+--register power-up is low
+
+B1_counter[5] = DFFEAS(B1L11, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[4] is frequency_divider:freq_divider|counter[4]
+--register power-up is low
+
+B1_counter[4] = DFFEAS(B1L9, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[3] is frequency_divider:freq_divider|counter[3]
+--register power-up is low
+
+B1_counter[3] = DFFEAS(B1L7, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1_counter[2] is frequency_divider:freq_divider|counter[2]
+--register power-up is low
+
+B1_counter[2] = DFFEAS(B1L5, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1L96 is frequency_divider:freq_divider|Equal0~6
+B1L96 = (!B1_counter[5] & (!B1_counter[4] & (!B1_counter[3] & !B1_counter[2])));
+
+
+--B1_counter[1] is frequency_divider:freq_divider|counter[1]
+--register power-up is low
+
+B1_counter[1] = DFFEAS(B1L3, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--B1L97 is frequency_divider:freq_divider|Equal0~7
+B1L97 = (B1L94 & (B1L95 & (B1L96 & !B1_counter[1])));
+
+
+--B1L99 is frequency_divider:freq_divider|state~0
+B1L99 = B1_state $ (B1L97);
+
+
+--clk is clk
+clk = INPUT();
+
+
+--B1L77 is frequency_divider:freq_divider|counter~0
+B1L77 = (B1L49 & !B1L97);
+
+
+--B1L78 is frequency_divider:freq_divider|counter~1
+B1L78 = (B1L45 & !B1L97);
+
+
+--B1L79 is frequency_divider:freq_divider|counter~2
+B1L79 = (B1L1 & !B1L97);
+
+
+--B1L80 is frequency_divider:freq_divider|counter~3
+B1L80 = (B1L43 & !B1L97);
+
+
+--B1L81 is frequency_divider:freq_divider|counter~4
+B1L81 = (B1L41 & !B1L97);
+
+
+--B1L82 is frequency_divider:freq_divider|counter~5
+B1L82 = (B1L39 & !B1L97);
+
+
+--B1L83 is frequency_divider:freq_divider|counter~6
+B1L83 = (B1L37 & !B1L97);
+
+
+--B1L84 is frequency_divider:freq_divider|counter~7
+B1L84 = (B1L33 & !B1L97);
+
+
+--B1L85 is frequency_divider:freq_divider|counter~8
+B1L85 = (B1L29 & !B1L97);
+
+
+--B1L86 is frequency_divider:freq_divider|counter~9
+B1L86 = (B1L27 & !B1L97);
+
+
+--B1L87 is frequency_divider:freq_divider|counter~10
+B1L87 = (B1L25 & !B1L97);
+
+
+--B1L88 is frequency_divider:freq_divider|counter~11
+B1L88 = (B1L23 & !B1L97);
+
+
+--B1L89 is frequency_divider:freq_divider|counter~12
+B1L89 = (B1L13 & !B1L97);
+
+
+--A1L6 is prev_state.disarmed~_wirecell
+A1L6 = !prev_state.disarmed;
+
+

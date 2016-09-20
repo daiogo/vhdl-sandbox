@@ -1,0 +1,2195 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+
+HEADER
+{
+	VERSION = 1;
+	TIME_UNIT = ns;
+	DATA_OFFSET = 0.0;
+	DATA_DURATION = 1000.0;
+	SIMULATION_TIME = 0.0;
+	GRID_PHASE = 0.0;
+	GRID_PERIOD = 0.0;
+	GRID_DUTY_CYCLE = 50;
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_in")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 7;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_in[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "hamming_weight_calculator_vlg_vec_tst|hwc_in";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_in[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "hamming_weight_calculator_vlg_vec_tst|hwc_in";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_in[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "hamming_weight_calculator_vlg_vec_tst|hwc_in";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_in[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "hamming_weight_calculator_vlg_vec_tst|hwc_in";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_in[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "hamming_weight_calculator_vlg_vec_tst|hwc_in";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_in[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "hamming_weight_calculator_vlg_vec_tst|hwc_in";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_in[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "hamming_weight_calculator_vlg_vec_tst|hwc_in";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_led_out[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_led_out[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_led_out[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|sampler")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|gnd")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|vcc")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|unknown")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|devclrn")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|devpor")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|devoe")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[4][2]~4_combout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[1]~input_o")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_led_out[0]~output_o")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_led_out[1]~output_o")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_led_out[2]~output_o")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[0]~output_o")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[1]~output_o")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[2]~output_o")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[3]~output_o")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[4]~output_o")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[5]~output_o")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[6]~output_o")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[6]~input_o")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[4]~input_o")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[5]~input_o")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[2]~input_o")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[0]~input_o")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[3]~input_o")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[3][0]~0_combout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|integer_out[0]~0_combout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[5][0]~3_combout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[5][1]~2_combout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|integer_out[1]~1_combout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[3][1]~1_combout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[5][2]~5_combout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[5][2]~6_combout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|integer_out[2]~2_combout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[0]~0_combout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[1]~1_combout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[2]~2_combout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[3]~3_combout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[4]~4_combout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[5]~5_combout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[6]~6_combout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|hwc_in[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|hwc_in[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|hwc_in[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 800.0;
+		LEVEL 1 FOR 200.0;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|hwc_in[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 400.0;
+		LEVEL 1 FOR 400.0;
+		LEVEL 0 FOR 200.0;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|hwc_in[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 200.0;
+		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 200.0;
+		LEVEL 0 FOR 200.0;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|hwc_in[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 100.0;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|hwc_in[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|hwc_led_out[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 7.21;
+		LEVEL 0 FOR 751.426;
+		LEVEL 1 FOR 49.684;
+		LEVEL 0 FOR 191.68;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|hwc_led_out[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 9.082;
+		LEVEL 0 FOR 150.825;
+		LEVEL 1 FOR 50.687;
+		LEVEL 0 FOR 49.313;
+		LEVEL 1 FOR 150.687;
+		LEVEL 0 FOR 49.313;
+		LEVEL 1 FOR 300.203;
+		LEVEL 0 FOR 99.509;
+		LEVEL 1 FOR 140.381;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|hwc_led_out[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 7.374;
+		LEVEL 0 FOR 50.365;
+		LEVEL 1 FOR 100.003;
+		LEVEL 0 FOR 49.254;
+		LEVEL 1 FOR 50.746;
+		LEVEL 0 FOR 99.997;
+		LEVEL 1 FOR 100.003;
+		LEVEL 0 FOR 99.997;
+		LEVEL 1 FOR 49.26;
+		LEVEL 0 FOR 50.74;
+		LEVEL 1 FOR 100.003;
+		LEVEL 0 FOR 48.885;
+		LEVEL 1 FOR 51.094;
+		LEVEL 0 FOR 100.039;
+		LEVEL 1 FOR 42.24;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8.357;
+		LEVEL 0 FOR 50.29;
+		LEVEL 1 FOR 100.078;
+		LEVEL 0 FOR 50.831;
+		LEVEL 1 FOR 49.169;
+		LEVEL 0 FOR 150.831;
+		LEVEL 1 FOR 49.169;
+		LEVEL 0 FOR 300.347;
+		LEVEL 1 FOR 99.6;
+		LEVEL 0 FOR 141.328;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 7.099;
+		LEVEL 0 FOR 992.901;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 7.768;
+		LEVEL 0 FOR 150.914;
+		LEVEL 1 FOR 48.983;
+		LEVEL 0 FOR 51.017;
+		LEVEL 1 FOR 99.726;
+		LEVEL 0 FOR 100.274;
+		LEVEL 1 FOR 99.726;
+		LEVEL 0 FOR 49.891;
+		LEVEL 1 FOR 50.109;
+		LEVEL 0 FOR 200.058;
+		LEVEL 1 FOR 99.966;
+		LEVEL 0 FOR 41.568;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8.334;
+		LEVEL 0 FOR 50.307;
+		LEVEL 1 FOR 100.061;
+		LEVEL 0 FOR 50.837;
+		LEVEL 1 FOR 49.163;
+		LEVEL 0 FOR 150.837;
+		LEVEL 1 FOR 49.163;
+		LEVEL 0 FOR 300.353;
+		LEVEL 1 FOR 99.593;
+		LEVEL 0 FOR 141.352;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8.882;
+		LEVEL 0 FOR 50.301;
+		LEVEL 1 FOR 100.067;
+		LEVEL 0 FOR 49.19;
+		LEVEL 1 FOR 50.81;
+		LEVEL 0 FOR 99.933;
+		LEVEL 1 FOR 100.067;
+		LEVEL 0 FOR 99.933;
+		LEVEL 1 FOR 49.324;
+		LEVEL 0 FOR 50.676;
+		LEVEL 1 FOR 200.043;
+		LEVEL 0 FOR 99.981;
+		LEVEL 1 FOR 40.793;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8.376;
+		LEVEL 0 FOR 50.298;
+		LEVEL 1 FOR 699.937;
+		LEVEL 0 FOR 49.713;
+		LEVEL 1 FOR 191.676;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 7.737;
+		LEVEL 1 FOR 150.903;
+		LEVEL 0 FOR 50.609;
+		LEVEL 1 FOR 49.391;
+		LEVEL 0 FOR 150.609;
+		LEVEL 1 FOR 49.391;
+		LEVEL 0 FOR 349.366;
+		LEVEL 1 FOR 50.346;
+		LEVEL 0 FOR 141.648;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|sampler")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|gnd")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|vcc")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|unknown")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|devclrn")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|devpor")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|devoe")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[4][2]~4_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 3.115;
+		LEVEL 0 FOR 400.535;
+		LEVEL 1 FOR 0.401;
+		LEVEL 0 FOR 199.573;
+		LEVEL 1 FOR 0.671;
+		LEVEL 0 FOR 99.565;
+		LEVEL 1 FOR 1.072;
+		LEVEL 0 FOR 49.514;
+		LEVEL 1 FOR 49.605;
+		LEVEL 0 FOR 195.949;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[1]~input_o")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 100.775;
+		LEVEL 1 FOR 100.161;
+		LEVEL 0 FOR 99.839;
+		LEVEL 1 FOR 100.161;
+		LEVEL 0 FOR 99.839;
+		LEVEL 1 FOR 100.161;
+		LEVEL 0 FOR 99.839;
+		LEVEL 1 FOR 100.161;
+		LEVEL 0 FOR 99.839;
+		LEVEL 1 FOR 99.225;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_led_out[0]~output_o")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 7.374;
+		LEVEL 0 FOR 50.365;
+		LEVEL 1 FOR 100.003;
+		LEVEL 0 FOR 49.254;
+		LEVEL 1 FOR 50.746;
+		LEVEL 0 FOR 99.997;
+		LEVEL 1 FOR 100.003;
+		LEVEL 0 FOR 99.997;
+		LEVEL 1 FOR 49.26;
+		LEVEL 0 FOR 50.74;
+		LEVEL 1 FOR 100.003;
+		LEVEL 0 FOR 48.885;
+		LEVEL 1 FOR 51.094;
+		LEVEL 0 FOR 100.039;
+		LEVEL 1 FOR 42.24;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_led_out[1]~output_o")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 9.082;
+		LEVEL 0 FOR 150.825;
+		LEVEL 1 FOR 50.687;
+		LEVEL 0 FOR 49.313;
+		LEVEL 1 FOR 150.687;
+		LEVEL 0 FOR 49.313;
+		LEVEL 1 FOR 300.203;
+		LEVEL 0 FOR 99.509;
+		LEVEL 1 FOR 140.381;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_led_out[2]~output_o")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 7.21;
+		LEVEL 0 FOR 751.426;
+		LEVEL 1 FOR 49.684;
+		LEVEL 0 FOR 191.68;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[0]~output_o")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 7.737;
+		LEVEL 1 FOR 150.903;
+		LEVEL 0 FOR 50.609;
+		LEVEL 1 FOR 49.391;
+		LEVEL 0 FOR 150.609;
+		LEVEL 1 FOR 49.391;
+		LEVEL 0 FOR 349.366;
+		LEVEL 1 FOR 50.346;
+		LEVEL 0 FOR 141.648;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[1]~output_o")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8.376;
+		LEVEL 0 FOR 50.298;
+		LEVEL 1 FOR 699.937;
+		LEVEL 0 FOR 49.713;
+		LEVEL 1 FOR 191.676;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[2]~output_o")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8.882;
+		LEVEL 0 FOR 50.301;
+		LEVEL 1 FOR 100.067;
+		LEVEL 0 FOR 49.19;
+		LEVEL 1 FOR 50.81;
+		LEVEL 0 FOR 99.933;
+		LEVEL 1 FOR 100.067;
+		LEVEL 0 FOR 99.933;
+		LEVEL 1 FOR 49.324;
+		LEVEL 0 FOR 50.676;
+		LEVEL 1 FOR 200.043;
+		LEVEL 0 FOR 99.981;
+		LEVEL 1 FOR 40.793;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[3]~output_o")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8.334;
+		LEVEL 0 FOR 50.307;
+		LEVEL 1 FOR 100.061;
+		LEVEL 0 FOR 50.837;
+		LEVEL 1 FOR 49.163;
+		LEVEL 0 FOR 150.837;
+		LEVEL 1 FOR 49.163;
+		LEVEL 0 FOR 300.353;
+		LEVEL 1 FOR 99.593;
+		LEVEL 0 FOR 141.352;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[4]~output_o")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 7.768;
+		LEVEL 0 FOR 150.914;
+		LEVEL 1 FOR 48.983;
+		LEVEL 0 FOR 51.017;
+		LEVEL 1 FOR 99.726;
+		LEVEL 0 FOR 100.274;
+		LEVEL 1 FOR 99.726;
+		LEVEL 0 FOR 49.891;
+		LEVEL 1 FOR 50.109;
+		LEVEL 0 FOR 200.058;
+		LEVEL 1 FOR 99.966;
+		LEVEL 0 FOR 41.568;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[5]~output_o")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 7.099;
+		LEVEL 0 FOR 992.901;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[6]~output_o")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8.357;
+		LEVEL 0 FOR 50.29;
+		LEVEL 1 FOR 100.078;
+		LEVEL 0 FOR 50.831;
+		LEVEL 1 FOR 49.169;
+		LEVEL 0 FOR 150.831;
+		LEVEL 1 FOR 49.169;
+		LEVEL 0 FOR 300.347;
+		LEVEL 1 FOR 99.6;
+		LEVEL 0 FOR 141.328;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[6]~input_o")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[4]~input_o")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 800.689;
+		LEVEL 1 FOR 199.311;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[5]~input_o")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[2]~input_o")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 200.775;
+		LEVEL 1 FOR 200.161;
+		LEVEL 0 FOR 199.839;
+		LEVEL 1 FOR 200.161;
+		LEVEL 0 FOR 199.064;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[0]~input_o")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 50.689;
+		LEVEL 1 FOR 50.163;
+		LEVEL 0 FOR 49.837;
+		LEVEL 1 FOR 50.163;
+		LEVEL 0 FOR 49.837;
+		LEVEL 1 FOR 50.163;
+		LEVEL 0 FOR 49.837;
+		LEVEL 1 FOR 50.163;
+		LEVEL 0 FOR 49.837;
+		LEVEL 1 FOR 50.163;
+		LEVEL 0 FOR 49.837;
+		LEVEL 1 FOR 50.163;
+		LEVEL 0 FOR 49.837;
+		LEVEL 1 FOR 50.163;
+		LEVEL 0 FOR 49.837;
+		LEVEL 1 FOR 50.163;
+		LEVEL 0 FOR 49.837;
+		LEVEL 1 FOR 50.163;
+		LEVEL 0 FOR 49.837;
+		LEVEL 1 FOR 49.311;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[3]~input_o")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 400.745;
+		LEVEL 1 FOR 400.161;
+		LEVEL 0 FOR 199.094;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[3][0]~0_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 4.08;
+		LEVEL 0 FOR 50.369;
+		LEVEL 1 FOR 49.488;
+		LEVEL 0 FOR 0.996;
+		LEVEL 1 FOR 49.515;
+		LEVEL 0 FOR 49.258;
+		LEVEL 1 FOR 0.659;
+		LEVEL 0 FOR 0.568;
+		LEVEL 1 FOR 49.515;
+		LEVEL 0 FOR 49.484;
+		LEVEL 1 FOR 1.0;
+		LEVEL 0 FOR 49.517;
+		LEVEL 1 FOR 49.192;
+		LEVEL 0 FOR 1.292;
+		LEVEL 1 FOR 49.515;
+		LEVEL 0 FOR 49.484;
+		LEVEL 1 FOR 1.0;
+		LEVEL 0 FOR 49.517;
+		LEVEL 1 FOR 49.256;
+		LEVEL 0 FOR 0.655;
+		LEVEL 1 FOR 0.572;
+		LEVEL 0 FOR 49.517;
+		LEVEL 1 FOR 49.488;
+		LEVEL 0 FOR 0.996;
+		LEVEL 1 FOR 49.515;
+		LEVEL 0 FOR 49.912;
+		LEVEL 1 FOR 0.572;
+		LEVEL 0 FOR 49.517;
+		LEVEL 1 FOR 49.488;
+		LEVEL 0 FOR 0.996;
+		LEVEL 1 FOR 49.515;
+		LEVEL 0 FOR 45.552;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|integer_out[0]~0_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 4.832;
+		LEVEL 0 FOR 50.357;
+		LEVEL 1 FOR 49.5;
+		LEVEL 0 FOR 0.984;
+		LEVEL 1 FOR 49.527;
+		LEVEL 0 FOR 49.246;
+		LEVEL 1 FOR 50.754;
+		LEVEL 0 FOR 49.472;
+		LEVEL 1 FOR 1.012;
+		LEVEL 0 FOR 49.505;
+		LEVEL 1 FOR 49.204;
+		LEVEL 0 FOR 1.28;
+		LEVEL 1 FOR 49.527;
+		LEVEL 0 FOR 49.472;
+		LEVEL 1 FOR 1.012;
+		LEVEL 0 FOR 49.505;
+		LEVEL 1 FOR 49.268;
+		LEVEL 0 FOR 50.732;
+		LEVEL 1 FOR 49.5;
+		LEVEL 0 FOR 0.984;
+		LEVEL 1 FOR 49.527;
+		LEVEL 0 FOR 48.877;
+		LEVEL 1 FOR 51.102;
+		LEVEL 0 FOR 49.52;
+		LEVEL 1 FOR 0.964;
+		LEVEL 0 FOR 49.547;
+		LEVEL 1 FOR 44.79;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[5][0]~3_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 4.834;
+		LEVEL 0 FOR 50.354;
+		LEVEL 1 FOR 49.503;
+		LEVEL 0 FOR 0.981;
+		LEVEL 1 FOR 49.53;
+		LEVEL 0 FOR 49.243;
+		LEVEL 1 FOR 50.757;
+		LEVEL 0 FOR 49.469;
+		LEVEL 1 FOR 1.015;
+		LEVEL 0 FOR 49.502;
+		LEVEL 1 FOR 49.207;
+		LEVEL 0 FOR 1.277;
+		LEVEL 1 FOR 49.53;
+		LEVEL 0 FOR 49.469;
+		LEVEL 1 FOR 1.015;
+		LEVEL 0 FOR 49.502;
+		LEVEL 1 FOR 49.271;
+		LEVEL 0 FOR 50.729;
+		LEVEL 1 FOR 49.503;
+		LEVEL 0 FOR 0.981;
+		LEVEL 1 FOR 49.53;
+		LEVEL 0 FOR 48.858;
+		LEVEL 1 FOR 51.118;
+		LEVEL 0 FOR 49.523;
+		LEVEL 1 FOR 0.961;
+		LEVEL 0 FOR 49.55;
+		LEVEL 1 FOR 44.788;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[5][1]~2_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 4.486;
+		LEVEL 0 FOR 100.444;
+		LEVEL 1 FOR 1.068;
+		LEVEL 0 FOR 49.478;
+		LEVEL 1 FOR 50.522;
+		LEVEL 0 FOR 49.478;
+		LEVEL 1 FOR 150.522;
+		LEVEL 0 FOR 49.478;
+		LEVEL 1 FOR 249.519;
+		LEVEL 0 FOR 0.965;
+		LEVEL 1 FOR 49.554;
+		LEVEL 0 FOR 99.674;
+		LEVEL 1 FOR 144.812;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|integer_out[1]~1_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 4.905;
+		LEVEL 0 FOR 100.392;
+		LEVEL 1 FOR 1.12;
+		LEVEL 0 FOR 49.426;
+		LEVEL 1 FOR 50.574;
+		LEVEL 0 FOR 49.426;
+		LEVEL 1 FOR 150.574;
+		LEVEL 0 FOR 49.426;
+		LEVEL 1 FOR 249.571;
+		LEVEL 0 FOR 0.913;
+		LEVEL 1 FOR 49.606;
+		LEVEL 0 FOR 99.622;
+		LEVEL 1 FOR 144.445;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[3][1]~1_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 3.419;
+		LEVEL 0 FOR 100.483;
+		LEVEL 1 FOR 1.029;
+		LEVEL 0 FOR 49.517;
+		LEVEL 1 FOR 50.483;
+		LEVEL 0 FOR 49.517;
+		LEVEL 1 FOR 149.193;
+		LEVEL 0 FOR 0.446;
+		LEVEL 1 FOR 0.844;
+		LEVEL 0 FOR 49.517;
+		LEVEL 1 FOR 149.246;
+		LEVEL 0 FOR 0.635;
+		LEVEL 1 FOR 99.599;
+		LEVEL 0 FOR 1.004;
+		LEVEL 1 FOR 49.515;
+		LEVEL 0 FOR 149.455;
+		LEVEL 1 FOR 1.029;
+		LEVEL 0 FOR 49.517;
+		LEVEL 1 FOR 45.552;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[5][2]~5_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 3.646;
+		LEVEL 0 FOR 851.542;
+		LEVEL 1 FOR 49.498;
+		LEVEL 0 FOR 0.986;
+		LEVEL 1 FOR 49.525;
+		LEVEL 0 FOR 44.803;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[5][2]~6_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 3.969;
+		LEVEL 0 FOR 600.642;
+		LEVEL 1 FOR 0.712;
+		LEVEL 0 FOR 99.524;
+		LEVEL 1 FOR 1.113;
+		LEVEL 0 FOR 49.473;
+		LEVEL 1 FOR 49.646;
+		LEVEL 0 FOR 99.7;
+		LEVEL 1 FOR 0.23;
+		LEVEL 0 FOR 50.316;
+		LEVEL 1 FOR 0.195;
+		LEVEL 0 FOR 44.48;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|integer_out[2]~2_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 4.354;
+		LEVEL 0 FOR 600.609;
+		LEVEL 1 FOR 0.745;
+		LEVEL 0 FOR 99.491;
+		LEVEL 1 FOR 1.146;
+		LEVEL 0 FOR 49.44;
+		LEVEL 1 FOR 49.679;
+		LEVEL 0 FOR 99.667;
+		LEVEL 1 FOR 0.263;
+		LEVEL 0 FOR 94.606;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[0]~0_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 5.2;
+		LEVEL 0 FOR 100.352;
+		LEVEL 1 FOR 1.16;
+		LEVEL 0 FOR 49.386;
+		LEVEL 1 FOR 50.614;
+		LEVEL 0 FOR 49.386;
+		LEVEL 1 FOR 150.614;
+		LEVEL 0 FOR 49.386;
+		LEVEL 1 FOR 349.371;
+		LEVEL 0 FOR 50.341;
+		LEVEL 1 FOR 49.315;
+		LEVEL 0 FOR 0.284;
+		LEVEL 1 FOR 94.591;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[1]~1_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 5.541;
+		LEVEL 0 FOR 50.284;
+		LEVEL 1 FOR 549.129;
+		LEVEL 0 FOR 0.765;
+		LEVEL 1 FOR 99.471;
+		LEVEL 0 FOR 1.166;
+		LEVEL 1 FOR 49.42;
+		LEVEL 0 FOR 49.699;
+		LEVEL 1 FOR 194.525;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[2]~2_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 5.531;
+		LEVEL 0 FOR 50.273;
+		LEVEL 1 FOR 49.584;
+		LEVEL 0 FOR 0.9;
+		LEVEL 1 FOR 49.611;
+		LEVEL 0 FOR 49.162;
+		LEVEL 1 FOR 50.838;
+		LEVEL 0 FOR 49.388;
+		LEVEL 1 FOR 1.096;
+		LEVEL 0 FOR 49.421;
+		LEVEL 1 FOR 49.288;
+		LEVEL 0 FOR 1.196;
+		LEVEL 1 FOR 49.611;
+		LEVEL 0 FOR 49.388;
+		LEVEL 1 FOR 1.096;
+		LEVEL 0 FOR 49.421;
+		LEVEL 1 FOR 49.352;
+		LEVEL 0 FOR 50.648;
+		LEVEL 1 FOR 200.071;
+		LEVEL 0 FOR 49.442;
+		LEVEL 1 FOR 1.042;
+		LEVEL 0 FOR 49.469;
+		LEVEL 1 FOR 44.172;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[3]~3_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 5.516;
+		LEVEL 0 FOR 50.296;
+		LEVEL 1 FOR 49.561;
+		LEVEL 0 FOR 1.337;
+		LEVEL 1 FOR 49.174;
+		LEVEL 0 FOR 50.826;
+		LEVEL 1 FOR 49.174;
+		LEVEL 0 FOR 150.826;
+		LEVEL 1 FOR 49.174;
+		LEVEL 0 FOR 249.823;
+		LEVEL 1 FOR 0.642;
+		LEVEL 0 FOR 49.877;
+		LEVEL 1 FOR 48.452;
+		LEVEL 0 FOR 0.8;
+		LEVEL 1 FOR 50.352;
+		LEVEL 0 FOR 49.305;
+		LEVEL 1 FOR 0.263;
+		LEVEL 0 FOR 94.602;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[4]~4_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 5.197;
+		LEVEL 0 FOR 100.36;
+		LEVEL 1 FOR 0.764;
+		LEVEL 0 FOR 49.782;
+		LEVEL 1 FOR 48.991;
+		LEVEL 0 FOR 51.009;
+		LEVEL 1 FOR 49.217;
+		LEVEL 0 FOR 1.075;
+		LEVEL 1 FOR 49.442;
+		LEVEL 0 FOR 49.267;
+		LEVEL 1 FOR 1.217;
+		LEVEL 0 FOR 49.782;
+		LEVEL 1 FOR 49.217;
+		LEVEL 0 FOR 1.075;
+		LEVEL 1 FOR 49.442;
+		LEVEL 0 FOR 49.883;
+		LEVEL 1 FOR 50.117;
+		LEVEL 0 FOR 200.05;
+		LEVEL 1 FOR 49.463;
+		LEVEL 0 FOR 1.021;
+		LEVEL 1 FOR 49.49;
+		LEVEL 0 FOR 44.139;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[5]~5_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 4.354;
+		LEVEL 0 FOR 600.613;
+		LEVEL 1 FOR 0.741;
+		LEVEL 0 FOR 99.495;
+		LEVEL 1 FOR 0.459;
+		LEVEL 0 FOR 50.127;
+		LEVEL 1 FOR 0.392;
+		LEVEL 0 FOR 48.485;
+		LEVEL 1 FOR 0.798;
+		LEVEL 0 FOR 194.536;
+	}
+}
+
+TRANSITION_LIST("hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[6]~6_combout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 5.518;
+		LEVEL 0 FOR 50.29;
+		LEVEL 1 FOR 49.567;
+		LEVEL 0 FOR 1.342;
+		LEVEL 1 FOR 49.169;
+		LEVEL 0 FOR 50.831;
+		LEVEL 1 FOR 49.169;
+		LEVEL 0 FOR 150.831;
+		LEVEL 1 FOR 49.169;
+		LEVEL 0 FOR 249.828;
+		LEVEL 1 FOR 0.572;
+		LEVEL 0 FOR 49.947;
+		LEVEL 1 FOR 48.441;
+		LEVEL 0 FOR 0.807;
+		LEVEL 1 FOR 50.352;
+		LEVEL 0 FOR 144.167;
+	}
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_in";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 0;
+	TREE_LEVEL = 0;
+	CHILDREN = 1, 2, 3, 4, 5, 6, 7;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_in[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 1;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_in[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 2;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_in[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 3;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_in[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 4;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_in[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 5;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_in[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 6;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_in[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 7;
+	TREE_LEVEL = 1;
+	PARENT = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_led_out[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 8;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_led_out[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 9;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_led_out[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 10;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 11;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 12;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 13;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 14;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 15;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 16;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|hwc_ssd_out[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 17;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|sampler";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 18;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|gnd";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 19;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|vcc";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 20;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|unknown";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 21;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|devclrn";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 22;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|devpor";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 23;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|devoe";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 24;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[4][2]~4_combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 25;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[1]~input_o";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 26;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_led_out[0]~output_o";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 27;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_led_out[1]~output_o";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 28;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_led_out[2]~output_o";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 29;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[0]~output_o";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 30;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[1]~output_o";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 31;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[2]~output_o";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 32;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[3]~output_o";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 33;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[4]~output_o";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 34;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[5]~output_o";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 35;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd_out[6]~output_o";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 36;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[6]~input_o";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 37;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[4]~input_o";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 38;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[5]~input_o";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 39;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[2]~input_o";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 40;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[0]~input_o";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 41;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_in[3]~input_o";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 42;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[3][0]~0_combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 43;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|integer_out[0]~0_combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 44;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[5][0]~3_combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 45;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[5][1]~2_combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 46;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|integer_out[1]~1_combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 47;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[3][1]~1_combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 48;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[5][2]~5_combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 49;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|ones[5][2]~6_combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 50;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_calculator|integer_out[2]~2_combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 51;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[0]~0_combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 52;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[1]~1_combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 53;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[2]~2_combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 54;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[3]~3_combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 55;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[4]~4_combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 56;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[5]~5_combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 57;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "hamming_weight_calculator_vlg_vec_tst|i1|hwc_ssd|decimal_out[6]~6_combout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 58;
+	TREE_LEVEL = 0;
+}
+;

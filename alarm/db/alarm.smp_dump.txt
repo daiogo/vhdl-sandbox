@@ -1,0 +1,24 @@
+
+State Machine - |alarm|alarm_controller:ra_alarm_controller|prev_state
+Name prev_state.hold_disarm prev_state.off prev_state.wait_in prev_state.armed prev_state.wait_out prev_state.hold_arm prev_state.disarmed 
+prev_state.disarmed 0 0 0 0 0 0 0 
+prev_state.hold_arm 0 0 0 0 0 1 1 
+prev_state.wait_out 0 0 0 0 1 0 1 
+prev_state.armed 0 0 0 1 0 0 1 
+prev_state.wait_in 0 0 1 0 0 0 1 
+prev_state.off 0 1 0 0 0 0 1 
+prev_state.hold_disarm 1 0 0 0 0 0 1 
+
+State Machine - |alarm|password_detector:ra_pwd_detector|prev_state
+Name prev_state.error4 prev_state.error3 prev_state.error2 prev_state.error1 prev_state.unlocked prev_state.wait2 prev_state.key2 prev_state.wait1 prev_state.key1 prev_state.ready prev_state.idle 
+prev_state.idle 0 0 0 0 0 0 0 0 0 0 0 
+prev_state.ready 0 0 0 0 0 0 0 0 0 1 1 
+prev_state.key1 0 0 0 0 0 0 0 0 1 0 1 
+prev_state.wait1 0 0 0 0 0 0 0 1 0 0 1 
+prev_state.key2 0 0 0 0 0 0 1 0 0 0 1 
+prev_state.wait2 0 0 0 0 0 1 0 0 0 0 1 
+prev_state.unlocked 0 0 0 0 1 0 0 0 0 0 1 
+prev_state.error1 0 0 0 1 0 0 0 0 0 0 1 
+prev_state.error2 0 0 1 0 0 0 0 0 0 0 1 
+prev_state.error3 0 1 0 0 0 0 0 0 0 0 1 
+prev_state.error4 1 0 0 0 0 0 0 0 0 0 1 

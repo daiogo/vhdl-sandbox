@@ -1,0 +1,17 @@
+vendor_name = ModelSim
+source_file = 1, E:/Dropbox/2-2016/Lógica Programável e VHDL/vhdl-playground/tflipflop/tflipflop.vhd
+source_file = 1, E:/Dropbox/2-2016/Lógica Programável e VHDL/vhdl-playground/tflipflop/Waveform.vwf
+source_file = 1, E:/Dropbox/2-2016/Lógica Programável e VHDL/vhdl-playground/tflipflop/db/tflipflop.cbx.xml
+source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = tflipflop
+instance = comp, \d_and_enable~output , d_and_enable~output, tflipflop, 1
+instance = comp, \q~output , q~output, tflipflop, 1
+instance = comp, \enable~input , enable~input, tflipflop, 1
+instance = comp, \d~input , d~input, tflipflop, 1
+instance = comp, \d_and_enable~0 , d_and_enable~0, tflipflop, 1
+instance = comp, \clk~input , clk~input, tflipflop, 1
+instance = comp, \q~0 , q~0, tflipflop, 1
+instance = comp, \q~reg0 , q~reg0, tflipflop, 1

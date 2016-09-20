@@ -1,0 +1,1215 @@
+-- Copyright (C) 1991-2013 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--E1_count[2] is counter:value_counter|count[2] at FF_X11_Y23_N19
+--register power-up is low
+
+E1_count[2] = DFFEAS(E1L9, GLOBAL(A1L4), A1L8,  , E1L16,  ,  ,  ,  );
+
+
+--E1_count[3] is counter:value_counter|count[3] at FF_X11_Y23_N21
+--register power-up is low
+
+E1_count[3] = DFFEAS(E1L12, GLOBAL(A1L4), A1L8,  , E1L16,  ,  ,  ,  );
+
+
+--E1_count[4] is counter:value_counter|count[4] at FF_X11_Y23_N23
+--register power-up is low
+
+E1_count[4] = DFFEAS(E1L17, GLOBAL(A1L4), A1L8,  , E1L16,  ,  ,  ,  );
+
+
+--E1_count[1] is counter:value_counter|count[1] at FF_X11_Y23_N17
+--register power-up is low
+
+E1_count[1] = DFFEAS(E1L6, GLOBAL(A1L4), A1L8,  , E1L16,  ,  ,  ,  );
+
+
+--J1L1 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_3_result_int[1]~0 at LCCOMB_X19_Y28_N20
+J1L1 = E1_count[2] $ (VCC);
+
+--J1L2 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_3_result_int[1]~1 at LCCOMB_X19_Y28_N20
+J1L2 = CARRY(E1_count[2]);
+
+
+--J1L3 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_3_result_int[2]~2 at LCCOMB_X19_Y28_N22
+J1L3 = (E1_count[3] & (J1L2 & VCC)) # (!E1_count[3] & (!J1L2));
+
+--J1L4 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_3_result_int[2]~3 at LCCOMB_X19_Y28_N22
+J1L4 = CARRY((!E1_count[3] & !J1L2));
+
+
+--J1L5 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_3_result_int[3]~4 at LCCOMB_X19_Y28_N24
+J1L5 = (E1_count[4] & (J1L4 $ (GND))) # (!E1_count[4] & (!J1L4 & VCC));
+
+--J1L6 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_3_result_int[3]~5 at LCCOMB_X19_Y28_N24
+J1L6 = CARRY((E1_count[4] & !J1L4));
+
+
+--J1L7 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_3_result_int[4]~6 at LCCOMB_X19_Y28_N26
+J1L7 = !J1L6;
+
+
+--J1L9 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[1]~0 at LCCOMB_X20_Y28_N10
+J1L9 = (((J1L19) # (J1L20)));
+
+--J1L10 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[1]~1 at LCCOMB_X20_Y28_N10
+J1L10 = CARRY((J1L19) # (J1L20));
+
+
+--J1L11 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[2]~2 at LCCOMB_X20_Y28_N12
+J1L11 = (J1L10 & (((J1L21) # (J1L22)))) # (!J1L10 & (!J1L21 & (!J1L22)));
+
+--J1L12 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[2]~3 at LCCOMB_X20_Y28_N12
+J1L12 = CARRY((!J1L21 & (!J1L22 & !J1L10)));
+
+
+--J1L13 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[3]~4 at LCCOMB_X20_Y28_N14
+J1L13 = (J1L12 & (((J1L23) # (J1L24)))) # (!J1L12 & ((((J1L23) # (J1L24)))));
+
+--J1L14 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[3]~5 at LCCOMB_X20_Y28_N14
+J1L14 = CARRY((!J1L12 & ((J1L23) # (J1L24))));
+
+
+--J1L16 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[4]~7 at LCCOMB_X20_Y28_N16
+J1L16 = CARRY((!J1L26 & (!J1L25 & !J1L14)));
+
+
+--J1L17 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[5]~8 at LCCOMB_X20_Y28_N18
+J1L17 = J1L16;
+
+
+--E1_count[0] is counter:value_counter|count[0] at FF_X11_Y23_N15
+--register power-up is low
+
+E1_count[0] = DFFEAS(E1L3, GLOBAL(A1L4), A1L8,  , E1L16,  ,  ,  ,  );
+
+
+--E1L3 is counter:value_counter|count[0]~5 at LCCOMB_X11_Y23_N14
+E1L3 = E1_count[0] $ (VCC);
+
+--E1L4 is counter:value_counter|count[0]~6 at LCCOMB_X11_Y23_N14
+E1L4 = CARRY(E1_count[0]);
+
+
+--E1L6 is counter:value_counter|count[1]~7 at LCCOMB_X11_Y23_N16
+E1L6 = (E1L20 & ((E1_count[1] & (!E1L4)) # (!E1_count[1] & ((E1L4) # (GND))))) # (!E1L20 & ((E1_count[1] & (E1L4 & VCC)) # (!E1_count[1] & (!E1L4))));
+
+--E1L7 is counter:value_counter|count[1]~8 at LCCOMB_X11_Y23_N16
+E1L7 = CARRY((E1L20 & ((!E1L4) # (!E1_count[1]))) # (!E1L20 & (!E1_count[1] & !E1L4)));
+
+
+--E1L9 is counter:value_counter|count[2]~9 at LCCOMB_X11_Y23_N18
+E1L9 = ((E1L20 $ (E1_count[2] $ (E1L7)))) # (GND);
+
+--E1L10 is counter:value_counter|count[2]~10 at LCCOMB_X11_Y23_N18
+E1L10 = CARRY((E1L20 & (E1_count[2] & !E1L7)) # (!E1L20 & ((E1_count[2]) # (!E1L7))));
+
+
+--E1L12 is counter:value_counter|count[3]~13 at LCCOMB_X11_Y23_N20
+E1L12 = (E1L20 & ((E1_count[3] & (!E1L10)) # (!E1_count[3] & ((E1L10) # (GND))))) # (!E1L20 & ((E1_count[3] & (E1L10 & VCC)) # (!E1_count[3] & (!E1L10))));
+
+--E1L13 is counter:value_counter|count[3]~14 at LCCOMB_X11_Y23_N20
+E1L13 = CARRY((E1L20 & ((!E1L10) # (!E1_count[3]))) # (!E1L20 & (!E1_count[3] & !E1L10)));
+
+
+--E1L17 is counter:value_counter|count[4]~15 at LCCOMB_X11_Y23_N22
+E1L17 = E1_count[4] $ (E1L13 $ (E1L20));
+
+
+--C1_t[22] is debouncer:up_debouncer|t[22] at FF_X11_Y18_N23
+--register power-up is low
+
+C1_t[22] = DFFEAS(C1L95, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[20] is debouncer:up_debouncer|t[20] at FF_X11_Y18_N19
+--register power-up is low
+
+C1_t[20] = DFFEAS(C1L89, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[21] is debouncer:up_debouncer|t[21] at FF_X11_Y18_N21
+--register power-up is low
+
+C1_t[21] = DFFEAS(C1L92, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[14] is debouncer:up_debouncer|t[14] at FF_X11_Y18_N7
+--register power-up is low
+
+C1_t[14] = DFFEAS(C1L71, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[8] is debouncer:up_debouncer|t[8] at FF_X11_Y19_N27
+--register power-up is low
+
+C1_t[8] = DFFEAS(C1L53, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[9] is debouncer:up_debouncer|t[9] at FF_X11_Y19_N29
+--register power-up is low
+
+C1_t[9] = DFFEAS(C1L56, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[11] is debouncer:up_debouncer|t[11] at FF_X11_Y18_N1
+--register power-up is low
+
+C1_t[11] = DFFEAS(C1L62, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[7] is debouncer:up_debouncer|t[7] at FF_X11_Y19_N25
+--register power-up is low
+
+C1_t[7] = DFFEAS(C1L50, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[6] is debouncer:up_debouncer|t[6] at FF_X11_Y19_N23
+--register power-up is low
+
+C1_t[6] = DFFEAS(C1L47, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[0] is debouncer:up_debouncer|t[0] at FF_X11_Y19_N11
+--register power-up is low
+
+C1_t[0] = DFFEAS(C1L25, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[1] is debouncer:up_debouncer|t[1] at FF_X11_Y19_N13
+--register power-up is low
+
+C1_t[1] = DFFEAS(C1L32, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[2] is debouncer:up_debouncer|t[2] at FF_X11_Y19_N15
+--register power-up is low
+
+C1_t[2] = DFFEAS(C1L35, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[3] is debouncer:up_debouncer|t[3] at FF_X11_Y19_N17
+--register power-up is low
+
+C1_t[3] = DFFEAS(C1L38, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[4] is debouncer:up_debouncer|t[4] at FF_X11_Y19_N19
+--register power-up is low
+
+C1_t[4] = DFFEAS(C1L41, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[5] is debouncer:up_debouncer|t[5] at FF_X11_Y19_N21
+--register power-up is low
+
+C1_t[5] = DFFEAS(C1L44, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[12] is debouncer:up_debouncer|t[12] at FF_X11_Y18_N3
+--register power-up is low
+
+C1_t[12] = DFFEAS(C1L65, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[13] is debouncer:up_debouncer|t[13] at FF_X11_Y18_N5
+--register power-up is low
+
+C1_t[13] = DFFEAS(C1L68, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[10] is debouncer:up_debouncer|t[10] at FF_X11_Y19_N31
+--register power-up is low
+
+C1_t[10] = DFFEAS(C1L59, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[15] is debouncer:up_debouncer|t[15] at FF_X11_Y18_N9
+--register power-up is low
+
+C1_t[15] = DFFEAS(C1L74, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[16] is debouncer:up_debouncer|t[16] at FF_X11_Y18_N11
+--register power-up is low
+
+C1_t[16] = DFFEAS(C1L77, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[17] is debouncer:up_debouncer|t[17] at FF_X11_Y18_N13
+--register power-up is low
+
+C1_t[17] = DFFEAS(C1L80, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[18] is debouncer:up_debouncer|t[18] at FF_X11_Y18_N15
+--register power-up is low
+
+C1_t[18] = DFFEAS(C1L83, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C1_t[19] is debouncer:up_debouncer|t[19] at FF_X11_Y18_N17
+--register power-up is low
+
+C1_t[19] = DFFEAS(C1L86, A1L3, A1L8,  , C1L30,  ,  , C1_WideOr0,  );
+
+
+--C2_t[22] is debouncer:down_debouncer|t[22] at FF_X5_Y23_N23
+--register power-up is low
+
+C2_t[22] = DFFEAS(C2L93, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[20] is debouncer:down_debouncer|t[20] at FF_X5_Y23_N19
+--register power-up is low
+
+C2_t[20] = DFFEAS(C2L83, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[21] is debouncer:down_debouncer|t[21] at FF_X5_Y23_N21
+--register power-up is low
+
+C2_t[21] = DFFEAS(C2L90, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[14] is debouncer:down_debouncer|t[14] at FF_X5_Y23_N7
+--register power-up is low
+
+C2_t[14] = DFFEAS(C2L60, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[8] is debouncer:down_debouncer|t[8] at FF_X5_Y24_N27
+--register power-up is low
+
+C2_t[8] = DFFEAS(C2L42, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[9] is debouncer:down_debouncer|t[9] at FF_X5_Y24_N29
+--register power-up is low
+
+C2_t[9] = DFFEAS(C2L45, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[11] is debouncer:down_debouncer|t[11] at FF_X5_Y23_N1
+--register power-up is low
+
+C2_t[11] = DFFEAS(C2L51, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[7] is debouncer:down_debouncer|t[7] at FF_X5_Y24_N25
+--register power-up is low
+
+C2_t[7] = DFFEAS(C2L39, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[6] is debouncer:down_debouncer|t[6] at FF_X5_Y24_N23
+--register power-up is low
+
+C2_t[6] = DFFEAS(C2L36, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[0] is debouncer:down_debouncer|t[0] at FF_X5_Y24_N11
+--register power-up is low
+
+C2_t[0] = DFFEAS(C2L18, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[1] is debouncer:down_debouncer|t[1] at FF_X5_Y24_N13
+--register power-up is low
+
+C2_t[1] = DFFEAS(C2L21, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[2] is debouncer:down_debouncer|t[2] at FF_X5_Y24_N15
+--register power-up is low
+
+C2_t[2] = DFFEAS(C2L24, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[3] is debouncer:down_debouncer|t[3] at FF_X5_Y24_N17
+--register power-up is low
+
+C2_t[3] = DFFEAS(C2L27, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[4] is debouncer:down_debouncer|t[4] at FF_X5_Y24_N19
+--register power-up is low
+
+C2_t[4] = DFFEAS(C2L30, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[5] is debouncer:down_debouncer|t[5] at FF_X5_Y24_N21
+--register power-up is low
+
+C2_t[5] = DFFEAS(C2L33, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[12] is debouncer:down_debouncer|t[12] at FF_X5_Y23_N3
+--register power-up is low
+
+C2_t[12] = DFFEAS(C2L54, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[13] is debouncer:down_debouncer|t[13] at FF_X5_Y23_N5
+--register power-up is low
+
+C2_t[13] = DFFEAS(C2L57, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[10] is debouncer:down_debouncer|t[10] at FF_X5_Y24_N31
+--register power-up is low
+
+C2_t[10] = DFFEAS(C2L48, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[15] is debouncer:down_debouncer|t[15] at FF_X5_Y23_N9
+--register power-up is low
+
+C2_t[15] = DFFEAS(C2L63, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[16] is debouncer:down_debouncer|t[16] at FF_X5_Y23_N11
+--register power-up is low
+
+C2_t[16] = DFFEAS(C2L66, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[17] is debouncer:down_debouncer|t[17] at FF_X5_Y23_N13
+--register power-up is low
+
+C2_t[17] = DFFEAS(C2L69, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[18] is debouncer:down_debouncer|t[18] at FF_X5_Y23_N15
+--register power-up is low
+
+C2_t[18] = DFFEAS(C2L72, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C2_t[19] is debouncer:down_debouncer|t[19] at FF_X5_Y23_N17
+--register power-up is low
+
+C2_t[19] = DFFEAS(C2L75, A1L3, A1L8,  , C2L88,  ,  , C2_WideOr0,  );
+
+
+--C1L25 is debouncer:up_debouncer|t[0]~28 at LCCOMB_X11_Y19_N10
+C1L25 = C1_t[0] $ (VCC);
+
+--C1L26 is debouncer:up_debouncer|t[0]~29 at LCCOMB_X11_Y19_N10
+C1L26 = CARRY(C1_t[0]);
+
+
+--C1L32 is debouncer:up_debouncer|t[1]~30 at LCCOMB_X11_Y19_N12
+C1L32 = (C1_t[1] & (!C1L26)) # (!C1_t[1] & ((C1L26) # (GND)));
+
+--C1L33 is debouncer:up_debouncer|t[1]~31 at LCCOMB_X11_Y19_N12
+C1L33 = CARRY((!C1L26) # (!C1_t[1]));
+
+
+--C1L35 is debouncer:up_debouncer|t[2]~32 at LCCOMB_X11_Y19_N14
+C1L35 = (C1_t[2] & (C1L33 $ (GND))) # (!C1_t[2] & (!C1L33 & VCC));
+
+--C1L36 is debouncer:up_debouncer|t[2]~33 at LCCOMB_X11_Y19_N14
+C1L36 = CARRY((C1_t[2] & !C1L33));
+
+
+--C1L38 is debouncer:up_debouncer|t[3]~34 at LCCOMB_X11_Y19_N16
+C1L38 = (C1_t[3] & (!C1L36)) # (!C1_t[3] & ((C1L36) # (GND)));
+
+--C1L39 is debouncer:up_debouncer|t[3]~35 at LCCOMB_X11_Y19_N16
+C1L39 = CARRY((!C1L36) # (!C1_t[3]));
+
+
+--C1L41 is debouncer:up_debouncer|t[4]~36 at LCCOMB_X11_Y19_N18
+C1L41 = (C1_t[4] & (C1L39 $ (GND))) # (!C1_t[4] & (!C1L39 & VCC));
+
+--C1L42 is debouncer:up_debouncer|t[4]~37 at LCCOMB_X11_Y19_N18
+C1L42 = CARRY((C1_t[4] & !C1L39));
+
+
+--C1L44 is debouncer:up_debouncer|t[5]~38 at LCCOMB_X11_Y19_N20
+C1L44 = (C1_t[5] & (!C1L42)) # (!C1_t[5] & ((C1L42) # (GND)));
+
+--C1L45 is debouncer:up_debouncer|t[5]~39 at LCCOMB_X11_Y19_N20
+C1L45 = CARRY((!C1L42) # (!C1_t[5]));
+
+
+--C1L47 is debouncer:up_debouncer|t[6]~40 at LCCOMB_X11_Y19_N22
+C1L47 = (C1_t[6] & (C1L45 $ (GND))) # (!C1_t[6] & (!C1L45 & VCC));
+
+--C1L48 is debouncer:up_debouncer|t[6]~41 at LCCOMB_X11_Y19_N22
+C1L48 = CARRY((C1_t[6] & !C1L45));
+
+
+--C1L50 is debouncer:up_debouncer|t[7]~42 at LCCOMB_X11_Y19_N24
+C1L50 = (C1_t[7] & (!C1L48)) # (!C1_t[7] & ((C1L48) # (GND)));
+
+--C1L51 is debouncer:up_debouncer|t[7]~43 at LCCOMB_X11_Y19_N24
+C1L51 = CARRY((!C1L48) # (!C1_t[7]));
+
+
+--C1L53 is debouncer:up_debouncer|t[8]~44 at LCCOMB_X11_Y19_N26
+C1L53 = (C1_t[8] & (C1L51 $ (GND))) # (!C1_t[8] & (!C1L51 & VCC));
+
+--C1L54 is debouncer:up_debouncer|t[8]~45 at LCCOMB_X11_Y19_N26
+C1L54 = CARRY((C1_t[8] & !C1L51));
+
+
+--C1L56 is debouncer:up_debouncer|t[9]~46 at LCCOMB_X11_Y19_N28
+C1L56 = (C1_t[9] & (!C1L54)) # (!C1_t[9] & ((C1L54) # (GND)));
+
+--C1L57 is debouncer:up_debouncer|t[9]~47 at LCCOMB_X11_Y19_N28
+C1L57 = CARRY((!C1L54) # (!C1_t[9]));
+
+
+--C1L59 is debouncer:up_debouncer|t[10]~48 at LCCOMB_X11_Y19_N30
+C1L59 = (C1_t[10] & (C1L57 $ (GND))) # (!C1_t[10] & (!C1L57 & VCC));
+
+--C1L60 is debouncer:up_debouncer|t[10]~49 at LCCOMB_X11_Y19_N30
+C1L60 = CARRY((C1_t[10] & !C1L57));
+
+
+--C1L62 is debouncer:up_debouncer|t[11]~50 at LCCOMB_X11_Y18_N0
+C1L62 = (C1_t[11] & (!C1L60)) # (!C1_t[11] & ((C1L60) # (GND)));
+
+--C1L63 is debouncer:up_debouncer|t[11]~51 at LCCOMB_X11_Y18_N0
+C1L63 = CARRY((!C1L60) # (!C1_t[11]));
+
+
+--C1L65 is debouncer:up_debouncer|t[12]~52 at LCCOMB_X11_Y18_N2
+C1L65 = (C1_t[12] & (C1L63 $ (GND))) # (!C1_t[12] & (!C1L63 & VCC));
+
+--C1L66 is debouncer:up_debouncer|t[12]~53 at LCCOMB_X11_Y18_N2
+C1L66 = CARRY((C1_t[12] & !C1L63));
+
+
+--C1L68 is debouncer:up_debouncer|t[13]~54 at LCCOMB_X11_Y18_N4
+C1L68 = (C1_t[13] & (!C1L66)) # (!C1_t[13] & ((C1L66) # (GND)));
+
+--C1L69 is debouncer:up_debouncer|t[13]~55 at LCCOMB_X11_Y18_N4
+C1L69 = CARRY((!C1L66) # (!C1_t[13]));
+
+
+--C1L71 is debouncer:up_debouncer|t[14]~56 at LCCOMB_X11_Y18_N6
+C1L71 = (C1_t[14] & (C1L69 $ (GND))) # (!C1_t[14] & (!C1L69 & VCC));
+
+--C1L72 is debouncer:up_debouncer|t[14]~57 at LCCOMB_X11_Y18_N6
+C1L72 = CARRY((C1_t[14] & !C1L69));
+
+
+--C1L74 is debouncer:up_debouncer|t[15]~58 at LCCOMB_X11_Y18_N8
+C1L74 = (C1_t[15] & (!C1L72)) # (!C1_t[15] & ((C1L72) # (GND)));
+
+--C1L75 is debouncer:up_debouncer|t[15]~59 at LCCOMB_X11_Y18_N8
+C1L75 = CARRY((!C1L72) # (!C1_t[15]));
+
+
+--C1L77 is debouncer:up_debouncer|t[16]~60 at LCCOMB_X11_Y18_N10
+C1L77 = (C1_t[16] & (C1L75 $ (GND))) # (!C1_t[16] & (!C1L75 & VCC));
+
+--C1L78 is debouncer:up_debouncer|t[16]~61 at LCCOMB_X11_Y18_N10
+C1L78 = CARRY((C1_t[16] & !C1L75));
+
+
+--C1L80 is debouncer:up_debouncer|t[17]~62 at LCCOMB_X11_Y18_N12
+C1L80 = (C1_t[17] & (!C1L78)) # (!C1_t[17] & ((C1L78) # (GND)));
+
+--C1L81 is debouncer:up_debouncer|t[17]~63 at LCCOMB_X11_Y18_N12
+C1L81 = CARRY((!C1L78) # (!C1_t[17]));
+
+
+--C1L83 is debouncer:up_debouncer|t[18]~64 at LCCOMB_X11_Y18_N14
+C1L83 = (C1_t[18] & (C1L81 $ (GND))) # (!C1_t[18] & (!C1L81 & VCC));
+
+--C1L84 is debouncer:up_debouncer|t[18]~65 at LCCOMB_X11_Y18_N14
+C1L84 = CARRY((C1_t[18] & !C1L81));
+
+
+--C1L86 is debouncer:up_debouncer|t[19]~66 at LCCOMB_X11_Y18_N16
+C1L86 = (C1_t[19] & (!C1L84)) # (!C1_t[19] & ((C1L84) # (GND)));
+
+--C1L87 is debouncer:up_debouncer|t[19]~67 at LCCOMB_X11_Y18_N16
+C1L87 = CARRY((!C1L84) # (!C1_t[19]));
+
+
+--C1L89 is debouncer:up_debouncer|t[20]~68 at LCCOMB_X11_Y18_N18
+C1L89 = (C1_t[20] & (C1L87 $ (GND))) # (!C1_t[20] & (!C1L87 & VCC));
+
+--C1L90 is debouncer:up_debouncer|t[20]~69 at LCCOMB_X11_Y18_N18
+C1L90 = CARRY((C1_t[20] & !C1L87));
+
+
+--C1L92 is debouncer:up_debouncer|t[21]~70 at LCCOMB_X11_Y18_N20
+C1L92 = (C1_t[21] & (!C1L90)) # (!C1_t[21] & ((C1L90) # (GND)));
+
+--C1L93 is debouncer:up_debouncer|t[21]~71 at LCCOMB_X11_Y18_N20
+C1L93 = CARRY((!C1L90) # (!C1_t[21]));
+
+
+--C1L95 is debouncer:up_debouncer|t[22]~72 at LCCOMB_X11_Y18_N22
+C1L95 = C1L93 $ (!C1_t[22]);
+
+
+--C2L18 is debouncer:down_debouncer|t[0]~28 at LCCOMB_X5_Y24_N10
+C2L18 = C2_t[0] $ (VCC);
+
+--C2L19 is debouncer:down_debouncer|t[0]~29 at LCCOMB_X5_Y24_N10
+C2L19 = CARRY(C2_t[0]);
+
+
+--C2L21 is debouncer:down_debouncer|t[1]~30 at LCCOMB_X5_Y24_N12
+C2L21 = (C2_t[1] & (!C2L19)) # (!C2_t[1] & ((C2L19) # (GND)));
+
+--C2L22 is debouncer:down_debouncer|t[1]~31 at LCCOMB_X5_Y24_N12
+C2L22 = CARRY((!C2L19) # (!C2_t[1]));
+
+
+--C2L24 is debouncer:down_debouncer|t[2]~32 at LCCOMB_X5_Y24_N14
+C2L24 = (C2_t[2] & (C2L22 $ (GND))) # (!C2_t[2] & (!C2L22 & VCC));
+
+--C2L25 is debouncer:down_debouncer|t[2]~33 at LCCOMB_X5_Y24_N14
+C2L25 = CARRY((C2_t[2] & !C2L22));
+
+
+--C2L27 is debouncer:down_debouncer|t[3]~34 at LCCOMB_X5_Y24_N16
+C2L27 = (C2_t[3] & (!C2L25)) # (!C2_t[3] & ((C2L25) # (GND)));
+
+--C2L28 is debouncer:down_debouncer|t[3]~35 at LCCOMB_X5_Y24_N16
+C2L28 = CARRY((!C2L25) # (!C2_t[3]));
+
+
+--C2L30 is debouncer:down_debouncer|t[4]~36 at LCCOMB_X5_Y24_N18
+C2L30 = (C2_t[4] & (C2L28 $ (GND))) # (!C2_t[4] & (!C2L28 & VCC));
+
+--C2L31 is debouncer:down_debouncer|t[4]~37 at LCCOMB_X5_Y24_N18
+C2L31 = CARRY((C2_t[4] & !C2L28));
+
+
+--C2L33 is debouncer:down_debouncer|t[5]~38 at LCCOMB_X5_Y24_N20
+C2L33 = (C2_t[5] & (!C2L31)) # (!C2_t[5] & ((C2L31) # (GND)));
+
+--C2L34 is debouncer:down_debouncer|t[5]~39 at LCCOMB_X5_Y24_N20
+C2L34 = CARRY((!C2L31) # (!C2_t[5]));
+
+
+--C2L36 is debouncer:down_debouncer|t[6]~40 at LCCOMB_X5_Y24_N22
+C2L36 = (C2_t[6] & (C2L34 $ (GND))) # (!C2_t[6] & (!C2L34 & VCC));
+
+--C2L37 is debouncer:down_debouncer|t[6]~41 at LCCOMB_X5_Y24_N22
+C2L37 = CARRY((C2_t[6] & !C2L34));
+
+
+--C2L39 is debouncer:down_debouncer|t[7]~42 at LCCOMB_X5_Y24_N24
+C2L39 = (C2_t[7] & (!C2L37)) # (!C2_t[7] & ((C2L37) # (GND)));
+
+--C2L40 is debouncer:down_debouncer|t[7]~43 at LCCOMB_X5_Y24_N24
+C2L40 = CARRY((!C2L37) # (!C2_t[7]));
+
+
+--C2L42 is debouncer:down_debouncer|t[8]~44 at LCCOMB_X5_Y24_N26
+C2L42 = (C2_t[8] & (C2L40 $ (GND))) # (!C2_t[8] & (!C2L40 & VCC));
+
+--C2L43 is debouncer:down_debouncer|t[8]~45 at LCCOMB_X5_Y24_N26
+C2L43 = CARRY((C2_t[8] & !C2L40));
+
+
+--C2L45 is debouncer:down_debouncer|t[9]~46 at LCCOMB_X5_Y24_N28
+C2L45 = (C2_t[9] & (!C2L43)) # (!C2_t[9] & ((C2L43) # (GND)));
+
+--C2L46 is debouncer:down_debouncer|t[9]~47 at LCCOMB_X5_Y24_N28
+C2L46 = CARRY((!C2L43) # (!C2_t[9]));
+
+
+--C2L48 is debouncer:down_debouncer|t[10]~48 at LCCOMB_X5_Y24_N30
+C2L48 = (C2_t[10] & (C2L46 $ (GND))) # (!C2_t[10] & (!C2L46 & VCC));
+
+--C2L49 is debouncer:down_debouncer|t[10]~49 at LCCOMB_X5_Y24_N30
+C2L49 = CARRY((C2_t[10] & !C2L46));
+
+
+--C2L51 is debouncer:down_debouncer|t[11]~50 at LCCOMB_X5_Y23_N0
+C2L51 = (C2_t[11] & (!C2L49)) # (!C2_t[11] & ((C2L49) # (GND)));
+
+--C2L52 is debouncer:down_debouncer|t[11]~51 at LCCOMB_X5_Y23_N0
+C2L52 = CARRY((!C2L49) # (!C2_t[11]));
+
+
+--C2L54 is debouncer:down_debouncer|t[12]~52 at LCCOMB_X5_Y23_N2
+C2L54 = (C2_t[12] & (C2L52 $ (GND))) # (!C2_t[12] & (!C2L52 & VCC));
+
+--C2L55 is debouncer:down_debouncer|t[12]~53 at LCCOMB_X5_Y23_N2
+C2L55 = CARRY((C2_t[12] & !C2L52));
+
+
+--C2L57 is debouncer:down_debouncer|t[13]~54 at LCCOMB_X5_Y23_N4
+C2L57 = (C2_t[13] & (!C2L55)) # (!C2_t[13] & ((C2L55) # (GND)));
+
+--C2L58 is debouncer:down_debouncer|t[13]~55 at LCCOMB_X5_Y23_N4
+C2L58 = CARRY((!C2L55) # (!C2_t[13]));
+
+
+--C2L60 is debouncer:down_debouncer|t[14]~56 at LCCOMB_X5_Y23_N6
+C2L60 = (C2_t[14] & (C2L58 $ (GND))) # (!C2_t[14] & (!C2L58 & VCC));
+
+--C2L61 is debouncer:down_debouncer|t[14]~57 at LCCOMB_X5_Y23_N6
+C2L61 = CARRY((C2_t[14] & !C2L58));
+
+
+--C2L63 is debouncer:down_debouncer|t[15]~58 at LCCOMB_X5_Y23_N8
+C2L63 = (C2_t[15] & (!C2L61)) # (!C2_t[15] & ((C2L61) # (GND)));
+
+--C2L64 is debouncer:down_debouncer|t[15]~59 at LCCOMB_X5_Y23_N8
+C2L64 = CARRY((!C2L61) # (!C2_t[15]));
+
+
+--C2L66 is debouncer:down_debouncer|t[16]~60 at LCCOMB_X5_Y23_N10
+C2L66 = (C2_t[16] & (C2L64 $ (GND))) # (!C2_t[16] & (!C2L64 & VCC));
+
+--C2L67 is debouncer:down_debouncer|t[16]~61 at LCCOMB_X5_Y23_N10
+C2L67 = CARRY((C2_t[16] & !C2L64));
+
+
+--C2L69 is debouncer:down_debouncer|t[17]~62 at LCCOMB_X5_Y23_N12
+C2L69 = (C2_t[17] & (!C2L67)) # (!C2_t[17] & ((C2L67) # (GND)));
+
+--C2L70 is debouncer:down_debouncer|t[17]~63 at LCCOMB_X5_Y23_N12
+C2L70 = CARRY((!C2L67) # (!C2_t[17]));
+
+
+--C2L72 is debouncer:down_debouncer|t[18]~64 at LCCOMB_X5_Y23_N14
+C2L72 = (C2_t[18] & (C2L70 $ (GND))) # (!C2_t[18] & (!C2L70 & VCC));
+
+--C2L73 is debouncer:down_debouncer|t[18]~65 at LCCOMB_X5_Y23_N14
+C2L73 = CARRY((C2_t[18] & !C2L70));
+
+
+--C2L75 is debouncer:down_debouncer|t[19]~66 at LCCOMB_X5_Y23_N16
+C2L75 = (C2_t[19] & (!C2L73)) # (!C2_t[19] & ((C2L73) # (GND)));
+
+--C2L76 is debouncer:down_debouncer|t[19]~67 at LCCOMB_X5_Y23_N16
+C2L76 = CARRY((!C2L73) # (!C2_t[19]));
+
+
+--C2L83 is debouncer:down_debouncer|t[20]~68 at LCCOMB_X5_Y23_N18
+C2L83 = (C2_t[20] & (C2L76 $ (GND))) # (!C2_t[20] & (!C2L76 & VCC));
+
+--C2L84 is debouncer:down_debouncer|t[20]~69 at LCCOMB_X5_Y23_N18
+C2L84 = CARRY((C2_t[20] & !C2L76));
+
+
+--C2L90 is debouncer:down_debouncer|t[21]~70 at LCCOMB_X5_Y23_N20
+C2L90 = (C2_t[21] & (!C2L84)) # (!C2_t[21] & ((C2L84) # (GND)));
+
+--C2L91 is debouncer:down_debouncer|t[21]~71 at LCCOMB_X5_Y23_N20
+C2L91 = CARRY((!C2L84) # (!C2_t[21]));
+
+
+--C2L93 is debouncer:down_debouncer|t[22]~72 at LCCOMB_X5_Y23_N22
+C2L93 = C2_t[22] $ (!C2L91);
+
+
+--D1L1 is ssd_driver:tens_digit_display|decimal_out[0]~0 at LCCOMB_X19_Y28_N0
+D1L1 = ((!E1_count[2] & !E1_count[3])) # (!E1_count[4]);
+
+
+--D1L5 is ssd_driver:tens_digit_display|Equal15~0 at LCCOMB_X19_Y28_N6
+D1L5 = (E1_count[4]) # ((E1_count[3] & ((E1_count[2]) # (E1_count[1]))));
+
+
+--D1L2 is ssd_driver:tens_digit_display|decimal_out[2]~1 at LCCOMB_X19_Y28_N16
+D1L2 = (E1_count[2] & (E1_count[3] & ((E1_count[1]) # (!E1_count[4])))) # (!E1_count[2] & ((E1_count[3] & (E1_count[1] & !E1_count[4])) # (!E1_count[3] & ((E1_count[4])))));
+
+
+--D1L4 is ssd_driver:tens_digit_display|Equal14~0 at LCCOMB_X19_Y28_N2
+D1L4 = (E1_count[3] & (!E1_count[4] & ((E1_count[2]) # (E1_count[1])))) # (!E1_count[3] & (!E1_count[2] & ((E1_count[4]))));
+
+
+--D1L3 is ssd_driver:tens_digit_display|Equal13~0 at LCCOMB_X19_Y28_N12
+D1L3 = (E1_count[4] & ((E1_count[2] & ((!E1_count[3]) # (!E1_count[1]))) # (!E1_count[2] & ((E1_count[3])))));
+
+
+--J1L21 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[16]~0 at LCCOMB_X19_Y28_N14
+J1L21 = (E1_count[2] & J1L7);
+
+
+--J1L22 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[16]~1 at LCCOMB_X20_Y28_N20
+J1L22 = (!J1L7 & J1L1);
+
+
+--J1L19 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[15]~2 at LCCOMB_X20_Y28_N22
+J1L19 = (E1_count[1] & J1L7);
+
+
+--J1L20 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[15]~3 at LCCOMB_X20_Y28_N4
+J1L20 = (E1_count[1] & !J1L7);
+
+
+--J1L25 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[18]~4 at LCCOMB_X19_Y28_N4
+J1L25 = (J1L7 & E1_count[4]);
+
+
+--J1L26 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[18]~5 at LCCOMB_X20_Y28_N26
+J1L26 = (!J1L7 & J1L5);
+
+
+--J1L23 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[17]~6 at LCCOMB_X19_Y28_N10
+J1L23 = (E1_count[3] & J1L7);
+
+
+--J1L24 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[17]~7 at LCCOMB_X20_Y28_N24
+J1L24 = (!J1L7 & J1L3);
+
+
+--J1L28 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[22]~8 at LCCOMB_X20_Y28_N8
+J1L28 = (J1L17 & ((J1L21) # ((J1L22)))) # (!J1L17 & (((J1L11))));
+
+
+--J1L27 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[21]~9 at LCCOMB_X20_Y28_N30
+J1L27 = (J1L17 & ((E1_count[1]))) # (!J1L17 & (J1L9));
+
+
+--J1L29 is counter:value_counter|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[23]~10 at LCCOMB_X20_Y28_N28
+J1L29 = (J1L17 & ((J1L23) # ((J1L24)))) # (!J1L17 & (((J1L13))));
+
+
+--D2L1 is ssd_driver:units_digit_display|decimal_out[0]~0 at LCCOMB_X24_Y28_N8
+D2L1 = (E1_count[0] & (!J1L29 & (J1L28 $ (!J1L27)))) # (!E1_count[0] & (!J1L27 & (J1L28 $ (!J1L29))));
+
+
+--D2L2 is ssd_driver:units_digit_display|decimal_out[1]~1 at LCCOMB_X24_Y28_N22
+D2L2 = (J1L28 & (E1_count[0] & (J1L29 $ (J1L27)))) # (!J1L28 & (!J1L29 & ((E1_count[0]) # (J1L27))));
+
+
+--D2L3 is ssd_driver:units_digit_display|decimal_out[2]~2 at LCCOMB_X24_Y28_N12
+D2L3 = (J1L27 & (((!J1L29 & E1_count[0])))) # (!J1L27 & ((J1L28 & (!J1L29)) # (!J1L28 & ((E1_count[0])))));
+
+
+--D2L4 is ssd_driver:units_digit_display|decimal_out[3]~3 at LCCOMB_X24_Y28_N10
+D2L4 = (J1L27 & ((J1L28 & ((E1_count[0]))) # (!J1L28 & (J1L29 & !E1_count[0])))) # (!J1L27 & (!J1L29 & (J1L28 $ (E1_count[0]))));
+
+
+--D2L5 is ssd_driver:units_digit_display|decimal_out[4]~4 at LCCOMB_X24_Y28_N4
+D2L5 = (J1L28 & (((E1_count[0] & !J1L27)) # (!J1L29))) # (!J1L28 & ((J1L29) # ((E1_count[0]) # (!J1L27))));
+
+
+--D2L6 is ssd_driver:units_digit_display|decimal_out[5]~5 at LCCOMB_X24_Y28_N2
+D2L6 = (J1L29 & ((E1_count[0] & ((J1L27))) # (!E1_count[0] & (J1L28)))) # (!J1L29 & (J1L28 & (E1_count[0] $ (J1L27))));
+
+
+--D2L7 is ssd_driver:units_digit_display|decimal_out[6]~6 at LCCOMB_X24_Y28_N24
+D2L7 = (J1L28 & (!J1L27 & (J1L29 $ (!E1_count[0])))) # (!J1L28 & (E1_count[0] & (J1L29 $ (!J1L27))));
+
+
+--C1_prev_state.hold is debouncer:up_debouncer|prev_state.hold at FF_X10_Y19_N27
+--register power-up is low
+
+C1_prev_state.hold = DFFEAS(C1L13, GLOBAL(A1L4), A1L8,  ,  ,  ,  ,  ,  );
+
+
+--E1L19 is counter:value_counter|process_0~0 at LCCOMB_X11_Y23_N24
+E1L19 = (((!E1_count[1]) # (!E1_count[3])) # (!E1_count[2])) # (!E1_count[4]);
+
+
+--E1L20 is counter:value_counter|process_0~1 at LCCOMB_X11_Y23_N30
+E1L20 = (C1_prev_state.hold & E1L19);
+
+
+--E1L15 is counter:value_counter|count[4]~11 at LCCOMB_X11_Y23_N12
+E1L15 = (!E1_count[4] & (!E1_count[3] & (!E1_count[2] & !E1_count[1])));
+
+
+--C2_prev_state.hold is debouncer:down_debouncer|prev_state.hold at FF_X4_Y23_N29
+--register power-up is low
+
+C2_prev_state.hold = DFFEAS( , GLOBAL(A1L4), A1L8,  ,  , C2_next_state.hold_194,  ,  , VCC);
+
+
+--E1L16 is counter:value_counter|count[4]~12 at LCCOMB_X11_Y23_N26
+E1L16 = (E1L20) # ((C2_prev_state.hold & ((E1_count[0]) # (!E1L15))));
+
+
+--C1_prev_state.start is debouncer:up_debouncer|prev_state.start at FF_X10_Y19_N7
+--register power-up is low
+
+C1_prev_state.start = DFFEAS(C1L15, GLOBAL(A1L4), A1L8,  ,  ,  ,  ,  ,  );
+
+
+--C1L17 is debouncer:up_debouncer|Selector1~0 at LCCOMB_X10_Y19_N0
+C1L17 = (A1L40) # (!C1_prev_state.start);
+
+
+--C1L7 is debouncer:up_debouncer|next_state.start~0 at LCCOMB_X11_Y18_N26
+C1L7 = (A1L40) # ((C1_t[22] & ((C1_t[20]) # (C1_t[21]))));
+
+
+--C1L20 is debouncer:up_debouncer|t[0]~23 at LCCOMB_X11_Y19_N6
+C1L20 = (C1_t[9] & (C1_t[8] & C1_t[11]));
+
+
+--C1L21 is debouncer:up_debouncer|t[0]~24 at LCCOMB_X12_Y19_N26
+C1L21 = (!C1_t[2] & (!C1_t[0] & (!C1_t[3] & !C1_t[1])));
+
+
+--C1L22 is debouncer:up_debouncer|t[0]~25 at LCCOMB_X12_Y19_N8
+C1L22 = (!C1_t[5] & (C1L21 & !C1_t[4]));
+
+
+--C1L1 is debouncer:up_debouncer|LessThan0~0 at LCCOMB_X12_Y19_N30
+C1L1 = (C1L20 & ((C1_t[7]) # ((!C1L22 & C1_t[6]))));
+
+
+--C1L2 is debouncer:up_debouncer|LessThan0~1 at LCCOMB_X12_Y18_N22
+C1L2 = (C1_t[13]) # ((C1_t[12]) # ((C1_t[11] & C1_t[10])));
+
+
+--C1L23 is debouncer:up_debouncer|t[0]~26 at LCCOMB_X11_Y18_N28
+C1L23 = (!C1_t[16] & (!C1_t[15] & !C1_t[17]));
+
+
+--C1L3 is debouncer:up_debouncer|LessThan0~2 at LCCOMB_X12_Y18_N6
+C1L3 = ((C1_t[14] & ((C1L1) # (C1L2)))) # (!C1L23);
+
+
+--C1L24 is debouncer:up_debouncer|t[0]~27 at LCCOMB_X11_Y18_N30
+C1L24 = (C1_t[18] & (C1_t[22] & C1_t[19]));
+
+
+--C1_prev_state.count is debouncer:up_debouncer|prev_state.count at FF_X10_Y19_N31
+--register power-up is low
+
+C1_prev_state.count = DFFEAS(C1L11, A1L3, A1L8,  ,  ,  ,  ,  ,  );
+
+
+--C1L8 is debouncer:up_debouncer|next_state.start~1 at LCCOMB_X12_Y18_N30
+C1L8 = ((C1L7) # ((C1L24 & C1L3))) # (!C1_prev_state.count);
+
+
+--C2_prev_state.start is debouncer:down_debouncer|prev_state.start at FF_X4_Y23_N15
+--register power-up is low
+
+C2_prev_state.start = DFFEAS(C2L13, GLOBAL(A1L4), A1L8,  ,  ,  ,  ,  ,  );
+
+
+--C2L15 is debouncer:down_debouncer|Selector1~0 at LCCOMB_X4_Y23_N16
+C2L15 = (A1L6) # (!C2_prev_state.start);
+
+
+--C2L7 is debouncer:down_debouncer|next_state.start~0 at LCCOMB_X5_Y23_N28
+C2L7 = (A1L6) # ((C2_t[22] & ((C2_t[21]) # (C2_t[20]))));
+
+
+--C2L78 is debouncer:down_debouncer|t[20]~23 at LCCOMB_X4_Y23_N12
+C2L78 = (C2_t[8] & (C2_t[11] & C2_t[9]));
+
+
+--C2L79 is debouncer:down_debouncer|t[20]~24 at LCCOMB_X5_Y24_N8
+C2L79 = (!C2_t[0] & (!C2_t[3] & (!C2_t[2] & !C2_t[1])));
+
+
+--C2L80 is debouncer:down_debouncer|t[20]~25 at LCCOMB_X5_Y24_N4
+C2L80 = (!C2_t[5] & (C2L79 & !C2_t[4]));
+
+
+--C2L1 is debouncer:down_debouncer|LessThan0~0 at LCCOMB_X4_Y23_N30
+C2L1 = (C2L78 & ((C2_t[7]) # ((C2_t[6] & !C2L80))));
+
+
+--C2L2 is debouncer:down_debouncer|LessThan0~1 at LCCOMB_X5_Y23_N30
+C2L2 = (C2_t[13]) # ((C2_t[12]) # ((C2_t[10] & C2_t[11])));
+
+
+--C2L81 is debouncer:down_debouncer|t[20]~26 at LCCOMB_X5_Y23_N26
+C2L81 = (!C2_t[16] & (!C2_t[15] & !C2_t[17]));
+
+
+--C2L3 is debouncer:down_debouncer|LessThan0~2 at LCCOMB_X4_Y23_N22
+C2L3 = ((C2_t[14] & ((C2L2) # (C2L1)))) # (!C2L81);
+
+
+--C2L82 is debouncer:down_debouncer|t[20]~27 at LCCOMB_X5_Y23_N24
+C2L82 = (C2_t[18] & (C2_t[22] & C2_t[19]));
+
+
+--C2_prev_state.count is debouncer:down_debouncer|prev_state.count at FF_X4_Y23_N17
+--register power-up is low
+
+C2_prev_state.count = DFFEAS( , A1L3, A1L8,  ,  , C2_next_state.count_205,  ,  , VCC);
+
+
+--C2L8 is debouncer:down_debouncer|next_state.start~1 at LCCOMB_X4_Y23_N26
+C2L8 = (C2L7) # (((C2L82 & C2L3)) # (!C2_prev_state.count));
+
+
+--C1L98 is debouncer:up_debouncer|WideOr0~0 at LCCOMB_X10_Y19_N14
+C1L98 = (C1_prev_state.hold & ((C1_prev_state.count $ (C1_next_state.count_205)) # (!C1_next_state.hold_194))) # (!C1_prev_state.hold & ((C1_next_state.hold_194) # (C1_prev_state.count $ (C1_next_state.count_205))));
+
+
+--C1_WideOr0 is debouncer:up_debouncer|WideOr0 at LCCOMB_X11_Y19_N2
+C1_WideOr0 = (C1L98) # (C1_next_state.start_216 $ (!C1_prev_state.start));
+
+
+--C1L27 is debouncer:up_debouncer|t[0]~74 at LCCOMB_X11_Y19_N0
+C1L27 = (C1L20 & (!C1_t[7] & (C1_t[6] & C1L23)));
+
+
+--C1L28 is debouncer:up_debouncer|t[0]~75 at LCCOMB_X11_Y18_N24
+C1L28 = (C1_t[14] & (!C1_t[20] & (!C1_t[13] & !C1_t[12])));
+
+
+--C1L29 is debouncer:up_debouncer|t[0]~76 at LCCOMB_X11_Y19_N8
+C1L29 = (!C1_t[10] & (C1L24 & (C1L28 & C1L27)));
+
+
+--C1L30 is debouncer:up_debouncer|t[0]~77 at LCCOMB_X11_Y19_N4
+C1L30 = (C1_t[21]) # (((C1_WideOr0) # (!C1L29)) # (!C1L22));
+
+
+--C2L96 is debouncer:down_debouncer|WideOr0~0 at LCCOMB_X4_Y23_N28
+C2L96 = (C2_prev_state.count & ((C2_next_state.hold_194 $ (C2_prev_state.hold)) # (!C2_next_state.count_205))) # (!C2_prev_state.count & ((C2_next_state.count_205) # (C2_next_state.hold_194 $ (C2_prev_state.hold))));
+
+
+--C2_WideOr0 is debouncer:down_debouncer|WideOr0 at LCCOMB_X4_Y23_N8
+C2_WideOr0 = (C2L96) # (C2_next_state.start_216 $ (!C2_prev_state.start));
+
+
+--C2L85 is debouncer:down_debouncer|t[20]~74 at LCCOMB_X4_Y23_N24
+C2L85 = (!C2_t[7] & (C2L81 & (C2_t[6] & C2L78)));
+
+
+--C2L86 is debouncer:down_debouncer|t[20]~75 at LCCOMB_X4_Y23_N4
+C2L86 = (!C2_t[13] & (!C2_t[20] & (!C2_t[12] & C2_t[14])));
+
+
+--C2L87 is debouncer:down_debouncer|t[20]~76 at LCCOMB_X4_Y23_N2
+C2L87 = (!C2_t[10] & (C2L82 & (C2L86 & C2L85)));
+
+
+--C2L88 is debouncer:down_debouncer|t[20]~77 at LCCOMB_X4_Y23_N0
+C2L88 = (C2_t[21]) # (((C2_WideOr0) # (!C2L87)) # (!C2L80));
+
+
+--C1L16 is debouncer:up_debouncer|Selector0~0 at LCCOMB_X10_Y19_N10
+C1L16 = (C1_prev_state.start) # (A1L40);
+
+
+--C2L14 is debouncer:down_debouncer|Selector0~0 at LCCOMB_X4_Y23_N20
+C2L14 = (C2_prev_state.start) # (A1L6);
+
+
+--C1L15 is debouncer:up_debouncer|prev_state.start~0 at LCCOMB_X10_Y19_N6
+C1L15 = !C1_next_state.start_216;
+
+
+--C2L13 is debouncer:down_debouncer|prev_state.start~0 at LCCOMB_X4_Y23_N14
+C2L13 = !C2_next_state.start_216;
+
+
+--C1_next_state.hold_194 is debouncer:up_debouncer|next_state.hold_194 at LCCOMB_X10_Y19_N28
+C1_next_state.hold_194 = (GLOBAL(C1L9) & ((!C1L17))) # (!GLOBAL(C1L9) & (C1_next_state.hold_194));
+
+
+--C2_next_state.hold_194 is debouncer:down_debouncer|next_state.hold_194 at LCCOMB_X4_Y23_N18
+C2_next_state.hold_194 = (GLOBAL(C2L9) & (!C2L15)) # (!GLOBAL(C2L9) & ((C2_next_state.hold_194)));
+
+
+--C1_next_state.start_216 is debouncer:up_debouncer|next_state.start_216 at LCCOMB_X10_Y19_N8
+C1_next_state.start_216 = (GLOBAL(C1L9) & ((A1L40))) # (!GLOBAL(C1L9) & (C1_next_state.start_216));
+
+
+--C1_next_state.count_205 is debouncer:up_debouncer|next_state.count_205 at LCCOMB_X10_Y19_N22
+C1_next_state.count_205 = (GLOBAL(C1L9) & (!C1L16)) # (!GLOBAL(C1L9) & ((C1_next_state.count_205)));
+
+
+--C2_next_state.start_216 is debouncer:down_debouncer|next_state.start_216 at LCCOMB_X4_Y23_N10
+C2_next_state.start_216 = (GLOBAL(C2L9) & (A1L6)) # (!GLOBAL(C2L9) & ((C2_next_state.start_216)));
+
+
+--C2_next_state.count_205 is debouncer:down_debouncer|next_state.count_205 at LCCOMB_X4_Y23_N6
+C2_next_state.count_205 = (GLOBAL(C2L9) & (!C2L14)) # (!GLOBAL(C2L9) & ((C2_next_state.count_205)));
+
+
+--A1L11 is tens_ssd[0]~output at IOOBUF_X26_Y29_N23
+A1L11 = OUTPUT_BUFFER.O(.I(D1L1), , , , , , , , , , , , , , , , , );
+
+
+--tens_ssd[0] is tens_ssd[0] at PIN_A15
+tens_ssd[0] = OUTPUT();
+
+
+--A1L13 is tens_ssd[1]~output at IOOBUF_X28_Y29_N16
+A1L13 = OUTPUT_BUFFER.O(.I(D1L5), , , , , , , , , , , , , , , , , );
+
+
+--tens_ssd[1] is tens_ssd[1] at PIN_E14
+tens_ssd[1] = OUTPUT();
+
+
+--A1L15 is tens_ssd[2]~output at IOOBUF_X23_Y29_N30
+A1L15 = OUTPUT_BUFFER.O(.I(D1L2), , , , , , , , , , , , , , , , , );
+
+
+--tens_ssd[2] is tens_ssd[2] at PIN_B14
+tens_ssd[2] = OUTPUT();
+
+
+--A1L17 is tens_ssd[3]~output at IOOBUF_X23_Y29_N23
+A1L17 = OUTPUT_BUFFER.O(.I(D1L4), , , , , , , , , , , , , , , , , );
+
+
+--tens_ssd[3] is tens_ssd[3] at PIN_A14
+tens_ssd[3] = OUTPUT();
+
+
+--A1L19 is tens_ssd[4]~output at IOOBUF_X23_Y29_N2
+A1L19 = OUTPUT_BUFFER.O(.I(D1L3), , , , , , , , , , , , , , , , , );
+
+
+--tens_ssd[4] is tens_ssd[4] at PIN_C13
+tens_ssd[4] = OUTPUT();
+
+
+--A1L21 is tens_ssd[5]~output at IOOBUF_X21_Y29_N9
+A1L21 = OUTPUT_BUFFER.O(.I(GND), , , , , , , , , , , , , , , , , );
+
+
+--tens_ssd[5] is tens_ssd[5] at PIN_B13
+tens_ssd[5] = OUTPUT();
+
+
+--A1L23 is tens_ssd[6]~output at IOOBUF_X21_Y29_N2
+A1L23 = OUTPUT_BUFFER.O(.I(D1L4), , , , , , , , , , , , , , , , , );
+
+
+--tens_ssd[6] is tens_ssd[6] at PIN_A13
+tens_ssd[6] = OUTPUT();
+
+
+--A1L26 is units_ssd[0]~output at IOOBUF_X26_Y29_N16
+A1L26 = OUTPUT_BUFFER.O(.I(D2L1), , , , , , , , , , , , , , , , , );
+
+
+--units_ssd[0] is units_ssd[0] at PIN_F13
+units_ssd[0] = OUTPUT();
+
+
+--A1L28 is units_ssd[1]~output at IOOBUF_X28_Y29_N23
+A1L28 = OUTPUT_BUFFER.O(.I(D2L2), , , , , , , , , , , , , , , , , );
+
+
+--units_ssd[1] is units_ssd[1] at PIN_F12
+units_ssd[1] = OUTPUT();
+
+
+--A1L30 is units_ssd[2]~output at IOOBUF_X26_Y29_N9
+A1L30 = OUTPUT_BUFFER.O(.I(D2L3), , , , , , , , , , , , , , , , , );
+
+
+--units_ssd[2] is units_ssd[2] at PIN_G12
+units_ssd[2] = OUTPUT();
+
+
+--A1L32 is units_ssd[3]~output at IOOBUF_X28_Y29_N30
+A1L32 = OUTPUT_BUFFER.O(.I(D2L4), , , , , , , , , , , , , , , , , );
+
+
+--units_ssd[3] is units_ssd[3] at PIN_H13
+units_ssd[3] = OUTPUT();
+
+
+--A1L34 is units_ssd[4]~output at IOOBUF_X26_Y29_N2
+A1L34 = OUTPUT_BUFFER.O(.I(!D2L5), , , , , , , , , , , , , , , , , );
+
+
+--units_ssd[4] is units_ssd[4] at PIN_H12
+units_ssd[4] = OUTPUT();
+
+
+--A1L36 is units_ssd[5]~output at IOOBUF_X21_Y29_N30
+A1L36 = OUTPUT_BUFFER.O(.I(D2L6), , , , , , , , , , , , , , , , , );
+
+
+--units_ssd[5] is units_ssd[5] at PIN_F11
+units_ssd[5] = OUTPUT();
+
+
+--A1L38 is units_ssd[6]~output at IOOBUF_X21_Y29_N23
+A1L38 = OUTPUT_BUFFER.O(.I(D2L7), , , , , , , , , , , , , , , , , );
+
+
+--units_ssd[6] is units_ssd[6] at PIN_E11
+units_ssd[6] = OUTPUT();
+
+
+--A1L3 is clk~input at IOIBUF_X41_Y15_N1
+A1L3 = INPUT_BUFFER(.I(clk), );
+
+
+--clk is clk at PIN_G21
+clk = INPUT();
+
+
+--A1L8 is rst~input at IOIBUF_X0_Y23_N1
+A1L8 = INPUT_BUFFER(.I(rst), );
+
+
+--rst is rst at PIN_F1
+rst = INPUT();
+
+
+--A1L40 is up~input at IOIBUF_X0_Y21_N8
+A1L40 = INPUT_BUFFER(.I(up), );
+
+
+--up is up at PIN_H2
+up = INPUT();
+
+
+--A1L6 is down~input at IOIBUF_X0_Y23_N15
+A1L6 = INPUT_BUFFER(.I(down), );
+
+
+--down is down at PIN_G3
+down = INPUT();
+
+
+
+
+
+
+
+
+
+
+
+
+--C1L9 is debouncer:up_debouncer|next_state.start~1clkctrl at CLKCTRL_G3
+C1L9 = cycloneiii_clkctrl(.INCLK[0] = C1L8) WITH (clock_type = "Global Clock", ena_register_mode = "none");
+
+
+--C2L9 is debouncer:down_debouncer|next_state.start~1clkctrl at CLKCTRL_G1
+C2L9 = cycloneiii_clkctrl(.INCLK[0] = C2L8) WITH (clock_type = "Global Clock", ena_register_mode = "none");
+
+
+--A1L4 is clk~inputclkctrl at CLKCTRL_G9
+A1L4 = cycloneiii_clkctrl(.INCLK[0] = A1L3) WITH (clock_type = "Global Clock", ena_register_mode = "none");
+
+
+--C1L13 is debouncer:up_debouncer|prev_state.hold~feeder at LCCOMB_X10_Y19_N26
+C1L13 = C1_next_state.hold_194;
+
+
+--C1L11 is debouncer:up_debouncer|prev_state.count~feeder at LCCOMB_X10_Y19_N30
+C1L11 = C1_next_state.count_205;
+
+

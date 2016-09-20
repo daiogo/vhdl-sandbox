@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\Dropbox\1-2016\Lógica Programável e VHDL\vhdl-playground\reference_setter\simulation\qsim
+vreference_setter
+Z1 !s100 `>k;JmeSIim1HoM9_XWN_2
+Z2 IT<6mG@80GC@eh18OQ@L@A0
+Z3 Ve9;eJna@]?PoY=3eSK:@23
+Z4 dE:\Dropbox\1-2016\Lógica Programável e VHDL\vhdl-playground\reference_setter\simulation\qsim
+Z5 w1470718330
+Z6 8reference_setter.vo
+Z7 Freference_setter.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|reference_setter.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1470718332.908000
+Z12 !s107 reference_setter.vo|
+!s101 -O0
+vreference_setter_vlg_check_tst
+Z13 IFQM9_U<F44WP:HC`nhO8L2
+Z14 VRU2Fd7faBO?gUlok14CLa2
+R4
+Z15 w1470717074
+Z16 8reference_setter.vt
+Z17 Freference_setter.vt
+L0 63
+R8
+r1
+31
+Z18 !s108 1470717082.274000
+Z19 !s107 reference_setter.vt|
+Z20 !s90 -work|work|reference_setter.vt|
+R10
+Z21 !s100 XkWMDI:=_2d`B4cXHz@703
+!i10b 1
+!s85 0
+!s101 -O0
+vreference_setter_vlg_sample_tst
+Z22 IVQhjU^z_VX]D^bZMJ<LZ`0
+Z23 VckCH=n[m]fFgS7CN0QnaB2
+R4
+R15
+R16
+R17
+L0 29
+R8
+r1
+31
+R18
+R19
+R20
+R10
+Z24 !s100 nJ>GoIJB@[8ifhFReeobT0
+!i10b 1
+!s85 0
+!s101 -O0
+vreference_setter_vlg_vec_tst
+!i10b 1
+!s100 b49YZE`JQJ8H?]Tk@^lW=3
+IgYl[hEObgFIZ>:`3NAcWJ1
+Z25 V<OW`R0laOBd_356OAOSzL2
+R4
+w1470718329
+R16
+R17
+L0 29
+R8
+r1
+!s85 0
+31
+!s108 1470718333.454000
+!s107 reference_setter.vt|
+R20
+!s101 -O0
+R10

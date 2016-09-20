@@ -1,0 +1,8 @@
+|decoder_3to2
+x[0] => ~NO_FANOUT~
+x[1] => y[0].DATAIN
+x[2] => y[1].DATAIN
+y[0] <= x[1].DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= x[2].DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,227 @@
+-- Copyright (C) 1991-2013 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--C1L4 is hamming_calculator:hwc_calculator|ones[3][0]~0 at LCCOMB_X1_Y24_N0
+C1L4 = A1L10 $ (A1L4 $ (A1L8 $ (A1L6)));
+
+
+--C1L1 is hamming_calculator:hwc_calculator|integer_out[0]~0 at LCCOMB_X1_Y25_N8
+C1L1 = A1L16 $ (A1L14 $ (A1L12 $ (C1L4)));
+
+
+--C1L5 is hamming_calculator:hwc_calculator|ones[3][1]~1 at LCCOMB_X1_Y24_N10
+C1L5 = (A1L10 & ((A1L4 & ((!A1L6) # (!A1L8))) # (!A1L4 & ((A1L8) # (A1L6))))) # (!A1L10 & ((A1L4 & ((A1L8) # (A1L6))) # (!A1L4 & (A1L8 & A1L6))));
+
+
+--C1L8 is hamming_calculator:hwc_calculator|ones[5][1]~2 at LCCOMB_X1_Y25_N18
+C1L8 = C1L5 $ (((A1L14 & ((A1L12) # (C1L4))) # (!A1L14 & (A1L12 & C1L4))));
+
+
+--C1L7 is hamming_calculator:hwc_calculator|ones[5][0]~3 at LCCOMB_X1_Y25_N28
+C1L7 = A1L14 $ (A1L12 $ (C1L4));
+
+
+--C1L2 is hamming_calculator:hwc_calculator|integer_out[1]~1 at LCCOMB_X1_Y25_N30
+C1L2 = C1L8 $ (((A1L16 & C1L7)));
+
+
+--C1L6 is hamming_calculator:hwc_calculator|ones[4][2]~4 at LCCOMB_X1_Y24_N12
+C1L6 = (A1L10 & (A1L4 & (A1L8 & A1L6)));
+
+
+--C1L9 is hamming_calculator:hwc_calculator|ones[5][2]~5 at LCCOMB_X1_Y25_N0
+C1L9 = (A1L14 & ((A1L12) # (C1L4))) # (!A1L14 & (A1L12 & C1L4));
+
+
+--C1L10 is hamming_calculator:hwc_calculator|ones[5][2]~6 at LCCOMB_X1_Y25_N2
+C1L10 = C1L6 $ (((C1L9 & C1L5)));
+
+
+--C1L3 is hamming_calculator:hwc_calculator|integer_out[2]~2 at LCCOMB_X1_Y25_N20
+C1L3 = C1L10 $ (((A1L16 & (C1L7 & C1L8))));
+
+
+--D1L1 is ssd_driver:hwc_ssd|decimal_out[0]~0 at LCCOMB_X1_Y25_N14
+D1L1 = (C1L8 & ((A1L16 $ (!C1L7)) # (!C1L10))) # (!C1L8 & ((C1L10) # ((A1L16 & C1L7))));
+
+
+--D1L2 is ssd_driver:hwc_ssd|decimal_out[1]~1 at LCCOMB_X1_Y25_N24
+D1L2 = (C1L8 & ((A1L16 & (!C1L7)) # (!A1L16 & ((C1L7) # (!C1L10))))) # (!C1L8 & (!C1L10 & ((A1L16) # (C1L7))));
+
+
+--D1L3 is ssd_driver:hwc_ssd|decimal_out[2]~2 at LCCOMB_X1_Y25_N26
+D1L3 = (A1L16 & (((C1L8 & !C1L10)) # (!C1L7))) # (!A1L16 & ((C1L7) # ((!C1L8 & C1L10))));
+
+
+--D1L4 is ssd_driver:hwc_ssd|decimal_out[3]~3 at LCCOMB_X1_Y25_N12
+D1L4 = (A1L16 & ((C1L7 & (C1L8 & !C1L10)) # (!C1L7 & (C1L8 $ (!C1L10))))) # (!A1L16 & ((C1L7 & (C1L8 $ (!C1L10))) # (!C1L7 & (!C1L8 & C1L10))));
+
+
+--D1L5 is ssd_driver:hwc_ssd|decimal_out[4]~4 at LCCOMB_X1_Y25_N22
+D1L5 = (!C1L10 & ((A1L16 & (C1L7 & !C1L8)) # (!A1L16 & (!C1L7 & C1L8))));
+
+
+--D1L6 is ssd_driver:hwc_ssd|decimal_out[5]~5 at LCCOMB_X1_Y25_N16
+D1L6 = (C1L10 & (C1L8 $ (((A1L16) # (C1L7)))));
+
+
+--D1L7 is ssd_driver:hwc_ssd|decimal_out[6]~6 at LCCOMB_X1_Y25_N10
+D1L7 = (A1L16 & (!C1L10 & (C1L7 $ (!C1L8)))) # (!A1L16 & (!C1L8 & (C1L7 $ (C1L10))));
+
+
+--A1L19 is hwc_led_out[0]~output at IOOBUF_X0_Y20_N9
+A1L19 = OUTPUT_BUFFER.O(.I(C1L1), , , , , , , , , , , , , , , , , );
+
+
+--hwc_led_out[0] is hwc_led_out[0] at PIN_J1
+hwc_led_out[0] = OUTPUT();
+
+
+--A1L21 is hwc_led_out[1]~output at IOOBUF_X0_Y20_N2
+A1L21 = OUTPUT_BUFFER.O(.I(C1L2), , , , , , , , , , , , , , , , , );
+
+
+--hwc_led_out[1] is hwc_led_out[1] at PIN_J2
+hwc_led_out[1] = OUTPUT();
+
+
+--A1L23 is hwc_led_out[2]~output at IOOBUF_X0_Y21_N23
+A1L23 = OUTPUT_BUFFER.O(.I(C1L3), , , , , , , , , , , , , , , , , );
+
+
+--hwc_led_out[2] is hwc_led_out[2] at PIN_J3
+hwc_led_out[2] = OUTPUT();
+
+
+--A1L26 is hwc_ssd_out[0]~output at IOOBUF_X26_Y29_N16
+A1L26 = OUTPUT_BUFFER.O(.I(!D1L1), , , , , , , , , , , , , , , , , );
+
+
+--hwc_ssd_out[0] is hwc_ssd_out[0] at PIN_F13
+hwc_ssd_out[0] = OUTPUT();
+
+
+--A1L28 is hwc_ssd_out[1]~output at IOOBUF_X28_Y29_N23
+A1L28 = OUTPUT_BUFFER.O(.I(D1L2), , , , , , , , , , , , , , , , , );
+
+
+--hwc_ssd_out[1] is hwc_ssd_out[1] at PIN_F12
+hwc_ssd_out[1] = OUTPUT();
+
+
+--A1L30 is hwc_ssd_out[2]~output at IOOBUF_X26_Y29_N9
+A1L30 = OUTPUT_BUFFER.O(.I(D1L3), , , , , , , , , , , , , , , , , );
+
+
+--hwc_ssd_out[2] is hwc_ssd_out[2] at PIN_G12
+hwc_ssd_out[2] = OUTPUT();
+
+
+--A1L32 is hwc_ssd_out[3]~output at IOOBUF_X28_Y29_N30
+A1L32 = OUTPUT_BUFFER.O(.I(D1L4), , , , , , , , , , , , , , , , , );
+
+
+--hwc_ssd_out[3] is hwc_ssd_out[3] at PIN_H13
+hwc_ssd_out[3] = OUTPUT();
+
+
+--A1L34 is hwc_ssd_out[4]~output at IOOBUF_X26_Y29_N2
+A1L34 = OUTPUT_BUFFER.O(.I(D1L5), , , , , , , , , , , , , , , , , );
+
+
+--hwc_ssd_out[4] is hwc_ssd_out[4] at PIN_H12
+hwc_ssd_out[4] = OUTPUT();
+
+
+--A1L36 is hwc_ssd_out[5]~output at IOOBUF_X21_Y29_N30
+A1L36 = OUTPUT_BUFFER.O(.I(D1L6), , , , , , , , , , , , , , , , , );
+
+
+--hwc_ssd_out[5] is hwc_ssd_out[5] at PIN_F11
+hwc_ssd_out[5] = OUTPUT();
+
+
+--A1L38 is hwc_ssd_out[6]~output at IOOBUF_X21_Y29_N23
+A1L38 = OUTPUT_BUFFER.O(.I(D1L7), , , , , , , , , , , , , , , , , );
+
+
+--hwc_ssd_out[6] is hwc_ssd_out[6] at PIN_E11
+hwc_ssd_out[6] = OUTPUT();
+
+
+--A1L16 is hwc_in[6]~input at IOIBUF_X0_Y25_N15
+A1L16 = INPUT_BUFFER(.I(hwc_in[6]), );
+
+
+--hwc_in[6] is hwc_in[6] at PIN_H7
+hwc_in[6] = INPUT();
+
+
+--A1L14 is hwc_in[5]~input at IOIBUF_X0_Y22_N15
+A1L14 = INPUT_BUFFER(.I(hwc_in[5]), );
+
+
+--hwc_in[5] is hwc_in[5] at PIN_J7
+hwc_in[5] = INPUT();
+
+
+--A1L12 is hwc_in[4]~input at IOIBUF_X0_Y27_N22
+A1L12 = INPUT_BUFFER(.I(hwc_in[4]), );
+
+
+--hwc_in[4] is hwc_in[4] at PIN_G5
+hwc_in[4] = INPUT();
+
+
+--A1L4 is hwc_in[0]~input at IOIBUF_X0_Y24_N1
+A1L4 = INPUT_BUFFER(.I(hwc_in[0]), );
+
+
+--hwc_in[0] is hwc_in[0] at PIN_J6
+hwc_in[0] = INPUT();
+
+
+--A1L6 is hwc_in[1]~input at IOIBUF_X0_Y27_N1
+A1L6 = INPUT_BUFFER(.I(hwc_in[1]), );
+
+
+--hwc_in[1] is hwc_in[1] at PIN_H5
+hwc_in[1] = INPUT();
+
+
+--A1L8 is hwc_in[2]~input at IOIBUF_X0_Y25_N22
+A1L8 = INPUT_BUFFER(.I(hwc_in[2]), );
+
+
+--hwc_in[2] is hwc_in[2] at PIN_H6
+hwc_in[2] = INPUT();
+
+
+--A1L10 is hwc_in[3]~input at IOIBUF_X0_Y23_N8
+A1L10 = INPUT_BUFFER(.I(hwc_in[3]), );
+
+
+--hwc_in[3] is hwc_in[3] at PIN_G4
+hwc_in[3] = INPUT();
+
+
+
+
+
+
+
+
+
+
+
+

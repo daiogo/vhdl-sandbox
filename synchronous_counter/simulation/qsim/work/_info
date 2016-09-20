@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\Dropbox\2-2016\Lógica Programável e VHDL\vhdl-playground\synchronous_counter\simulation\qsim
+vsynchronous_counter
+Z1 !s100 ?^<kHLFfnh<Sj8GaH[HlV0
+Z2 If>9lokoT2kMQJJWIS`SPz2
+Z3 V]I0I_24W>Q4KPA3?jb^Pk3
+Z4 dE:\Dropbox\2-2016\Lógica Programável e VHDL\vhdl-playground\synchronous_counter\simulation\qsim
+Z5 w1472698497
+Z6 8synchronous_counter.vo
+Z7 Fsynchronous_counter.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|synchronous_counter.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1472698499.971000
+Z12 !s107 synchronous_counter.vo|
+!s101 -O0
+vsynchronous_counter_vlg_check_tst
+!i10b 1
+Z13 !s100 PL_<?ZiUbWVkcdiLOc99;1
+Z14 ImlJcB3XfbgJ0ZIEY72QLL0
+Z15 Vc?KPIjBl4RlK3ELOgO]a_3
+R4
+Z16 w1472698496
+Z17 8synchronous_counter.vt
+Z18 Fsynchronous_counter.vt
+L0 57
+R8
+r1
+!s85 0
+31
+Z19 !s108 1472698501.643000
+Z20 !s107 synchronous_counter.vt|
+Z21 !s90 -work|work|synchronous_counter.vt|
+!s101 -O0
+R10
+vsynchronous_counter_vlg_sample_tst
+!i10b 1
+Z22 !s100 9<@ZI5UbzWlG]CAR2DS[D0
+Z23 IVfTMML9XCVaje]KM`F2lJ0
+Z24 VL[n3Wi@A_?3jdMTm6V[ib0
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vsynchronous_counter_vlg_vec_tst
+!i10b 1
+Z25 !s100 lIUP1UHeYWXma=eA<W:dZ3
+Z26 I^825EenECIocnE30<@7XO3
+Z27 V0meUK5R1[gX[`Pf;_=BGb1
+R4
+R16
+R17
+R18
+Z28 L0 205
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

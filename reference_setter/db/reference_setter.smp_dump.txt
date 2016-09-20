@@ -1,0 +1,12 @@
+
+State Machine - |reference_setter|debouncer:down_debouncer|prev_state
+Name prev_state.hold prev_state.count prev_state.start 
+prev_state.start 0 0 0 
+prev_state.count 0 1 1 
+prev_state.hold 1 0 1 
+
+State Machine - |reference_setter|debouncer:up_debouncer|prev_state
+Name prev_state.hold prev_state.count prev_state.start 
+prev_state.start 0 0 0 
+prev_state.count 0 1 1 
+prev_state.hold 1 0 1 

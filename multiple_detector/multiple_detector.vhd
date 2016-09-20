@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 -----------------------------------------------------------------
 
 entity multiple_detector is
-	generic (N: integer := 8; M: integer := 8); --number of bits of input
+	generic (N: integer := 5; M: integer := 5); --number of bits of input
 	port(
 		a: in std_logic_vector(N-1 downto 0);
 		b: in std_logic_vector(M-1 downto 0);

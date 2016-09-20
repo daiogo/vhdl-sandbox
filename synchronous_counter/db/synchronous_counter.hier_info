@@ -1,0 +1,43 @@
+|synchronous_counter
+clk => tflipflop:tff_array:1:tff1:tff.clk
+clk => tflipflop:tff_array:2:tffx:tff.clk
+clk => tflipflop:tff_array:3:tffx:tff.clk
+clk => tflipflop:tff_array:4:tffN:tff.clk
+count[0] <= tflipflop:tff_array:4:tffN:tff.q
+count[1] <= tflipflop:tff_array:3:tffx:tff.q
+count[2] <= tflipflop:tff_array:2:tffx:tff.q
+count[3] <= tflipflop:tff_array:1:tff1:tff.q
+
+
+|synchronous_counter|tflipflop:\tff_array:1:tff1:tff
+clk => q~reg0.CLK
+d => d_and_enable.IN0
+enable => d_and_enable.IN1
+d_and_enable <= d_and_enable.DB_MAX_OUTPUT_PORT_TYPE
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|synchronous_counter|tflipflop:\tff_array:2:tffx:tff
+clk => q~reg0.CLK
+d => d_and_enable.IN0
+enable => d_and_enable.IN1
+d_and_enable <= d_and_enable.DB_MAX_OUTPUT_PORT_TYPE
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|synchronous_counter|tflipflop:\tff_array:3:tffx:tff
+clk => q~reg0.CLK
+d => d_and_enable.IN0
+enable => d_and_enable.IN1
+d_and_enable <= d_and_enable.DB_MAX_OUTPUT_PORT_TYPE
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|synchronous_counter|tflipflop:\tff_array:4:tffN:tff
+clk => q~reg0.CLK
+d => d_and_enable.IN0
+enable => d_and_enable.IN1
+d_and_enable <= d_and_enable.DB_MAX_OUTPUT_PORT_TYPE
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

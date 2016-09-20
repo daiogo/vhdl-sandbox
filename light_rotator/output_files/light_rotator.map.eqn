@@ -1,0 +1,584 @@
+-- Copyright (C) 1991-2013 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--C1L1 is frequency_divider:lr_freq_divider|Add0~0
+C1L1 = C1_counter[0] $ (VCC);
+
+--C1L2 is frequency_divider:lr_freq_divider|Add0~1
+C1L2 = CARRY(C1_counter[0]);
+
+
+--C1L3 is frequency_divider:lr_freq_divider|Add0~2
+C1L3 = (C1_counter[1] & (!C1L2)) # (!C1_counter[1] & ((C1L2) # (GND)));
+
+--C1L4 is frequency_divider:lr_freq_divider|Add0~3
+C1L4 = CARRY((!C1L2) # (!C1_counter[1]));
+
+
+--C1L5 is frequency_divider:lr_freq_divider|Add0~4
+C1L5 = (C1_counter[2] & (C1L4 $ (GND))) # (!C1_counter[2] & (!C1L4 & VCC));
+
+--C1L6 is frequency_divider:lr_freq_divider|Add0~5
+C1L6 = CARRY((C1_counter[2] & !C1L4));
+
+
+--C1L7 is frequency_divider:lr_freq_divider|Add0~6
+C1L7 = (C1_counter[3] & (!C1L6)) # (!C1_counter[3] & ((C1L6) # (GND)));
+
+--C1L8 is frequency_divider:lr_freq_divider|Add0~7
+C1L8 = CARRY((!C1L6) # (!C1_counter[3]));
+
+
+--C1L9 is frequency_divider:lr_freq_divider|Add0~8
+C1L9 = (C1_counter[4] & (C1L8 $ (GND))) # (!C1_counter[4] & (!C1L8 & VCC));
+
+--C1L10 is frequency_divider:lr_freq_divider|Add0~9
+C1L10 = CARRY((C1_counter[4] & !C1L8));
+
+
+--C1L11 is frequency_divider:lr_freq_divider|Add0~10
+C1L11 = (C1_counter[5] & (!C1L10)) # (!C1_counter[5] & ((C1L10) # (GND)));
+
+--C1L12 is frequency_divider:lr_freq_divider|Add0~11
+C1L12 = CARRY((!C1L10) # (!C1_counter[5]));
+
+
+--C1L13 is frequency_divider:lr_freq_divider|Add0~12
+C1L13 = (C1_counter[6] & (C1L12 $ (GND))) # (!C1_counter[6] & (!C1L12 & VCC));
+
+--C1L14 is frequency_divider:lr_freq_divider|Add0~13
+C1L14 = CARRY((C1_counter[6] & !C1L12));
+
+
+--C1L15 is frequency_divider:lr_freq_divider|Add0~14
+C1L15 = (C1_counter[7] & (!C1L14)) # (!C1_counter[7] & ((C1L14) # (GND)));
+
+--C1L16 is frequency_divider:lr_freq_divider|Add0~15
+C1L16 = CARRY((!C1L14) # (!C1_counter[7]));
+
+
+--C1L17 is frequency_divider:lr_freq_divider|Add0~16
+C1L17 = (C1_counter[8] & (C1L16 $ (GND))) # (!C1_counter[8] & (!C1L16 & VCC));
+
+--C1L18 is frequency_divider:lr_freq_divider|Add0~17
+C1L18 = CARRY((C1_counter[8] & !C1L16));
+
+
+--C1L19 is frequency_divider:lr_freq_divider|Add0~18
+C1L19 = (C1_counter[9] & (!C1L18)) # (!C1_counter[9] & ((C1L18) # (GND)));
+
+--C1L20 is frequency_divider:lr_freq_divider|Add0~19
+C1L20 = CARRY((!C1L18) # (!C1_counter[9]));
+
+
+--C1L21 is frequency_divider:lr_freq_divider|Add0~20
+C1L21 = (C1_counter[10] & (C1L20 $ (GND))) # (!C1_counter[10] & (!C1L20 & VCC));
+
+--C1L22 is frequency_divider:lr_freq_divider|Add0~21
+C1L22 = CARRY((C1_counter[10] & !C1L20));
+
+
+--C1L23 is frequency_divider:lr_freq_divider|Add0~22
+C1L23 = (C1_counter[11] & (!C1L22)) # (!C1_counter[11] & ((C1L22) # (GND)));
+
+--C1L24 is frequency_divider:lr_freq_divider|Add0~23
+C1L24 = CARRY((!C1L22) # (!C1_counter[11]));
+
+
+--C1L25 is frequency_divider:lr_freq_divider|Add0~24
+C1L25 = (C1_counter[12] & (C1L24 $ (GND))) # (!C1_counter[12] & (!C1L24 & VCC));
+
+--C1L26 is frequency_divider:lr_freq_divider|Add0~25
+C1L26 = CARRY((C1_counter[12] & !C1L24));
+
+
+--C1L27 is frequency_divider:lr_freq_divider|Add0~26
+C1L27 = (C1_counter[13] & (!C1L26)) # (!C1_counter[13] & ((C1L26) # (GND)));
+
+--C1L28 is frequency_divider:lr_freq_divider|Add0~27
+C1L28 = CARRY((!C1L26) # (!C1_counter[13]));
+
+
+--C1L29 is frequency_divider:lr_freq_divider|Add0~28
+C1L29 = (C1_counter[14] & (C1L28 $ (GND))) # (!C1_counter[14] & (!C1L28 & VCC));
+
+--C1L30 is frequency_divider:lr_freq_divider|Add0~29
+C1L30 = CARRY((C1_counter[14] & !C1L28));
+
+
+--C1L31 is frequency_divider:lr_freq_divider|Add0~30
+C1L31 = (C1_counter[15] & (!C1L30)) # (!C1_counter[15] & ((C1L30) # (GND)));
+
+--C1L32 is frequency_divider:lr_freq_divider|Add0~31
+C1L32 = CARRY((!C1L30) # (!C1_counter[15]));
+
+
+--C1L33 is frequency_divider:lr_freq_divider|Add0~32
+C1L33 = (C1_counter[16] & (C1L32 $ (GND))) # (!C1_counter[16] & (!C1L32 & VCC));
+
+--C1L34 is frequency_divider:lr_freq_divider|Add0~33
+C1L34 = CARRY((C1_counter[16] & !C1L32));
+
+
+--C1L35 is frequency_divider:lr_freq_divider|Add0~34
+C1L35 = (C1_counter[17] & (!C1L34)) # (!C1_counter[17] & ((C1L34) # (GND)));
+
+--C1L36 is frequency_divider:lr_freq_divider|Add0~35
+C1L36 = CARRY((!C1L34) # (!C1_counter[17]));
+
+
+--C1L37 is frequency_divider:lr_freq_divider|Add0~36
+C1L37 = (C1_counter[18] & (C1L36 $ (GND))) # (!C1_counter[18] & (!C1L36 & VCC));
+
+--C1L38 is frequency_divider:lr_freq_divider|Add0~37
+C1L38 = CARRY((C1_counter[18] & !C1L36));
+
+
+--C1L39 is frequency_divider:lr_freq_divider|Add0~38
+C1L39 = (C1_counter[19] & (!C1L38)) # (!C1_counter[19] & ((C1L38) # (GND)));
+
+--C1L40 is frequency_divider:lr_freq_divider|Add0~39
+C1L40 = CARRY((!C1L38) # (!C1_counter[19]));
+
+
+--C1L41 is frequency_divider:lr_freq_divider|Add0~40
+C1L41 = (C1_counter[20] & (C1L40 $ (GND))) # (!C1_counter[20] & (!C1L40 & VCC));
+
+--C1L42 is frequency_divider:lr_freq_divider|Add0~41
+C1L42 = CARRY((C1_counter[20] & !C1L40));
+
+
+--C1L43 is frequency_divider:lr_freq_divider|Add0~42
+C1L43 = (C1_counter[21] & (!C1L42)) # (!C1_counter[21] & ((C1L42) # (GND)));
+
+--C1L44 is frequency_divider:lr_freq_divider|Add0~43
+C1L44 = CARRY((!C1L42) # (!C1_counter[21]));
+
+
+--C1L45 is frequency_divider:lr_freq_divider|Add0~44
+C1L45 = (C1_counter[22] & (C1L44 $ (GND))) # (!C1_counter[22] & (!C1L44 & VCC));
+
+--C1L46 is frequency_divider:lr_freq_divider|Add0~45
+C1L46 = CARRY((C1_counter[22] & !C1L44));
+
+
+--C1L47 is frequency_divider:lr_freq_divider|Add0~46
+C1L47 = C1_counter[23] $ (C1L46);
+
+
+--stop is stop
+stop = INPUT();
+
+
+--ssd_display[0] is ssd_display[0]
+ssd_display[0] = OUTPUT(A1L41);
+
+
+--ssd_display[1] is ssd_display[1]
+ssd_display[1] = OUTPUT(A1L41);
+
+
+--ssd_display[2] is ssd_display[2]
+ssd_display[2] = OUTPUT(A1L11);
+
+
+--ssd_display[3] is ssd_display[3]
+ssd_display[3] = OUTPUT(A1L40);
+
+
+--ssd_display[4] is ssd_display[4]
+ssd_display[4] = OUTPUT(A1L38);
+
+
+--ssd_display[5] is ssd_display[5]
+ssd_display[5] = OUTPUT(A1L37);
+
+
+--ssd_display[6] is ssd_display[6]
+ssd_display[6] = OUTPUT(A1L36);
+
+
+--prev_state.DE is prev_state.DE
+--register power-up is low
+
+prev_state.DE = DFFEAS(A1L2, C1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--prev_state.CD is prev_state.CD
+--register power-up is low
+
+prev_state.CD = DFFEAS(A1L18, C1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--prev_state.D is prev_state.D
+--register power-up is low
+
+prev_state.D = DFFEAS(A1L19, C1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--A1L39 is WideOr4~0
+A1L39 = (prev_state.DE) # ((prev_state.CD) # (prev_state.D));
+
+
+--prev_state.BC is prev_state.BC
+--register power-up is low
+
+prev_state.BC = DFFEAS(A1L16, C1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--prev_state.C is prev_state.C
+--register power-up is low
+
+prev_state.C = DFFEAS(A1L17, C1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--A1L38 is WideOr3~0
+A1L38 = (!prev_state.CD & (!prev_state.BC & !prev_state.C));
+
+
+--prev_state.AB is prev_state.AB
+--register power-up is low
+
+prev_state.AB = DFFEAS(A1L14, C1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--prev_state.B is prev_state.B
+--register power-up is low
+
+prev_state.B = DFFEAS(A1L15, C1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--A1L37 is WideOr2~0
+A1L37 = (!prev_state.BC & (!prev_state.AB & !prev_state.B));
+
+
+--prev_state.A is prev_state.A
+--register power-up is low
+
+prev_state.A = DFFEAS(A1L13, C1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--A1L36 is WideOr1~0
+A1L36 = (prev_state.A & !prev_state.AB);
+
+
+--t[1] is t[1]
+--register power-up is low
+
+t[1] = DFFEAS(A1L33, C1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--t[0] is t[0]
+--register power-up is low
+
+t[0] = DFFEAS(A1L31, C1_state, rst,  ,  ,  ,  ,  ,  );
+
+
+--A1L2 is next_state.DE~0
+A1L2 = (prev_state.D & (t[1] & t[0]));
+
+
+--C1_state is frequency_divider:lr_freq_divider|state
+--register power-up is low
+
+C1_state = DFFEAS(C1L94, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--rst is rst
+rst = INPUT();
+
+
+--A1L18 is Selector5~0
+A1L18 = (t[1] & ((t[0] & (prev_state.C)) # (!t[0] & ((prev_state.CD))))) # (!t[1] & (((prev_state.CD))));
+
+
+--A1L19 is Selector6~0
+A1L19 = (t[1] & ((t[0] & (prev_state.CD)) # (!t[0] & ((prev_state.D))))) # (!t[1] & (((prev_state.D))));
+
+
+--A1L16 is Selector3~0
+A1L16 = (t[1] & ((t[0] & (prev_state.B)) # (!t[0] & ((prev_state.BC))))) # (!t[1] & (((prev_state.BC))));
+
+
+--A1L17 is Selector4~0
+A1L17 = (t[1] & ((t[0] & (prev_state.BC)) # (!t[0] & ((prev_state.C))))) # (!t[1] & (((prev_state.C))));
+
+
+--A1L34 is WideOr0~0
+A1L34 = (t[1] & t[0]);
+
+
+--A1L14 is Selector1~0
+A1L14 = (A1L34 & ((prev_state.DE) # ((!prev_state.A)))) # (!A1L34 & (((prev_state.AB))));
+
+
+--A1L15 is Selector2~0
+A1L15 = (t[1] & ((t[0] & (prev_state.AB)) # (!t[0] & ((prev_state.B))))) # (!t[1] & (((prev_state.B))));
+
+
+--A1L13 is Selector0~0
+A1L13 = (prev_state.DE & (((t[1] & t[0])))) # (!prev_state.DE & ((prev_state.A) # ((t[1] & t[0]))));
+
+
+--A1L35 is WideOr0~1
+A1L35 = (prev_state.D) # ((prev_state.B) # ((!A1L36) # (!A1L38)));
+
+
+--A1L33 is t[1]~2
+A1L33 = (!prev_state.DE & ((t[1] & ((!A1L35) # (!t[0]))) # (!t[1] & (t[0]))));
+
+
+--C1_counter[0] is frequency_divider:lr_freq_divider|counter[0]
+--register power-up is low
+
+C1_counter[0] = DFFEAS(C1L1, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[23] is frequency_divider:lr_freq_divider|counter[23]
+--register power-up is low
+
+C1_counter[23] = DFFEAS(C1L83, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[21] is frequency_divider:lr_freq_divider|counter[21]
+--register power-up is low
+
+C1_counter[21] = DFFEAS(C1L84, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[22] is frequency_divider:lr_freq_divider|counter[22]
+--register power-up is low
+
+C1_counter[22] = DFFEAS(C1L45, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1L86 is frequency_divider:lr_freq_divider|Equal0~0
+C1L86 = (C1_counter[0] & (C1_counter[23] & (C1_counter[21] & !C1_counter[22])));
+
+
+--C1_counter[20] is frequency_divider:lr_freq_divider|counter[20]
+--register power-up is low
+
+C1_counter[20] = DFFEAS(C1L85, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[19] is frequency_divider:lr_freq_divider|counter[19]
+--register power-up is low
+
+C1_counter[19] = DFFEAS(C1L74, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[18] is frequency_divider:lr_freq_divider|counter[18]
+--register power-up is low
+
+C1_counter[18] = DFFEAS(C1L75, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[17] is frequency_divider:lr_freq_divider|counter[17]
+--register power-up is low
+
+C1_counter[17] = DFFEAS(C1L76, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1L87 is frequency_divider:lr_freq_divider|Equal0~1
+C1L87 = (C1_counter[20] & (C1_counter[19] & (C1_counter[18] & C1_counter[17])));
+
+
+--C1_counter[15] is frequency_divider:lr_freq_divider|counter[15]
+--register power-up is low
+
+C1_counter[15] = DFFEAS(C1L77, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[13] is frequency_divider:lr_freq_divider|counter[13]
+--register power-up is low
+
+C1_counter[13] = DFFEAS(C1L78, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[16] is frequency_divider:lr_freq_divider|counter[16]
+--register power-up is low
+
+C1_counter[16] = DFFEAS(C1L33, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[14] is frequency_divider:lr_freq_divider|counter[14]
+--register power-up is low
+
+C1_counter[14] = DFFEAS(C1L29, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1L88 is frequency_divider:lr_freq_divider|Equal0~2
+C1L88 = (C1_counter[15] & (C1_counter[13] & (!C1_counter[16] & !C1_counter[14])));
+
+
+--C1_counter[12] is frequency_divider:lr_freq_divider|counter[12]
+--register power-up is low
+
+C1_counter[12] = DFFEAS(C1L79, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[11] is frequency_divider:lr_freq_divider|counter[11]
+--register power-up is low
+
+C1_counter[11] = DFFEAS(C1L80, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[10] is frequency_divider:lr_freq_divider|counter[10]
+--register power-up is low
+
+C1_counter[10] = DFFEAS(C1L81, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[9] is frequency_divider:lr_freq_divider|counter[9]
+--register power-up is low
+
+C1_counter[9] = DFFEAS(C1L19, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1L89 is frequency_divider:lr_freq_divider|Equal0~3
+C1L89 = (C1_counter[12] & (C1_counter[11] & (C1_counter[10] & !C1_counter[9])));
+
+
+--C1L90 is frequency_divider:lr_freq_divider|Equal0~4
+C1L90 = (C1L86 & (C1L87 & (C1L88 & C1L89)));
+
+
+--C1_counter[8] is frequency_divider:lr_freq_divider|counter[8]
+--register power-up is low
+
+C1_counter[8] = DFFEAS(C1L17, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[7] is frequency_divider:lr_freq_divider|counter[7]
+--register power-up is low
+
+C1_counter[7] = DFFEAS(C1L15, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[6] is frequency_divider:lr_freq_divider|counter[6]
+--register power-up is low
+
+C1_counter[6] = DFFEAS(C1L13, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[5] is frequency_divider:lr_freq_divider|counter[5]
+--register power-up is low
+
+C1_counter[5] = DFFEAS(C1L82, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1L91 is frequency_divider:lr_freq_divider|Equal0~5
+C1L91 = (!C1_counter[8] & (!C1_counter[7] & (!C1_counter[6] & !C1_counter[5])));
+
+
+--C1_counter[4] is frequency_divider:lr_freq_divider|counter[4]
+--register power-up is low
+
+C1_counter[4] = DFFEAS(C1L9, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[3] is frequency_divider:lr_freq_divider|counter[3]
+--register power-up is low
+
+C1_counter[3] = DFFEAS(C1L7, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[2] is frequency_divider:lr_freq_divider|counter[2]
+--register power-up is low
+
+C1_counter[2] = DFFEAS(C1L5, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[1] is frequency_divider:lr_freq_divider|counter[1]
+--register power-up is low
+
+C1_counter[1] = DFFEAS(C1L3, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--C1L92 is frequency_divider:lr_freq_divider|Equal0~6
+C1L92 = (C1_counter[4] & (C1_counter[3] & (C1_counter[2] & C1_counter[1])));
+
+
+--C1L94 is frequency_divider:lr_freq_divider|state~0
+C1L94 = C1_state $ (((C1L90 & (C1L91 & C1L92))));
+
+
+--clk is clk
+clk = INPUT();
+
+
+--C1L74 is frequency_divider:lr_freq_divider|counter~6
+C1L74 = (C1L39 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--C1L75 is frequency_divider:lr_freq_divider|counter~7
+C1L75 = (C1L37 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--C1L76 is frequency_divider:lr_freq_divider|counter~8
+C1L76 = (C1L35 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--C1L77 is frequency_divider:lr_freq_divider|counter~9
+C1L77 = (C1L31 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--C1L78 is frequency_divider:lr_freq_divider|counter~10
+C1L78 = (C1L27 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--C1L79 is frequency_divider:lr_freq_divider|counter~11
+C1L79 = (C1L25 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--C1L80 is frequency_divider:lr_freq_divider|counter~12
+C1L80 = (C1L23 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--C1L81 is frequency_divider:lr_freq_divider|counter~13
+C1L81 = (C1L21 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--C1L82 is frequency_divider:lr_freq_divider|counter~14
+C1L82 = (C1L11 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--A1L31 is t[0]~3
+A1L31 = (!prev_state.DE & (((t[1] & !A1L35)) # (!t[0])));
+
+
+--C1L83 is frequency_divider:lr_freq_divider|counter~15
+C1L83 = (C1L47 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--C1L84 is frequency_divider:lr_freq_divider|counter~16
+C1L84 = (C1L43 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--C1L85 is frequency_divider:lr_freq_divider|counter~17
+C1L85 = (C1L41 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--A1L41 is ~VCC
+A1L41 = VCC;
+
+
+--A1L40 is WideOr4~0_wirecell
+A1L40 = !A1L39;
+
+
+--A1L11 is prev_state.DE~_wirecell
+A1L11 = !prev_state.DE;
+
+

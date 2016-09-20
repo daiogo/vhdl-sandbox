@@ -1,0 +1,11 @@
+|arbiter
+clk => prev_state~1.DATAIN
+rst => prev_state~3.DATAIN
+r[0] => process_1.IN1
+r[1] => process_1.IN0
+r[2] => process_1.IN1
+g[0] <= g[0].DB_MAX_OUTPUT_PORT_TYPE
+g[1] <= g[1].DB_MAX_OUTPUT_PORT_TYPE
+g[2] <= g[2].DB_MAX_OUTPUT_PORT_TYPE
+
+

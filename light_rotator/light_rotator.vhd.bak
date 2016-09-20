@@ -1,0 +1,185 @@
+library ieee;
+use ieee.std_logic_1164.all;
+----------------------------------------------------------------------------
+entity light_rotator is
+	port(
+		clk: in std_logic;
+		rst: in std_logic;
+		stop: in std_logic;
+		ssd_display: out std_logic_vector(6 downto 0)
+	);
+end entity;
+----------------------------------------------------------------------------
+architecture a_light_rotator of light_rotator is
+
+	--FSM declarations
+	type state is (A, AB, B, BC, C, CD, D, DE, E, EF, F, FA);
+	signal prev_state, next_state: state;
+
+	--Timer declarations
+	constant tmax: integer := 3;
+	signal t: integer range 0 to tmax;
+
+	component frequency_divider is
+		port(
+			clk_in: in std_logic;
+			rst: in std_logic;
+			clk_out: out std_logic
+		);
+	end component;
+	
+	component debouncer is
+		port(
+			clk: in std_logic;
+			x: in std_logic;
+			y: buffer std_logic
+		);
+	end component;
+
+	signal divided_clk: std_logic;
+	signal debounced_stop: std_logic;
+	signal timer_sig: std_logic;
+
+begin
+	
+	freq_divider: frequency_divider port map(clk_in=>clk, rst=>rst, clk_out=>divided_clk);
+	debouncer: debouncer port map(clk=>clk, rst=>rst, button=>, debounced_button=>debounced_button1);
+	
+	process(divided_clk)
+	begin
+		if (rising_edge(divided_clk)) then
+			timer_sig <= not timer_sig;
+		end if;
+		timer <= timer_sig;
+	end process;
+	
+-----------------FSM TIMER-----------------
+	process (divided_clk, rst)
+	begin
+		if (rst='0') then
+			t <= 0;
+		elsif (rising_edge(divided_clk)) then
+			if (prev_state /= next_state) then
+				t <= 0;
+			elsif (t /= tmax) then
+				t <= t + 1;
+			end if;
+		end if;
+	end process;
+	
+-----------------LOWER SECTION OF FSM-----------------
+	process (divided_clk, rst)
+	begin
+		if (rst='0') then
+			prev_state <= A;
+		elsif (rising_edge(divided_clk)) then
+			prev_state <= next_state;
+		end if;
+	end process;
+	
+-----------------UPPER SECTION OF FSM-----------------
+	process (all)
+	begin
+		case prev_state is
+			when A =>
+				ssd_display <= "0111111";
+				if t < tmax then
+					next_state <= A;
+				else
+					next_state <= AB;
+				end if;
+			
+			when AB =>
+				ssd_display <= "0011111";
+				if t < tmax then
+					next_state <= AB;
+				else
+					next_state <= B;
+				end if;
+			
+			when B =>
+				ssd_display <= "1011111";
+				if t < tmax then
+					next_state <= B;
+				else
+					next_state <= BC;
+				end if;
+			
+			when BC =>
+				ssd_display <= "1001111";
+				if t < tmax then
+					next_state <= BC;
+				else
+					next_state <= C;
+				end if;
+			
+			when C =>
+				ssd_display <= "1101111";
+				if t < tmax then
+					next_state <= C;
+				else
+					next_state <= CD;
+				end if;
+			
+			when CD =>
+				ssd_display <= "1100111";
+				if t < tmax then
+					next_state <= CD;
+				else
+					next_state <= D;
+				end if;
+			
+			when D =>
+				ssd_display <= "1110111";
+				if t < tmax then
+					next_state <= D;
+				else
+					next_state <= DE;
+				end if;
+			
+			when DE =>
+				ssd_display <= "1110011";
+				if t < tmax then
+					next_state <= A;
+				else
+					next_state <= AB;
+				end if;
+			
+			when E =>
+				ssd_display <= "1111011";
+				if t < tmax then
+					next_state <= E;
+				else
+					next_state <= EF;
+				end if;
+			
+			when EF =>
+				ssd_display <= "1111001";
+				if t < tmax then
+					next_state <= EF;
+				else
+					next_state <= F;
+				end if;
+			
+			when F =>
+				ssd_display <= "1111101";
+				if t < tmax then
+					next_state <= F;
+				else
+					next_state <= FA;
+				end if;
+			
+			when FA =>
+				ssd_display <= "0111101";
+				if t < tmax then
+					next_state <= FA;
+				else
+					next_state <= A;
+				end if;
+			
+			
+			
+		end case;
+	end process;	
+
+end architecture;

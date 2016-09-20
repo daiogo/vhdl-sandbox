@@ -1,0 +1,229 @@
+-- Copyright (C) 1991-2013 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--E1L1 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_2_result_int[0]~0
+E1L1 = (b[0] & (a[2] $ (VCC))) # (!b[0] & ((a[2]) # (GND)));
+
+--E1L2 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_2_result_int[0]~1
+E1L2 = CARRY((a[2]) # (!b[0]));
+
+
+--E1L3 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_2_result_int[1]~2
+E1L3 = (E1L34 & ((b[1] & (!E1L2)) # (!b[1] & (E1L2 & VCC)))) # (!E1L34 & ((b[1] & ((E1L2) # (GND))) # (!b[1] & (!E1L2))));
+
+--E1L4 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_2_result_int[1]~3
+E1L4 = CARRY((E1L34 & (b[1] & !E1L2)) # (!E1L34 & ((b[1]) # (!E1L2))));
+
+
+--E1L5 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_2_result_int[2]~4
+E1L5 = ((E1L36 $ (b[2] $ (E1L4)))) # (GND);
+
+--E1L6 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_2_result_int[2]~5
+E1L6 = CARRY((E1L36 & ((!E1L4) # (!b[2]))) # (!E1L36 & (!b[2] & !E1L4)));
+
+
+--E1L7 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_2_result_int[3]~6
+E1L7 = !E1L6;
+
+
+--E1L9 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_3_result_int[0]~0
+E1L9 = (b[0] & (a[1] $ (VCC))) # (!b[0] & ((a[1]) # (GND)));
+
+--E1L10 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_3_result_int[0]~1
+E1L10 = CARRY((a[1]) # (!b[0]));
+
+
+--E1L11 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_3_result_int[1]~2
+E1L11 = (E1L37 & ((b[1] & (!E1L10)) # (!b[1] & (E1L10 & VCC)))) # (!E1L37 & ((b[1] & ((E1L10) # (GND))) # (!b[1] & (!E1L10))));
+
+--E1L12 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_3_result_int[1]~3
+E1L12 = CARRY((E1L37 & (b[1] & !E1L10)) # (!E1L37 & ((b[1]) # (!E1L10))));
+
+
+--E1L13 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_3_result_int[2]~4
+E1L13 = ((E1L38 $ (b[2] $ (E1L12)))) # (GND);
+
+--E1L14 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_3_result_int[2]~5
+E1L14 = CARRY((E1L38 & ((!E1L12) # (!b[2]))) # (!E1L38 & (!b[2] & !E1L12)));
+
+
+--E1L15 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_3_result_int[3]~6
+E1L15 = (E1L39 & ((b[3] & (!E1L14)) # (!b[3] & (E1L14 & VCC)))) # (!E1L39 & ((b[3] & ((E1L14) # (GND))) # (!b[3] & (!E1L14))));
+
+--E1L16 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_3_result_int[3]~7
+E1L16 = CARRY((E1L39 & (b[3] & !E1L14)) # (!E1L39 & ((b[3]) # (!E1L14))));
+
+
+--E1L17 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_3_result_int[4]~8
+E1L17 = E1L16;
+
+
+--E1L19 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[0]~0
+E1L19 = (b[0] & (a[0] $ (VCC))) # (!b[0] & ((a[0]) # (GND)));
+
+--E1L20 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[0]~1
+E1L20 = CARRY((a[0]) # (!b[0]));
+
+
+--E1L21 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[1]~2
+E1L21 = (E1L40 & ((b[1] & (!E1L20)) # (!b[1] & (E1L20 & VCC)))) # (!E1L40 & ((b[1] & ((E1L20) # (GND))) # (!b[1] & (!E1L20))));
+
+--E1L22 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[1]~3
+E1L22 = CARRY((E1L40 & (b[1] & !E1L20)) # (!E1L40 & ((b[1]) # (!E1L20))));
+
+
+--E1L23 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[2]~4
+E1L23 = ((E1L41 $ (b[2] $ (E1L22)))) # (GND);
+
+--E1L24 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[2]~5
+E1L24 = CARRY((E1L41 & ((!E1L22) # (!b[2]))) # (!E1L41 & (!b[2] & !E1L22)));
+
+
+--E1L25 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[3]~6
+E1L25 = (E1L42 & ((b[3] & (!E1L24)) # (!b[3] & (E1L24 & VCC)))) # (!E1L42 & ((b[3] & ((E1L24) # (GND))) # (!b[3] & (!E1L24))));
+
+--E1L26 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[3]~7
+E1L26 = CARRY((E1L42 & (b[3] & !E1L24)) # (!E1L42 & ((b[3]) # (!E1L24))));
+
+
+--E1L27 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[4]~8
+E1L27 = ((E1L43 $ (b[4] $ (E1L26)))) # (GND);
+
+--E1L28 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[4]~9
+E1L28 = CARRY((E1L43 & ((!E1L26) # (!b[4]))) # (!E1L43 & (!b[4] & !E1L26)));
+
+
+--E1L29 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|add_sub_4_result_int[5]~10
+E1L29 = !E1L28;
+
+
+--multiple is multiple
+multiple = OUTPUT(A1L18);
+
+
+--invalid_input is invalid_input
+invalid_input = OUTPUT(A1L14);
+
+
+--a[2] is a[2]
+a[2] = INPUT();
+
+
+--b[0] is b[0]
+b[0] = INPUT();
+
+
+--b[4] is b[4]
+b[4] = INPUT();
+
+
+--b[3] is b[3]
+b[3] = INPUT();
+
+
+--a[4] is a[4]
+a[4] = INPUT();
+
+
+--b[1] is b[1]
+b[1] = INPUT();
+
+
+--a[3] is a[3]
+a[3] = INPUT();
+
+
+--E1L35 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[6]~0
+E1L35 = (b[0] & (b[1] & !a[3])) # (!b[0] & (!b[1]));
+
+
+--b[2] is b[2]
+b[2] = INPUT();
+
+
+--A1L13 is Equal0~0
+A1L13 = (!b[4] & (!b[2] & !b[3]));
+
+
+--E1L36 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[6]~1
+E1L36 = (a[4] & ((E1L35) # (!A1L13)));
+
+
+--E1L33 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[5]~2
+E1L33 = (b[4]) # ((b[2]) # ((b[3]) # (!b[0])));
+
+
+--E1L34 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[5]~3
+E1L34 = (a[3] & ((E1L33) # ((b[1] & !a[4]))));
+
+
+--E1_selnose[12] is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|selnose[12]
+E1_selnose[12] = (b[4]) # ((b[3]) # (E1L7));
+
+
+--E1L37 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[10]~4
+E1L37 = (E1_selnose[12] & (a[2])) # (!E1_selnose[12] & ((E1L1)));
+
+
+--a[1] is a[1]
+a[1] = INPUT();
+
+
+--E1L39 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[12]~5
+E1L39 = (E1_selnose[12] & (E1L36)) # (!E1_selnose[12] & ((E1L5)));
+
+
+--E1L38 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[11]~6
+E1L38 = (E1_selnose[12] & (E1L34)) # (!E1_selnose[12] & ((E1L3)));
+
+
+--E1L41 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[16]~7
+E1L41 = (b[4] & (E1L37)) # (!b[4] & ((E1L17 & (E1L37)) # (!E1L17 & ((E1L11)))));
+
+
+--E1L40 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[15]~8
+E1L40 = (b[4] & (a[1])) # (!b[4] & ((E1L17 & (a[1])) # (!E1L17 & ((E1L9)))));
+
+
+--a[0] is a[0]
+a[0] = INPUT();
+
+
+--E1L42 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[17]~9
+E1L42 = (b[4] & (E1L38)) # (!b[4] & ((E1L17 & (E1L38)) # (!E1L17 & ((E1L13)))));
+
+
+--E1L43 is lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider|StageOut[18]~10
+E1L43 = (b[4] & (E1L39)) # (!b[4] & ((E1L17 & (E1L39)) # (!E1L17 & ((E1L15)))));
+
+
+--A1L15 is Equal1~0
+A1L15 = (!E1L23 & (!E1L25 & (!E1L27 & !E1L29)));
+
+
+--A1L16 is Equal1~1
+A1L16 = (A1L15 & (!E1L19 & !E1L21));
+
+
+--A1L17 is Equal1~2
+A1L17 = (E1L29 & (!E1L41 & (!E1L40 & !a[0])));
+
+
+--A1L18 is Equal1~3
+A1L18 = (A1L16) # ((A1L17 & (!E1L43 & !E1L42)));
+
+
+--A1L14 is Equal0~1
+A1L14 = (A1L13 & (!b[0] & !b[1]));
+
+

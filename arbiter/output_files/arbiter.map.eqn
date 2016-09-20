@@ -1,0 +1,73 @@
+-- Copyright (C) 1991-2013 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--g[0] is g[0]
+g[0] = OUTPUT(prev_state.p3);
+
+
+--g[1] is g[1]
+g[1] = OUTPUT(A1L16);
+
+
+--g[2] is g[2]
+g[2] = OUTPUT(A1L16);
+
+
+--prev_state.p3 is prev_state.p3
+--register power-up is low
+
+prev_state.p3 = DFFEAS(A1L9, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--r[0] is r[0]
+r[0] = INPUT();
+
+
+--prev_state.idle is prev_state.idle
+--register power-up is low
+
+prev_state.idle = DFFEAS(A1L7, clk, rst,  ,  ,  ,  ,  ,  );
+
+
+--r[1] is r[1]
+r[1] = INPUT();
+
+
+--r[2] is r[2]
+r[2] = INPUT();
+
+
+--A1L10 is process_1~0
+A1L10 = (r[0] & (!prev_state.idle & (!r[1] & !r[2])));
+
+
+--A1L9 is prev_state.p3~0
+A1L9 = (prev_state.p3) # (A1L10);
+
+
+--clk is clk
+clk = INPUT();
+
+
+--rst is rst
+rst = INPUT();
+
+
+--A1L7 is prev_state.idle~0
+A1L7 = (prev_state.idle) # ((r[0] & (!r[1] & !r[2])));
+
+
+--A1L16 is ~GND
+A1L16 = GND;
+
+

@@ -1,0 +1,34 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity counter is
+	port(
+		clock: in std_logic;
+		reset: in std_logic;
+		enable: in std_logic;
+		done: out std_logic;
+		bcd_out1: out std_logic_vector(3 downto 0);
+		bcd_out2: out std_logic_vector(3 downto 0)
+	);
+end entity;
+
+-------------------------------------------------
+
+architecture a_counter of counter is
+
+	signal count: integer range 0 to 63;
+
+begin
+	process(clock, reset, enable, count)
+	begin
+		if (reset='1') then
+			count <= 0;
+		elsif (rising_edge(clock) and enable='1' and count < 60) then
+			count <= count + 1;
+		end if;
+	end process;
+	bcd_out1 <= std_logic_vector(to_unsigned((count mod 10), 4));
+	bcd_out2 <= std_logic_vector(to_unsigned((count/10), 4));
+	done <= '1' when count = 60 else '0';
+end architecture;

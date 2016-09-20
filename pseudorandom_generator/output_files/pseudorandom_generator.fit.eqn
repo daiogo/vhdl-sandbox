@@ -1,0 +1,530 @@
+-- Copyright (C) 1991-2013 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--C1L1 is frequency_divider:freq_div|Add0~0 at LCCOMB_X2_Y22_N8
+C1L1 = C1_counter[0] $ (VCC);
+
+--C1L2 is frequency_divider:freq_div|Add0~1 at LCCOMB_X2_Y22_N8
+C1L2 = CARRY(C1_counter[0]);
+
+
+--C1L3 is frequency_divider:freq_div|Add0~2 at LCCOMB_X2_Y22_N10
+C1L3 = (C1_counter[1] & (!C1L2)) # (!C1_counter[1] & ((C1L2) # (GND)));
+
+--C1L4 is frequency_divider:freq_div|Add0~3 at LCCOMB_X2_Y22_N10
+C1L4 = CARRY((!C1L2) # (!C1_counter[1]));
+
+
+--C1L5 is frequency_divider:freq_div|Add0~4 at LCCOMB_X2_Y22_N12
+C1L5 = (C1_counter[2] & (C1L4 $ (GND))) # (!C1_counter[2] & (!C1L4 & VCC));
+
+--C1L6 is frequency_divider:freq_div|Add0~5 at LCCOMB_X2_Y22_N12
+C1L6 = CARRY((C1_counter[2] & !C1L4));
+
+
+--C1L7 is frequency_divider:freq_div|Add0~6 at LCCOMB_X2_Y22_N14
+C1L7 = (C1_counter[3] & (!C1L6)) # (!C1_counter[3] & ((C1L6) # (GND)));
+
+--C1L8 is frequency_divider:freq_div|Add0~7 at LCCOMB_X2_Y22_N14
+C1L8 = CARRY((!C1L6) # (!C1_counter[3]));
+
+
+--C1L9 is frequency_divider:freq_div|Add0~8 at LCCOMB_X2_Y22_N16
+C1L9 = (C1_counter[4] & (C1L8 $ (GND))) # (!C1_counter[4] & (!C1L8 & VCC));
+
+--C1L10 is frequency_divider:freq_div|Add0~9 at LCCOMB_X2_Y22_N16
+C1L10 = CARRY((C1_counter[4] & !C1L8));
+
+
+--C1L11 is frequency_divider:freq_div|Add0~10 at LCCOMB_X2_Y22_N18
+C1L11 = (C1_counter[5] & (!C1L10)) # (!C1_counter[5] & ((C1L10) # (GND)));
+
+--C1L12 is frequency_divider:freq_div|Add0~11 at LCCOMB_X2_Y22_N18
+C1L12 = CARRY((!C1L10) # (!C1_counter[5]));
+
+
+--C1L13 is frequency_divider:freq_div|Add0~12 at LCCOMB_X2_Y22_N20
+C1L13 = (C1_counter[6] & (C1L12 $ (GND))) # (!C1_counter[6] & (!C1L12 & VCC));
+
+--C1L14 is frequency_divider:freq_div|Add0~13 at LCCOMB_X2_Y22_N20
+C1L14 = CARRY((C1_counter[6] & !C1L12));
+
+
+--C1L15 is frequency_divider:freq_div|Add0~14 at LCCOMB_X2_Y22_N22
+C1L15 = (C1_counter[7] & (!C1L14)) # (!C1_counter[7] & ((C1L14) # (GND)));
+
+--C1L16 is frequency_divider:freq_div|Add0~15 at LCCOMB_X2_Y22_N22
+C1L16 = CARRY((!C1L14) # (!C1_counter[7]));
+
+
+--C1L17 is frequency_divider:freq_div|Add0~16 at LCCOMB_X2_Y22_N24
+C1L17 = (C1_counter[8] & (C1L16 $ (GND))) # (!C1_counter[8] & (!C1L16 & VCC));
+
+--C1L18 is frequency_divider:freq_div|Add0~17 at LCCOMB_X2_Y22_N24
+C1L18 = CARRY((C1_counter[8] & !C1L16));
+
+
+--C1L19 is frequency_divider:freq_div|Add0~18 at LCCOMB_X2_Y22_N26
+C1L19 = (C1_counter[9] & (!C1L18)) # (!C1_counter[9] & ((C1L18) # (GND)));
+
+--C1L20 is frequency_divider:freq_div|Add0~19 at LCCOMB_X2_Y22_N26
+C1L20 = CARRY((!C1L18) # (!C1_counter[9]));
+
+
+--C1L21 is frequency_divider:freq_div|Add0~20 at LCCOMB_X2_Y22_N28
+C1L21 = (C1_counter[10] & (C1L20 $ (GND))) # (!C1_counter[10] & (!C1L20 & VCC));
+
+--C1L22 is frequency_divider:freq_div|Add0~21 at LCCOMB_X2_Y22_N28
+C1L22 = CARRY((C1_counter[10] & !C1L20));
+
+
+--C1L23 is frequency_divider:freq_div|Add0~22 at LCCOMB_X2_Y22_N30
+C1L23 = (C1_counter[11] & (!C1L22)) # (!C1_counter[11] & ((C1L22) # (GND)));
+
+--C1L24 is frequency_divider:freq_div|Add0~23 at LCCOMB_X2_Y22_N30
+C1L24 = CARRY((!C1L22) # (!C1_counter[11]));
+
+
+--C1L25 is frequency_divider:freq_div|Add0~24 at LCCOMB_X2_Y21_N0
+C1L25 = (C1_counter[12] & (C1L24 $ (GND))) # (!C1_counter[12] & (!C1L24 & VCC));
+
+--C1L26 is frequency_divider:freq_div|Add0~25 at LCCOMB_X2_Y21_N0
+C1L26 = CARRY((C1_counter[12] & !C1L24));
+
+
+--C1L27 is frequency_divider:freq_div|Add0~26 at LCCOMB_X2_Y21_N2
+C1L27 = (C1_counter[13] & (!C1L26)) # (!C1_counter[13] & ((C1L26) # (GND)));
+
+--C1L28 is frequency_divider:freq_div|Add0~27 at LCCOMB_X2_Y21_N2
+C1L28 = CARRY((!C1L26) # (!C1_counter[13]));
+
+
+--C1L29 is frequency_divider:freq_div|Add0~28 at LCCOMB_X2_Y21_N4
+C1L29 = (C1_counter[14] & (C1L28 $ (GND))) # (!C1_counter[14] & (!C1L28 & VCC));
+
+--C1L30 is frequency_divider:freq_div|Add0~29 at LCCOMB_X2_Y21_N4
+C1L30 = CARRY((C1_counter[14] & !C1L28));
+
+
+--C1L31 is frequency_divider:freq_div|Add0~30 at LCCOMB_X2_Y21_N6
+C1L31 = (C1_counter[15] & (!C1L30)) # (!C1_counter[15] & ((C1L30) # (GND)));
+
+--C1L32 is frequency_divider:freq_div|Add0~31 at LCCOMB_X2_Y21_N6
+C1L32 = CARRY((!C1L30) # (!C1_counter[15]));
+
+
+--C1L33 is frequency_divider:freq_div|Add0~32 at LCCOMB_X2_Y21_N8
+C1L33 = (C1_counter[16] & (C1L32 $ (GND))) # (!C1_counter[16] & (!C1L32 & VCC));
+
+--C1L34 is frequency_divider:freq_div|Add0~33 at LCCOMB_X2_Y21_N8
+C1L34 = CARRY((C1_counter[16] & !C1L32));
+
+
+--C1L35 is frequency_divider:freq_div|Add0~34 at LCCOMB_X2_Y21_N10
+C1L35 = (C1_counter[17] & (!C1L34)) # (!C1_counter[17] & ((C1L34) # (GND)));
+
+--C1L36 is frequency_divider:freq_div|Add0~35 at LCCOMB_X2_Y21_N10
+C1L36 = CARRY((!C1L34) # (!C1_counter[17]));
+
+
+--C1L37 is frequency_divider:freq_div|Add0~36 at LCCOMB_X2_Y21_N12
+C1L37 = (C1_counter[18] & (C1L36 $ (GND))) # (!C1_counter[18] & (!C1L36 & VCC));
+
+--C1L38 is frequency_divider:freq_div|Add0~37 at LCCOMB_X2_Y21_N12
+C1L38 = CARRY((C1_counter[18] & !C1L36));
+
+
+--C1L39 is frequency_divider:freq_div|Add0~38 at LCCOMB_X2_Y21_N14
+C1L39 = (C1_counter[19] & (!C1L38)) # (!C1_counter[19] & ((C1L38) # (GND)));
+
+--C1L40 is frequency_divider:freq_div|Add0~39 at LCCOMB_X2_Y21_N14
+C1L40 = CARRY((!C1L38) # (!C1_counter[19]));
+
+
+--C1L41 is frequency_divider:freq_div|Add0~40 at LCCOMB_X2_Y21_N16
+C1L41 = (C1_counter[20] & (C1L40 $ (GND))) # (!C1_counter[20] & (!C1L40 & VCC));
+
+--C1L42 is frequency_divider:freq_div|Add0~41 at LCCOMB_X2_Y21_N16
+C1L42 = CARRY((C1_counter[20] & !C1L40));
+
+
+--C1L43 is frequency_divider:freq_div|Add0~42 at LCCOMB_X2_Y21_N18
+C1L43 = (C1_counter[21] & (!C1L42)) # (!C1_counter[21] & ((C1L42) # (GND)));
+
+--C1L44 is frequency_divider:freq_div|Add0~43 at LCCOMB_X2_Y21_N18
+C1L44 = CARRY((!C1L42) # (!C1_counter[21]));
+
+
+--C1L45 is frequency_divider:freq_div|Add0~44 at LCCOMB_X2_Y21_N20
+C1L45 = (C1_counter[22] & (C1L44 $ (GND))) # (!C1_counter[22] & (!C1L44 & VCC));
+
+--C1L46 is frequency_divider:freq_div|Add0~45 at LCCOMB_X2_Y21_N20
+C1L46 = CARRY((C1_counter[22] & !C1L44));
+
+
+--C1L47 is frequency_divider:freq_div|Add0~46 at LCCOMB_X2_Y21_N22
+C1L47 = C1L46 $ (C1_counter[23]);
+
+
+--count[7] is count[7] at FF_X3_Y22_N29
+--register power-up is low
+
+count[7] = DFFEAS(A1L15, GLOBAL(C1L95), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_state is frequency_divider:freq_div|state at FF_X1_Y21_N23
+--register power-up is low
+
+C1_state = DFFEAS(C1L96, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--A1L19 is led1~0 at LCCOMB_X3_Y21_N28
+A1L19 = (count[7] & C1_state);
+
+
+--A1L22 is led2~0 at LCCOMB_X3_Y21_N6
+A1L22 = (count[7]) # (!C1_state);
+
+
+--count[6] is count[6] at FF_X3_Y22_N19
+--register power-up is low
+
+count[6] = DFFEAS(A1L13, GLOBAL(C1L95), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[0] is frequency_divider:freq_div|counter[0] at FF_X2_Y22_N9
+--register power-up is low
+
+C1_counter[0] = DFFEAS(C1L1, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[23] is frequency_divider:freq_div|counter[23] at FF_X1_Y21_N19
+--register power-up is low
+
+C1_counter[23] = DFFEAS(C1L83, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[21] is frequency_divider:freq_div|counter[21] at FF_X1_Y21_N7
+--register power-up is low
+
+C1_counter[21] = DFFEAS(C1L84, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[22] is frequency_divider:freq_div|counter[22] at FF_X2_Y21_N21
+--register power-up is low
+
+C1_counter[22] = DFFEAS(C1L45, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1L86 is frequency_divider:freq_div|Equal0~0 at LCCOMB_X1_Y21_N8
+C1L86 = (C1_counter[21] & (C1_counter[23] & (!C1_counter[22] & C1_counter[0])));
+
+
+--C1_counter[20] is frequency_divider:freq_div|counter[20] at FF_X2_Y21_N29
+--register power-up is low
+
+C1_counter[20] = DFFEAS(C1L85, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[19] is frequency_divider:freq_div|counter[19] at FF_X2_Y21_N27
+--register power-up is low
+
+C1_counter[19] = DFFEAS(C1L74, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[18] is frequency_divider:freq_div|counter[18] at FF_X1_Y21_N17
+--register power-up is low
+
+C1_counter[18] = DFFEAS(C1L75, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[17] is frequency_divider:freq_div|counter[17] at FF_X1_Y21_N11
+--register power-up is low
+
+C1_counter[17] = DFFEAS(C1L76, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1L87 is frequency_divider:freq_div|Equal0~1 at LCCOMB_X1_Y21_N28
+C1L87 = (C1_counter[17] & (C1_counter[18] & (C1_counter[19] & C1_counter[20])));
+
+
+--C1_counter[15] is frequency_divider:freq_div|counter[15] at FF_X2_Y21_N25
+--register power-up is low
+
+C1_counter[15] = DFFEAS(C1L77, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[13] is frequency_divider:freq_div|counter[13] at FF_X1_Y21_N21
+--register power-up is low
+
+C1_counter[13] = DFFEAS(C1L78, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[16] is frequency_divider:freq_div|counter[16] at FF_X2_Y21_N9
+--register power-up is low
+
+C1_counter[16] = DFFEAS(C1L33, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[14] is frequency_divider:freq_div|counter[14] at FF_X2_Y21_N5
+--register power-up is low
+
+C1_counter[14] = DFFEAS(C1L29, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1L88 is frequency_divider:freq_div|Equal0~2 at LCCOMB_X1_Y21_N12
+C1L88 = (!C1_counter[14] & (C1_counter[13] & (!C1_counter[16] & C1_counter[15])));
+
+
+--C1_counter[12] is frequency_divider:freq_div|counter[12] at FF_X2_Y21_N31
+--register power-up is low
+
+C1_counter[12] = DFFEAS(C1L79, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[11] is frequency_divider:freq_div|counter[11] at FF_X2_Y22_N5
+--register power-up is low
+
+C1_counter[11] = DFFEAS(C1L80, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[10] is frequency_divider:freq_div|counter[10] at FF_X1_Y21_N1
+--register power-up is low
+
+C1_counter[10] = DFFEAS(C1L81, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[9] is frequency_divider:freq_div|counter[9] at FF_X2_Y22_N27
+--register power-up is low
+
+C1_counter[9] = DFFEAS(C1L19, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1L89 is frequency_divider:freq_div|Equal0~3 at LCCOMB_X1_Y21_N24
+C1L89 = (C1_counter[12] & (C1_counter[10] & (C1_counter[11] & !C1_counter[9])));
+
+
+--C1L90 is frequency_divider:freq_div|Equal0~4 at LCCOMB_X1_Y21_N26
+C1L90 = (C1L88 & (C1L87 & (C1L86 & C1L89)));
+
+
+--C1_counter[8] is frequency_divider:freq_div|counter[8] at FF_X2_Y22_N25
+--register power-up is low
+
+C1_counter[8] = DFFEAS(C1L17, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[7] is frequency_divider:freq_div|counter[7] at FF_X2_Y22_N23
+--register power-up is low
+
+C1_counter[7] = DFFEAS(C1L15, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[6] is frequency_divider:freq_div|counter[6] at FF_X2_Y22_N21
+--register power-up is low
+
+C1_counter[6] = DFFEAS(C1L13, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[5] is frequency_divider:freq_div|counter[5] at FF_X2_Y22_N7
+--register power-up is low
+
+C1_counter[5] = DFFEAS(C1L82, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1L91 is frequency_divider:freq_div|Equal0~5 at LCCOMB_X2_Y22_N0
+C1L91 = (!C1_counter[5] & (!C1_counter[6] & (!C1_counter[7] & !C1_counter[8])));
+
+
+--C1_counter[4] is frequency_divider:freq_div|counter[4] at FF_X2_Y22_N17
+--register power-up is low
+
+C1_counter[4] = DFFEAS(C1L9, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[3] is frequency_divider:freq_div|counter[3] at FF_X2_Y22_N15
+--register power-up is low
+
+C1_counter[3] = DFFEAS(C1L7, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[2] is frequency_divider:freq_div|counter[2] at FF_X2_Y22_N13
+--register power-up is low
+
+C1_counter[2] = DFFEAS(C1L5, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1_counter[1] is frequency_divider:freq_div|counter[1] at FF_X2_Y22_N11
+--register power-up is low
+
+C1_counter[1] = DFFEAS(C1L3, GLOBAL(A1L4), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1L92 is frequency_divider:freq_div|Equal0~6 at LCCOMB_X2_Y22_N2
+C1L92 = (C1_counter[2] & (C1_counter[4] & (C1_counter[1] & C1_counter[3])));
+
+
+--C1L94 is frequency_divider:freq_div|state~0 at LCCOMB_X1_Y21_N30
+C1L94 = C1_state $ (((C1L90 & (C1L92 & C1L91))));
+
+
+--count[5] is count[5] at FF_X3_Y22_N1
+--register power-up is low
+
+count[5] = DFFEAS(A1L11, GLOBAL(C1L95), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--C1L74 is frequency_divider:freq_div|counter~6 at LCCOMB_X2_Y21_N26
+C1L74 = (C1L39 & (((!C1L90) # (!C1L91)) # (!C1L92)));
+
+
+--C1L75 is frequency_divider:freq_div|counter~7 at LCCOMB_X1_Y21_N16
+C1L75 = (C1L37 & (((!C1L90) # (!C1L91)) # (!C1L92)));
+
+
+--C1L76 is frequency_divider:freq_div|counter~8 at LCCOMB_X1_Y21_N10
+C1L76 = (C1L35 & (((!C1L90) # (!C1L91)) # (!C1L92)));
+
+
+--C1L77 is frequency_divider:freq_div|counter~9 at LCCOMB_X2_Y21_N24
+C1L77 = (C1L31 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--C1L78 is frequency_divider:freq_div|counter~10 at LCCOMB_X1_Y21_N20
+C1L78 = (C1L27 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--C1L79 is frequency_divider:freq_div|counter~11 at LCCOMB_X2_Y21_N30
+C1L79 = (C1L25 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--C1L80 is frequency_divider:freq_div|counter~12 at LCCOMB_X2_Y22_N4
+C1L80 = (C1L23 & (((!C1L90) # (!C1L91)) # (!C1L92)));
+
+
+--C1L81 is frequency_divider:freq_div|counter~13 at LCCOMB_X1_Y21_N0
+C1L81 = (C1L21 & (((!C1L90) # (!C1L91)) # (!C1L92)));
+
+
+--C1L82 is frequency_divider:freq_div|counter~14 at LCCOMB_X2_Y22_N6
+C1L82 = (C1L11 & (((!C1L90) # (!C1L91)) # (!C1L92)));
+
+
+--count[4] is count[4] at FF_X3_Y22_N3
+--register power-up is low
+
+count[4] = DFFEAS(A1L16, GLOBAL(C1L95), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--count[2] is count[2] at FF_X3_Y22_N9
+--register power-up is low
+
+count[2] = DFFEAS(A1L17, GLOBAL(C1L95), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--A1L16 is count~0 at LCCOMB_X3_Y22_N2
+A1L16 = count[2] $ (count[7]);
+
+
+--count[0] is count[0] at FF_X3_Y22_N23
+--register power-up is low
+
+count[0] = DFFEAS(A1L7, GLOBAL(C1L95), A1L25,  ,  ,  ,  ,  ,  );
+
+
+--A1L17 is count~1 at LCCOMB_X3_Y22_N8
+A1L17 = count[0] $ (count[7]);
+
+
+--C1L83 is frequency_divider:freq_div|counter~15 at LCCOMB_X1_Y21_N18
+C1L83 = (C1L47 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--C1L84 is frequency_divider:freq_div|counter~16 at LCCOMB_X1_Y21_N6
+C1L84 = (C1L43 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--C1L85 is frequency_divider:freq_div|counter~17 at LCCOMB_X2_Y21_N28
+C1L85 = (C1L41 & (((!C1L92) # (!C1L91)) # (!C1L90)));
+
+
+--A1L15 is count[7]~2 at LCCOMB_X3_Y22_N28
+A1L15 = !count[6];
+
+
+--A1L13 is count[6]~3 at LCCOMB_X3_Y22_N18
+A1L13 = !count[5];
+
+
+--A1L11 is count[5]~4 at LCCOMB_X3_Y22_N0
+A1L11 = !count[4];
+
+
+--A1L7 is count[0]~7 at LCCOMB_X3_Y22_N22
+A1L7 = !count[7];
+
+
+--A1L20 is led1~output at IOOBUF_X0_Y20_N2
+A1L20 = OUTPUT_BUFFER.O(.I(A1L19), , , , , , , , , , , , , , , , , );
+
+
+--led1 is led1 at PIN_J2
+led1 = OUTPUT();
+
+
+--A1L23 is led2~output at IOOBUF_X0_Y21_N23
+A1L23 = OUTPUT_BUFFER.O(.I(!A1L22), , , , , , , , , , , , , , , , , );
+
+
+--led2 is led2 at PIN_J3
+led2 = OUTPUT();
+
+
+--A1L25 is rst~input at IOIBUF_X0_Y23_N1
+A1L25 = INPUT_BUFFER(.I(rst), );
+
+
+--rst is rst at PIN_F1
+rst = INPUT();
+
+
+--A1L3 is clk~input at IOIBUF_X41_Y15_N1
+A1L3 = INPUT_BUFFER(.I(clk), );
+
+
+--clk is clk at PIN_G21
+clk = INPUT();
+
+
+
+
+
+
+
+
+
+
+
+
+--C1L95 is frequency_divider:freq_div|state~clkctrl at CLKCTRL_G3
+C1L95 = cycloneiii_clkctrl(.INCLK[0] = C1_state) WITH (clock_type = "Global Clock", ena_register_mode = "none");
+
+
+--A1L4 is clk~inputclkctrl at CLKCTRL_G9
+A1L4 = cycloneiii_clkctrl(.INCLK[0] = A1L3) WITH (clock_type = "Global Clock", ena_register_mode = "none");
+
+
+--C1L96 is frequency_divider:freq_div|state~feeder at LCCOMB_X1_Y21_N22
+C1L96 = C1L94;
+
+

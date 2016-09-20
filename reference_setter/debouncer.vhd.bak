@@ -1,0 +1,82 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+------------------------------------------------------------
+
+entity debouncer is
+	port(
+		clk: in std_logic;
+		rst: in std_logic;
+		button: in std_logic;
+		debounced_button: out std_logic
+	);
+end entity;
+
+------------------------------------------------------------
+
+architecture a_debouncer of debouncer is
+
+	--FSM declarations
+	type state is (start, count, hold);
+	signal prev_state, next_state: state;
+
+	constant tmax: integer := 10000;
+	signal t: integer range 0 to tmax;
+	
+begin
+-----------------FSM TIMER-----------------
+	process (clk, rst)
+	begin
+		if (rst='0') then
+			t <= 0;
+		elsif (rising_edge(clk)) then
+			if (prev_state /= next_state) then
+				t <= 0;
+			elsif (t /= tmax) then
+				t <= t + 1;
+			end if;
+		end if;
+	end process;
+	
+-----------------LOWER SECTION OF FSM-----------------
+	process (clk, rst)
+	begin
+		if (rst='0') then
+			prev_state <= start;
+		elsif (rising_edge(clk)) then
+			prev_state <= next_state;
+		end if;
+	end process;
+	
+-----------------UPPER SECTION OF FSM-----------------
+	process (all)
+	begin
+		case prev_state is
+			when start =>
+				debounced_button <= '1';
+				if (button='0') then
+					next_state <= count;
+				else
+					next_state <= start;
+				end if;	
+			
+			when count =>
+				debounced_button <= '1';
+				if (button='1') then
+					next_state <= start;
+				elsif (button='0' and t > 10000) then
+					next_state <= hold;
+				end if;	
+			
+			when hold =>
+				debounced_button <= '0';
+				if (button='1') then
+					next_state <= start;
+				else
+					next_state <= hold;
+				end if;	
+			
+		end case;
+	end process;
+
+end architecture;

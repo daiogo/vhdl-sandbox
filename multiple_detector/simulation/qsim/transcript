@@ -1,0 +1,30 @@
+# do multiple_detector.do 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module multiple_detector
+# 
+# Top level modules:
+# 	multiple_detector
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module multiple_detector_vlg_sample_tst
+# -- Compiling module multiple_detector_vlg_check_tst
+# -- Compiling module multiple_detector_vlg_vec_tst
+# 
+# Top level modules:
+# 	multiple_detector_vlg_vec_tst
+# vsim -L cycloneiii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.multiple_detector_vlg_vec_tst 
+# Loading work.multiple_detector_vlg_vec_tst
+# Loading work.multiple_detector
+# Loading cycloneiii_ver.cycloneiii_lcell_comb
+# Loading cycloneiii_ver.cycloneiii_io_ibuf
+# Loading cycloneiii_ver.cycloneiii_io_obuf
+# Loading work.multiple_detector_vlg_sample_tst
+# Loading work.multiple_detector_vlg_check_tst
+# SDF 10.1d Compiler 2012.11 Nov  2 2012
+# 
+# Loading instances from multiple_detector_v.sdo
+# Loading timing data from multiple_detector_v.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /multiple_detector_vlg_vec_tst File: multiple_detector.vt
+# Simulation passed !
+# ** Note: $finish    : multiple_detector.vt(177)
+#    Time: 2500 ns  Iteration: 0  Instance: /multiple_detector_vlg_vec_tst/tb_out

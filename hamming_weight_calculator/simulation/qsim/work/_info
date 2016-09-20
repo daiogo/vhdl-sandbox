@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Diogo\Desktop\hamming_weight_calculator\simulation\qsim
+vhamming_weight_calculator
+Z1 IKKF^B7Q1LUOdToWLNgMmU0
+Z2 VzEKWnPKgme1Q[3WeDzTXR2
+Z3 dE:\Dropbox\1-2016\Lógica Programável e VHDL\vhdl-playground\hamming_weight_calculator\simulation\qsim
+Z4 w1467784839
+Z5 8hamming_weight_calculator.vo
+Z6 Fhamming_weight_calculator.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|hamming_weight_calculator.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 jCc[[<1R]BZ?:N>`NRT_]0
+!s85 0
+Z11 !s108 1467784842.575000
+Z12 !s107 hamming_weight_calculator.vo|
+!s101 -O0
+vhamming_weight_calculator_vlg_check_tst
+!i10b 1
+!s100 USbebR]2A;`IeVjSc:M<M0
+ICZZW=HAW4I[7zSLi7gP?;3
+VJeT?0:l]g?beeZ?=@AR@]2
+R3
+Z13 w1467784838
+Z14 8hamming_weight_calculator.vt
+Z15 Fhamming_weight_calculator.vt
+L0 57
+R7
+r1
+!s85 0
+31
+Z16 !s108 1467784843.075000
+Z17 !s107 hamming_weight_calculator.vt|
+Z18 !s90 -work|work|hamming_weight_calculator.vt|
+!s101 -O0
+R9
+vhamming_weight_calculator_vlg_sample_tst
+!i10b 1
+!s100 mg?`2h727L8g7SeiH[Tef3
+I;dMFPL1X48XY_WN?j^FJA0
+V=Q9?:`3:HJF1mZZ9NFa]F0
+R3
+R13
+R14
+R15
+L0 29
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R9
+vhamming_weight_calculator_vlg_vec_tst
+!i10b 1
+!s100 E@NGGdXIEgWJ6mKH=4[Oa2
+I5maCa1ATai4nhO1KGUlUD3
+Z19 V>N>VL60zO2OgZOj?cFJdh1
+R3
+R13
+R14
+R15
+L0 192
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R9

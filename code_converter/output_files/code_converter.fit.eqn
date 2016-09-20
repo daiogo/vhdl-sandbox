@@ -1,0 +1,127 @@
+-- Copyright (C) 1991-2013 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L2 is LessThan0~0 at LCCOMB_X1_Y2_N16
+A1L2 = (A1L12) # ((A1L10) # (A1L14));
+
+
+--A1L3 is LessThan1~0 at LCCOMB_X1_Y2_N18
+A1L3 = (A1L12) # (A1L14);
+
+
+--A1L4 is LessThan2~0 at LCCOMB_X1_Y2_N12
+A1L4 = (A1L14) # ((A1L12 & A1L10));
+
+
+--A1L5 is LessThan4~0 at LCCOMB_X1_Y2_N6
+A1L5 = (A1L14 & ((A1L12) # (A1L10)));
+
+
+--A1L6 is LessThan5~0 at LCCOMB_X1_Y2_N8
+A1L6 = (A1L12 & A1L14);
+
+
+--A1L7 is LessThan6~0 at LCCOMB_X1_Y2_N10
+A1L7 = (A1L12 & (A1L10 & A1L14));
+
+
+--A1L17 is y[0]~output at IOOBUF_X0_Y2_N9
+A1L17 = OUTPUT_BUFFER.O(.I(A1L2), , , , , , , , , , , , , , , , , );
+
+
+--y[0] is y[0] at PIN_T7
+y[0] = OUTPUT();
+
+
+--A1L19 is y[1]~output at IOOBUF_X0_Y2_N16
+A1L19 = OUTPUT_BUFFER.O(.I(A1L3), , , , , , , , , , , , , , , , , );
+
+
+--y[1] is y[1] at PIN_P8
+y[1] = OUTPUT();
+
+
+--A1L21 is y[2]~output at IOOBUF_X0_Y4_N9
+A1L21 = OUTPUT_BUFFER.O(.I(A1L4), , , , , , , , , , , , , , , , , );
+
+
+--y[2] is y[2] at PIN_P6
+y[2] = OUTPUT();
+
+
+--A1L23 is y[3]~output at IOOBUF_X0_Y4_N2
+A1L23 = OUTPUT_BUFFER.O(.I(A1L14), , , , , , , , , , , , , , , , , );
+
+
+--y[3] is y[3] at PIN_V3
+y[3] = OUTPUT();
+
+
+--A1L25 is y[4]~output at IOOBUF_X1_Y0_N9
+A1L25 = OUTPUT_BUFFER.O(.I(A1L5), , , , , , , , , , , , , , , , , );
+
+
+--y[4] is y[4] at PIN_T9
+y[4] = OUTPUT();
+
+
+--A1L27 is y[5]~output at IOOBUF_X0_Y4_N16
+A1L27 = OUTPUT_BUFFER.O(.I(A1L6), , , , , , , , , , , , , , , , , );
+
+
+--y[5] is y[5] at PIN_R5
+y[5] = OUTPUT();
+
+
+--A1L29 is y[6]~output at IOOBUF_X0_Y3_N9
+A1L29 = OUTPUT_BUFFER.O(.I(A1L7), , , , , , , , , , , , , , , , , );
+
+
+--y[6] is y[6] at PIN_R6
+y[6] = OUTPUT();
+
+
+--A1L14 is x[2]~input at IOIBUF_X0_Y4_N22
+A1L14 = INPUT_BUFFER(.I(x[2]), );
+
+
+--x[2] is x[2] at PIN_T4
+x[2] = INPUT();
+
+
+--A1L10 is x[0]~input at IOIBUF_X0_Y3_N1
+A1L10 = INPUT_BUFFER(.I(x[0]), );
+
+
+--x[0] is x[0] at PIN_T5
+x[0] = INPUT();
+
+
+--A1L12 is x[1]~input at IOIBUF_X0_Y2_N1
+A1L12 = INPUT_BUFFER(.I(x[1]), );
+
+
+--x[1] is x[1] at PIN_R7
+x[1] = INPUT();
+
+
+
+
+
+
+
+
+
+
+
+

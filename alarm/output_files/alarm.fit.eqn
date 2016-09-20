@@ -1,0 +1,913 @@
+-- Copyright (C) 1991-2013 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--C1_t[4] is alarm_controller:ra_alarm_controller|t[4] at FF_X20_Y18_N25
+--register power-up is low
+
+C1_t[4] = DFFEAS(C1L41, GLOBAL(D1L100), A1L17,  , C1L45,  ,  , C1_WideOr0,  );
+
+
+--C1_t[3] is alarm_controller:ra_alarm_controller|t[3] at FF_X20_Y18_N23
+--register power-up is low
+
+C1_t[3] = DFFEAS(C1L38, GLOBAL(D1L100), A1L17,  , C1L45,  ,  , C1_WideOr0,  );
+
+
+--C1_t[1] is alarm_controller:ra_alarm_controller|t[1] at FF_X20_Y18_N19
+--register power-up is low
+
+C1_t[1] = DFFEAS(C1L32, GLOBAL(D1L100), A1L17,  , C1L45,  ,  , C1_WideOr0,  );
+
+
+--C1_t[2] is alarm_controller:ra_alarm_controller|t[2] at FF_X20_Y18_N21
+--register power-up is low
+
+C1_t[2] = DFFEAS(C1L35, GLOBAL(D1L100), A1L17,  , C1L45,  ,  , C1_WideOr0,  );
+
+
+--C1_t[0] is alarm_controller:ra_alarm_controller|t[0] at FF_X20_Y18_N17
+--register power-up is low
+
+C1_t[0] = DFFEAS(C1L29, GLOBAL(D1L100), A1L17,  , C1L45,  ,  , C1_WideOr0,  );
+
+
+--C1L29 is alarm_controller:ra_alarm_controller|t[0]~5 at LCCOMB_X20_Y18_N16
+C1L29 = C1_t[0] $ (VCC);
+
+--C1L30 is alarm_controller:ra_alarm_controller|t[0]~6 at LCCOMB_X20_Y18_N16
+C1L30 = CARRY(C1_t[0]);
+
+
+--C1L32 is alarm_controller:ra_alarm_controller|t[1]~7 at LCCOMB_X20_Y18_N18
+C1L32 = (C1_t[1] & (!C1L30)) # (!C1_t[1] & ((C1L30) # (GND)));
+
+--C1L33 is alarm_controller:ra_alarm_controller|t[1]~8 at LCCOMB_X20_Y18_N18
+C1L33 = CARRY((!C1L30) # (!C1_t[1]));
+
+
+--C1L35 is alarm_controller:ra_alarm_controller|t[2]~9 at LCCOMB_X20_Y18_N20
+C1L35 = (C1_t[2] & (C1L33 $ (GND))) # (!C1_t[2] & (!C1L33 & VCC));
+
+--C1L36 is alarm_controller:ra_alarm_controller|t[2]~10 at LCCOMB_X20_Y18_N20
+C1L36 = CARRY((C1_t[2] & !C1L33));
+
+
+--C1L38 is alarm_controller:ra_alarm_controller|t[3]~11 at LCCOMB_X20_Y18_N22
+C1L38 = (C1_t[3] & (!C1L36)) # (!C1_t[3] & ((C1L36) # (GND)));
+
+--C1L39 is alarm_controller:ra_alarm_controller|t[3]~12 at LCCOMB_X20_Y18_N22
+C1L39 = CARRY((!C1L36) # (!C1_t[3]));
+
+
+--C1L41 is alarm_controller:ra_alarm_controller|t[4]~13 at LCCOMB_X20_Y18_N24
+C1L41 = C1L39 $ (!C1_t[4]);
+
+
+--D1L1 is frequency_divider:ra_freq_divider|Add0~0 at LCCOMB_X2_Y10_N8
+D1L1 = D1_counter[0] $ (VCC);
+
+--D1L2 is frequency_divider:ra_freq_divider|Add0~1 at LCCOMB_X2_Y10_N8
+D1L2 = CARRY(D1_counter[0]);
+
+
+--D1L3 is frequency_divider:ra_freq_divider|Add0~2 at LCCOMB_X2_Y10_N10
+D1L3 = (D1_counter[1] & (!D1L2)) # (!D1_counter[1] & ((D1L2) # (GND)));
+
+--D1L4 is frequency_divider:ra_freq_divider|Add0~3 at LCCOMB_X2_Y10_N10
+D1L4 = CARRY((!D1L2) # (!D1_counter[1]));
+
+
+--D1L5 is frequency_divider:ra_freq_divider|Add0~4 at LCCOMB_X2_Y10_N12
+D1L5 = (D1_counter[2] & (D1L4 $ (GND))) # (!D1_counter[2] & (!D1L4 & VCC));
+
+--D1L6 is frequency_divider:ra_freq_divider|Add0~5 at LCCOMB_X2_Y10_N12
+D1L6 = CARRY((D1_counter[2] & !D1L4));
+
+
+--D1L7 is frequency_divider:ra_freq_divider|Add0~6 at LCCOMB_X2_Y10_N14
+D1L7 = (D1_counter[3] & (!D1L6)) # (!D1_counter[3] & ((D1L6) # (GND)));
+
+--D1L8 is frequency_divider:ra_freq_divider|Add0~7 at LCCOMB_X2_Y10_N14
+D1L8 = CARRY((!D1L6) # (!D1_counter[3]));
+
+
+--D1L9 is frequency_divider:ra_freq_divider|Add0~8 at LCCOMB_X2_Y10_N16
+D1L9 = (D1_counter[4] & (D1L8 $ (GND))) # (!D1_counter[4] & (!D1L8 & VCC));
+
+--D1L10 is frequency_divider:ra_freq_divider|Add0~9 at LCCOMB_X2_Y10_N16
+D1L10 = CARRY((D1_counter[4] & !D1L8));
+
+
+--D1L11 is frequency_divider:ra_freq_divider|Add0~10 at LCCOMB_X2_Y10_N18
+D1L11 = (D1_counter[5] & (!D1L10)) # (!D1_counter[5] & ((D1L10) # (GND)));
+
+--D1L12 is frequency_divider:ra_freq_divider|Add0~11 at LCCOMB_X2_Y10_N18
+D1L12 = CARRY((!D1L10) # (!D1_counter[5]));
+
+
+--D1L13 is frequency_divider:ra_freq_divider|Add0~12 at LCCOMB_X2_Y10_N20
+D1L13 = (D1_counter[6] & (D1L12 $ (GND))) # (!D1_counter[6] & (!D1L12 & VCC));
+
+--D1L14 is frequency_divider:ra_freq_divider|Add0~13 at LCCOMB_X2_Y10_N20
+D1L14 = CARRY((D1_counter[6] & !D1L12));
+
+
+--D1L15 is frequency_divider:ra_freq_divider|Add0~14 at LCCOMB_X2_Y10_N22
+D1L15 = (D1_counter[7] & (!D1L14)) # (!D1_counter[7] & ((D1L14) # (GND)));
+
+--D1L16 is frequency_divider:ra_freq_divider|Add0~15 at LCCOMB_X2_Y10_N22
+D1L16 = CARRY((!D1L14) # (!D1_counter[7]));
+
+
+--D1L17 is frequency_divider:ra_freq_divider|Add0~16 at LCCOMB_X2_Y10_N24
+D1L17 = (D1_counter[8] & (D1L16 $ (GND))) # (!D1_counter[8] & (!D1L16 & VCC));
+
+--D1L18 is frequency_divider:ra_freq_divider|Add0~17 at LCCOMB_X2_Y10_N24
+D1L18 = CARRY((D1_counter[8] & !D1L16));
+
+
+--D1L19 is frequency_divider:ra_freq_divider|Add0~18 at LCCOMB_X2_Y10_N26
+D1L19 = (D1_counter[9] & (!D1L18)) # (!D1_counter[9] & ((D1L18) # (GND)));
+
+--D1L20 is frequency_divider:ra_freq_divider|Add0~19 at LCCOMB_X2_Y10_N26
+D1L20 = CARRY((!D1L18) # (!D1_counter[9]));
+
+
+--D1L21 is frequency_divider:ra_freq_divider|Add0~20 at LCCOMB_X2_Y10_N28
+D1L21 = (D1_counter[10] & (D1L20 $ (GND))) # (!D1_counter[10] & (!D1L20 & VCC));
+
+--D1L22 is frequency_divider:ra_freq_divider|Add0~21 at LCCOMB_X2_Y10_N28
+D1L22 = CARRY((D1_counter[10] & !D1L20));
+
+
+--D1L23 is frequency_divider:ra_freq_divider|Add0~22 at LCCOMB_X2_Y10_N30
+D1L23 = (D1_counter[11] & (!D1L22)) # (!D1_counter[11] & ((D1L22) # (GND)));
+
+--D1L24 is frequency_divider:ra_freq_divider|Add0~23 at LCCOMB_X2_Y10_N30
+D1L24 = CARRY((!D1L22) # (!D1_counter[11]));
+
+
+--D1L25 is frequency_divider:ra_freq_divider|Add0~24 at LCCOMB_X2_Y9_N0
+D1L25 = (D1_counter[12] & (D1L24 $ (GND))) # (!D1_counter[12] & (!D1L24 & VCC));
+
+--D1L26 is frequency_divider:ra_freq_divider|Add0~25 at LCCOMB_X2_Y9_N0
+D1L26 = CARRY((D1_counter[12] & !D1L24));
+
+
+--D1L27 is frequency_divider:ra_freq_divider|Add0~26 at LCCOMB_X2_Y9_N2
+D1L27 = (D1_counter[13] & (!D1L26)) # (!D1_counter[13] & ((D1L26) # (GND)));
+
+--D1L28 is frequency_divider:ra_freq_divider|Add0~27 at LCCOMB_X2_Y9_N2
+D1L28 = CARRY((!D1L26) # (!D1_counter[13]));
+
+
+--D1L29 is frequency_divider:ra_freq_divider|Add0~28 at LCCOMB_X2_Y9_N4
+D1L29 = (D1_counter[14] & (D1L28 $ (GND))) # (!D1_counter[14] & (!D1L28 & VCC));
+
+--D1L30 is frequency_divider:ra_freq_divider|Add0~29 at LCCOMB_X2_Y9_N4
+D1L30 = CARRY((D1_counter[14] & !D1L28));
+
+
+--D1L31 is frequency_divider:ra_freq_divider|Add0~30 at LCCOMB_X2_Y9_N6
+D1L31 = (D1_counter[15] & (!D1L30)) # (!D1_counter[15] & ((D1L30) # (GND)));
+
+--D1L32 is frequency_divider:ra_freq_divider|Add0~31 at LCCOMB_X2_Y9_N6
+D1L32 = CARRY((!D1L30) # (!D1_counter[15]));
+
+
+--D1L33 is frequency_divider:ra_freq_divider|Add0~32 at LCCOMB_X2_Y9_N8
+D1L33 = (D1_counter[16] & (D1L32 $ (GND))) # (!D1_counter[16] & (!D1L32 & VCC));
+
+--D1L34 is frequency_divider:ra_freq_divider|Add0~33 at LCCOMB_X2_Y9_N8
+D1L34 = CARRY((D1_counter[16] & !D1L32));
+
+
+--D1L35 is frequency_divider:ra_freq_divider|Add0~34 at LCCOMB_X2_Y9_N10
+D1L35 = (D1_counter[17] & (!D1L34)) # (!D1_counter[17] & ((D1L34) # (GND)));
+
+--D1L36 is frequency_divider:ra_freq_divider|Add0~35 at LCCOMB_X2_Y9_N10
+D1L36 = CARRY((!D1L34) # (!D1_counter[17]));
+
+
+--D1L37 is frequency_divider:ra_freq_divider|Add0~36 at LCCOMB_X2_Y9_N12
+D1L37 = (D1_counter[18] & (D1L36 $ (GND))) # (!D1_counter[18] & (!D1L36 & VCC));
+
+--D1L38 is frequency_divider:ra_freq_divider|Add0~37 at LCCOMB_X2_Y9_N12
+D1L38 = CARRY((D1_counter[18] & !D1L36));
+
+
+--D1L39 is frequency_divider:ra_freq_divider|Add0~38 at LCCOMB_X2_Y9_N14
+D1L39 = (D1_counter[19] & (!D1L38)) # (!D1_counter[19] & ((D1L38) # (GND)));
+
+--D1L40 is frequency_divider:ra_freq_divider|Add0~39 at LCCOMB_X2_Y9_N14
+D1L40 = CARRY((!D1L38) # (!D1_counter[19]));
+
+
+--D1L41 is frequency_divider:ra_freq_divider|Add0~40 at LCCOMB_X2_Y9_N16
+D1L41 = (D1_counter[20] & (D1L40 $ (GND))) # (!D1_counter[20] & (!D1L40 & VCC));
+
+--D1L42 is frequency_divider:ra_freq_divider|Add0~41 at LCCOMB_X2_Y9_N16
+D1L42 = CARRY((D1_counter[20] & !D1L40));
+
+
+--D1L43 is frequency_divider:ra_freq_divider|Add0~42 at LCCOMB_X2_Y9_N18
+D1L43 = (D1_counter[21] & (!D1L42)) # (!D1_counter[21] & ((D1L42) # (GND)));
+
+--D1L44 is frequency_divider:ra_freq_divider|Add0~43 at LCCOMB_X2_Y9_N18
+D1L44 = CARRY((!D1L42) # (!D1_counter[21]));
+
+
+--D1L45 is frequency_divider:ra_freq_divider|Add0~44 at LCCOMB_X2_Y9_N20
+D1L45 = (D1_counter[22] & (D1L44 $ (GND))) # (!D1_counter[22] & (!D1L44 & VCC));
+
+--D1L46 is frequency_divider:ra_freq_divider|Add0~45 at LCCOMB_X2_Y9_N20
+D1L46 = CARRY((D1_counter[22] & !D1L44));
+
+
+--D1L47 is frequency_divider:ra_freq_divider|Add0~46 at LCCOMB_X2_Y9_N22
+D1L47 = (D1_counter[23] & (!D1L46)) # (!D1_counter[23] & ((D1L46) # (GND)));
+
+--D1L48 is frequency_divider:ra_freq_divider|Add0~47 at LCCOMB_X2_Y9_N22
+D1L48 = CARRY((!D1L46) # (!D1_counter[23]));
+
+
+--D1L49 is frequency_divider:ra_freq_divider|Add0~48 at LCCOMB_X2_Y9_N24
+D1L49 = D1L48 $ (!D1_counter[24]);
+
+
+--C1_prev_state.off is alarm_controller:ra_alarm_controller|prev_state.off at FF_X19_Y18_N21
+--register power-up is low
+
+C1_prev_state.off = DFFEAS(C1L8, GLOBAL(D1L100), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--C1_prev_state.disarmed is alarm_controller:ra_alarm_controller|prev_state.disarmed at FF_X20_Y18_N5
+--register power-up is low
+
+C1_prev_state.disarmed = DFFEAS(C1L16, GLOBAL(D1L100), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--C1_prev_state.wait_in is alarm_controller:ra_alarm_controller|prev_state.wait_in at FF_X19_Y18_N11
+--register power-up is low
+
+C1_prev_state.wait_in = DFFEAS(C1L23, GLOBAL(D1L100), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--C1L14 is alarm_controller:ra_alarm_controller|process_2~0 at LCCOMB_X20_Y18_N2
+C1L14 = (A1L19) # ((C1_t[3] & ((C1_t[1]) # (C1_t[2]))));
+
+
+--C1L24 is alarm_controller:ra_alarm_controller|Selector5~0 at LCCOMB_X19_Y18_N12
+C1L24 = (C1_prev_state.off) # ((C1_prev_state.wait_in & ((C1_t[4]) # (C1L14))));
+
+
+--E1_prev_state.unlocked is password_detector:ra_pwd_detector|prev_state.unlocked at FF_X17_Y18_N9
+--register power-up is low
+
+E1_prev_state.unlocked = DFFEAS(E1L9, GLOBAL(D1L100), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--C1_prev_state.hold_arm is alarm_controller:ra_alarm_controller|prev_state.hold_arm at FF_X20_Y18_N1
+--register power-up is low
+
+C1_prev_state.hold_arm = DFFEAS(C1L17, GLOBAL(D1L100), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--C1_prev_state.wait_out is alarm_controller:ra_alarm_controller|prev_state.wait_out at FF_X19_Y18_N27
+--register power-up is low
+
+C1_prev_state.wait_out = DFFEAS(C1L19, GLOBAL(D1L100), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--C1_prev_state.armed is alarm_controller:ra_alarm_controller|prev_state.armed at FF_X19_Y18_N1
+--register power-up is low
+
+C1_prev_state.armed = DFFEAS(C1L3, GLOBAL(D1L100), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--C1L25 is alarm_controller:ra_alarm_controller|Selector5~1 at LCCOMB_X19_Y18_N22
+C1L25 = (C1_prev_state.hold_arm) # ((!E1_prev_state.unlocked & ((C1_prev_state.wait_out) # (C1_prev_state.armed))));
+
+
+--C1L26 is alarm_controller:ra_alarm_controller|Selector5~2 at LCCOMB_X19_Y18_N24
+C1L26 = (A1L19 & ((C1L25) # ((!E1_prev_state.unlocked & C1L24)))) # (!A1L19 & (!E1_prev_state.unlocked & ((C1L24))));
+
+
+--D1_state is frequency_divider:ra_freq_divider|state at FF_X1_Y9_N29
+--register power-up is low
+
+D1_state = DFFEAS(D1L101, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--C1_prev_state.hold_disarm is alarm_controller:ra_alarm_controller|prev_state.hold_disarm at FF_X20_Y18_N7
+--register power-up is low
+
+C1_prev_state.hold_disarm = DFFEAS(C1L1, GLOBAL(D1L100), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--C1L16 is alarm_controller:ra_alarm_controller|Selector0~0 at LCCOMB_X20_Y18_N4
+C1L16 = (C1_prev_state.disarmed & (((E1_prev_state.unlocked)) # (!C1_prev_state.hold_disarm))) # (!C1_prev_state.disarmed & (((!A1L19 & E1_prev_state.unlocked))));
+
+
+--C1L22 is alarm_controller:ra_alarm_controller|Selector4~0 at LCCOMB_X19_Y18_N18
+C1L22 = (C1_prev_state.wait_in & (!C1_t[4] & (!E1_prev_state.unlocked & !C1L14)));
+
+
+--C1L15 is alarm_controller:ra_alarm_controller|process_2~1 at LCCOMB_X19_Y18_N28
+C1L15 = (!A1L19 & !E1_prev_state.unlocked);
+
+
+--C1L23 is alarm_controller:ra_alarm_controller|Selector4~1 at LCCOMB_X19_Y18_N10
+C1L23 = (C1L22) # ((A1L21 & (C1_prev_state.armed & C1L15)));
+
+
+--C1L20 is alarm_controller:ra_alarm_controller|Selector3~0 at LCCOMB_X19_Y18_N30
+C1L20 = (!A1L19 & (C1_prev_state.armed & (!A1L21 & !E1_prev_state.unlocked)));
+
+
+--C1L18 is alarm_controller:ra_alarm_controller|Selector2~0 at LCCOMB_X20_Y18_N8
+C1L18 = ((!C1_t[3] & !C1_t[2])) # (!C1_t[4]);
+
+
+--C1L21 is alarm_controller:ra_alarm_controller|Selector3~1 at LCCOMB_X19_Y18_N4
+C1L21 = (C1L20) # ((C1_prev_state.wait_out & (!C1L18 & C1L15)));
+
+
+--C1L47 is alarm_controller:ra_alarm_controller|WideOr0~0 at LCCOMB_X19_Y18_N14
+C1L47 = (C1_prev_state.off & ((C1_prev_state.armed $ (C1L21)) # (!C1L26))) # (!C1_prev_state.off & ((C1L26) # (C1_prev_state.armed $ (C1L21))));
+
+
+--C1L11 is alarm_controller:ra_alarm_controller|process_0~6 at LCCOMB_X19_Y18_N8
+C1L11 = (!C1_prev_state.armed) # (!A1L21);
+
+
+--C1L12 is alarm_controller:ra_alarm_controller|process_0~7 at LCCOMB_X19_Y18_N6
+C1L12 = C1_prev_state.wait_in $ (((C1L22) # ((!C1L11 & C1L15))));
+
+
+--C1L13 is alarm_controller:ra_alarm_controller|process_0~8 at LCCOMB_X20_Y18_N26
+C1L13 = (C1_prev_state.wait_out & (((!C1L18 & !C1_prev_state.hold_arm)) # (!C1L15))) # (!C1_prev_state.wait_out & (((C1_prev_state.hold_arm & C1L15))));
+
+
+--C1L17 is alarm_controller:ra_alarm_controller|Selector1~0 at LCCOMB_X20_Y18_N0
+C1L17 = (!A1L19 & (E1_prev_state.unlocked & ((C1_prev_state.hold_arm) # (!C1_prev_state.disarmed))));
+
+
+--C1L48 is alarm_controller:ra_alarm_controller|WideOr0~1 at LCCOMB_X20_Y18_N28
+C1L48 = (C1_prev_state.hold_arm & ((C1_prev_state.disarmed $ (C1L16)) # (!C1L17))) # (!C1_prev_state.hold_arm & ((C1L17) # (C1_prev_state.disarmed $ (C1L16))));
+
+
+--C1L1 is alarm_controller:ra_alarm_controller|next_state.hold_disarm~0 at LCCOMB_X20_Y18_N6
+C1L1 = (C1_prev_state.disarmed & (!C1_prev_state.hold_arm & E1_prev_state.unlocked));
+
+
+--C1L49 is alarm_controller:ra_alarm_controller|WideOr0~2 at LCCOMB_X20_Y18_N30
+C1L49 = (C1L13) # ((C1L48) # (C1_prev_state.hold_disarm $ (C1L1)));
+
+
+--C1_WideOr0 is alarm_controller:ra_alarm_controller|WideOr0 at LCCOMB_X20_Y18_N14
+C1_WideOr0 = (C1L12) # ((C1L49) # (C1L47));
+
+
+--C1L43 is alarm_controller:ra_alarm_controller|t[4]~15 at LCCOMB_X20_Y18_N12
+C1L43 = (!C1_t[3] & (C1_t[4] & (!C1_t[1] & C1_t[2])));
+
+
+--C1L44 is alarm_controller:ra_alarm_controller|t[4]~16 at LCCOMB_X19_Y18_N16
+C1L44 = (!C1_t[0] & C1L43);
+
+
+--C1L45 is alarm_controller:ra_alarm_controller|t[4]~17 at LCCOMB_X20_Y18_N10
+C1L45 = ((C1L12) # ((C1L49) # (C1L47))) # (!C1L44);
+
+
+--E1_t[1] is password_detector:ra_pwd_detector|t[1] at FF_X16_Y18_N25
+--register power-up is low
+
+E1_t[1] = DFFEAS(E1L40, GLOBAL(D1L100), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--E1_t[0] is password_detector:ra_pwd_detector|t[0] at FF_X16_Y18_N31
+--register power-up is low
+
+E1_t[0] = DFFEAS(E1L34, GLOBAL(D1L100), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--E1L30 is password_detector:ra_pwd_detector|Selector6~0 at LCCOMB_X17_Y18_N26
+E1L30 = (E1_prev_state.unlocked & (!E1_t[0] & !E1_t[1]));
+
+
+--E1_prev_state.wait2 is password_detector:ra_pwd_detector|prev_state.wait2 at FF_X17_Y18_N5
+--register power-up is low
+
+E1_prev_state.wait2 = DFFEAS(E1L13, GLOBAL(D1L100), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--E1L14 is password_detector:ra_pwd_detector|process_2~0 at LCCOMB_X17_Y18_N10
+E1L14 = (!A1L9 & (!A1L15 & ((!E1_t[0]) # (!E1_t[1]))));
+
+
+--E1L15 is password_detector:ra_pwd_detector|process_2~1 at LCCOMB_X17_Y18_N28
+E1L15 = (A1L11 & (!A1L13 & E1L14));
+
+
+--E1L31 is password_detector:ra_pwd_detector|Selector6~1 at LCCOMB_X17_Y18_N6
+E1L31 = (E1L30) # ((E1_prev_state.wait2 & E1L15));
+
+
+--C1L19 is alarm_controller:ra_alarm_controller|Selector2~1 at LCCOMB_X19_Y18_N26
+C1L19 = (C1L15 & ((C1_prev_state.hold_arm) # ((C1_prev_state.wait_out & C1L18))));
+
+
+--D1_counter[24] is frequency_divider:ra_freq_divider|counter[24] at FF_X1_Y9_N27
+--register power-up is low
+
+D1_counter[24] = DFFEAS(D1L77, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[22] is frequency_divider:ra_freq_divider|counter[22] at FF_X2_Y9_N27
+--register power-up is low
+
+D1_counter[22] = DFFEAS(D1L78, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[0] is frequency_divider:ra_freq_divider|counter[0] at FF_X2_Y10_N1
+--register power-up is low
+
+D1_counter[0] = DFFEAS(D1L79, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[23] is frequency_divider:ra_freq_divider|counter[23] at FF_X2_Y9_N23
+--register power-up is low
+
+D1_counter[23] = DFFEAS(D1L47, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1L90 is frequency_divider:ra_freq_divider|Equal0~0 at LCCOMB_X1_Y9_N22
+D1L90 = (D1_counter[24] & (!D1_counter[23] & (D1_counter[22] & !D1_counter[0])));
+
+
+--D1_counter[21] is frequency_divider:ra_freq_divider|counter[21] at FF_X2_Y9_N29
+--register power-up is low
+
+D1_counter[21] = DFFEAS(D1L80, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[20] is frequency_divider:ra_freq_divider|counter[20] at FF_X2_Y9_N31
+--register power-up is low
+
+D1_counter[20] = DFFEAS(D1L81, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[19] is frequency_divider:ra_freq_divider|counter[19] at FF_X1_Y9_N7
+--register power-up is low
+
+D1_counter[19] = DFFEAS(D1L82, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[18] is frequency_divider:ra_freq_divider|counter[18] at FF_X1_Y9_N9
+--register power-up is low
+
+D1_counter[18] = DFFEAS(D1L83, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1L91 is frequency_divider:ra_freq_divider|Equal0~1 at LCCOMB_X1_Y9_N14
+D1L91 = (D1_counter[19] & (D1_counter[18] & (D1_counter[20] & D1_counter[21])));
+
+
+--D1_counter[16] is frequency_divider:ra_freq_divider|counter[16] at FF_X1_Y9_N11
+--register power-up is low
+
+D1_counter[16] = DFFEAS(D1L84, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[14] is frequency_divider:ra_freq_divider|counter[14] at FF_X1_Y9_N5
+--register power-up is low
+
+D1_counter[14] = DFFEAS(D1L85, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[17] is frequency_divider:ra_freq_divider|counter[17] at FF_X2_Y9_N11
+--register power-up is low
+
+D1_counter[17] = DFFEAS(D1L35, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[15] is frequency_divider:ra_freq_divider|counter[15] at FF_X2_Y9_N7
+--register power-up is low
+
+D1_counter[15] = DFFEAS(D1L31, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1L92 is frequency_divider:ra_freq_divider|Equal0~2 at LCCOMB_X1_Y9_N18
+D1L92 = (!D1_counter[15] & (D1_counter[14] & (!D1_counter[17] & D1_counter[16])));
+
+
+--D1_counter[13] is frequency_divider:ra_freq_divider|counter[13] at FF_X1_Y9_N31
+--register power-up is low
+
+D1_counter[13] = DFFEAS(D1L86, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[12] is frequency_divider:ra_freq_divider|counter[12] at FF_X1_Y9_N3
+--register power-up is low
+
+D1_counter[12] = DFFEAS(D1L87, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[11] is frequency_divider:ra_freq_divider|counter[11] at FF_X1_Y9_N1
+--register power-up is low
+
+D1_counter[11] = DFFEAS(D1L88, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[10] is frequency_divider:ra_freq_divider|counter[10] at FF_X2_Y10_N29
+--register power-up is low
+
+D1_counter[10] = DFFEAS(D1L21, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1L93 is frequency_divider:ra_freq_divider|Equal0~3 at LCCOMB_X1_Y9_N24
+D1L93 = (D1_counter[13] & (D1_counter[12] & (D1_counter[11] & !D1_counter[10])));
+
+
+--D1L94 is frequency_divider:ra_freq_divider|Equal0~4 at LCCOMB_X1_Y9_N12
+D1L94 = (D1L90 & (D1L93 & (D1L91 & D1L92)));
+
+
+--D1_counter[6] is frequency_divider:ra_freq_divider|counter[6] at FF_X2_Y10_N3
+--register power-up is low
+
+D1_counter[6] = DFFEAS(D1L89, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[9] is frequency_divider:ra_freq_divider|counter[9] at FF_X2_Y10_N27
+--register power-up is low
+
+D1_counter[9] = DFFEAS(D1L19, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[8] is frequency_divider:ra_freq_divider|counter[8] at FF_X2_Y10_N25
+--register power-up is low
+
+D1_counter[8] = DFFEAS(D1L17, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[7] is frequency_divider:ra_freq_divider|counter[7] at FF_X2_Y10_N23
+--register power-up is low
+
+D1_counter[7] = DFFEAS(D1L15, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1L95 is frequency_divider:ra_freq_divider|Equal0~5 at LCCOMB_X2_Y10_N4
+D1L95 = (!D1_counter[9] & (D1_counter[6] & (!D1_counter[7] & !D1_counter[8])));
+
+
+--D1_counter[5] is frequency_divider:ra_freq_divider|counter[5] at FF_X2_Y10_N19
+--register power-up is low
+
+D1_counter[5] = DFFEAS(D1L11, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[4] is frequency_divider:ra_freq_divider|counter[4] at FF_X2_Y10_N17
+--register power-up is low
+
+D1_counter[4] = DFFEAS(D1L9, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[3] is frequency_divider:ra_freq_divider|counter[3] at FF_X2_Y10_N15
+--register power-up is low
+
+D1_counter[3] = DFFEAS(D1L7, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1_counter[2] is frequency_divider:ra_freq_divider|counter[2] at FF_X2_Y10_N13
+--register power-up is low
+
+D1_counter[2] = DFFEAS(D1L5, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1L96 is frequency_divider:ra_freq_divider|Equal0~6 at LCCOMB_X2_Y10_N6
+D1L96 = (!D1_counter[2] & (!D1_counter[5] & (!D1_counter[3] & !D1_counter[4])));
+
+
+--D1_counter[1] is frequency_divider:ra_freq_divider|counter[1] at FF_X2_Y10_N11
+--register power-up is low
+
+D1_counter[1] = DFFEAS(D1L3, GLOBAL(A1L6), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--D1L97 is frequency_divider:ra_freq_divider|Equal0~7 at LCCOMB_X1_Y9_N16
+D1L97 = (!D1_counter[1] & (D1L96 & (D1L95 & D1L94)));
+
+
+--D1L99 is frequency_divider:ra_freq_divider|state~0 at LCCOMB_X1_Y9_N20
+D1L99 = D1_state $ (D1L97);
+
+
+--E1_prev_state.ready is password_detector:ra_pwd_detector|prev_state.ready at FF_X16_Y18_N29
+--register power-up is low
+
+E1_prev_state.ready = DFFEAS( , GLOBAL(D1L100), A1L17,  ,  , E1L20,  ,  , VCC);
+
+
+--E1L1 is password_detector:ra_pwd_detector|Equal1~0 at LCCOMB_X17_Y18_N20
+E1L1 = (!A1L13 & (!A1L15 & (!A1L9 & !A1L11)));
+
+
+--E1_prev_state.idle is password_detector:ra_pwd_detector|prev_state.idle at FF_X16_Y18_N23
+--register power-up is low
+
+E1_prev_state.idle = DFFEAS(E1L19, GLOBAL(D1L100), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--E1L21 is password_detector:ra_pwd_detector|Selector2~2 at LCCOMB_X17_Y18_N2
+E1L21 = (!A1L13 & (A1L15 & (!A1L9 & !A1L11)));
+
+
+--E1L20 is password_detector:ra_pwd_detector|Selector1~0 at LCCOMB_X16_Y18_N16
+E1L20 = (E1L21 & (((E1L1 & !E1_prev_state.idle)))) # (!E1L21 & ((E1_prev_state.ready) # ((E1L1 & !E1_prev_state.idle))));
+
+
+--E1L2 is password_detector:ra_pwd_detector|LessThan0~0 at LCCOMB_X16_Y18_N28
+E1L2 = (!E1_t[1]) # (!E1_t[0]);
+
+
+--E1_prev_state.key2 is password_detector:ra_pwd_detector|prev_state.key2 at FF_X17_Y18_N13
+--register power-up is low
+
+E1_prev_state.key2 = DFFEAS(E1L6, GLOBAL(D1L100), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--E1L28 is password_detector:ra_pwd_detector|Selector5~0 at LCCOMB_X17_Y18_N14
+E1L28 = (E1L1 & (E1L2 & ((E1_prev_state.key2) # (E1_prev_state.wait2))));
+
+
+--E1L29 is password_detector:ra_pwd_detector|Selector5~1 at LCCOMB_X17_Y18_N24
+E1L29 = (E1L28) # ((E1_prev_state.wait2 & (E1L2 & !E1L15)));
+
+
+--E1L36 is password_detector:ra_pwd_detector|t[1]~2 at LCCOMB_X16_Y18_N18
+E1L36 = (E1_prev_state.wait2 & (E1L29 & (E1_prev_state.ready $ (!E1L20)))) # (!E1_prev_state.wait2 & (!E1L29 & (E1_prev_state.ready $ (!E1L20))));
+
+
+--E1_prev_state.wait1 is password_detector:ra_pwd_detector|prev_state.wait1 at FF_X16_Y18_N9
+--register power-up is low
+
+E1_prev_state.wait1 = DFFEAS(E1L11, GLOBAL(D1L100), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--E1_prev_state.key1 is password_detector:ra_pwd_detector|prev_state.key1 at FF_X16_Y18_N7
+--register power-up is low
+
+E1_prev_state.key1 = DFFEAS(E1L22, GLOBAL(D1L100), A1L17,  ,  ,  ,  ,  ,  );
+
+
+--E1L22 is password_detector:ra_pwd_detector|Selector2~3 at LCCOMB_X16_Y18_N6
+E1L22 = (E1L21 & ((E1_prev_state.ready) # ((E1L23 & E1_prev_state.key1)))) # (!E1L21 & (E1L23 & (E1_prev_state.key1)));
+
+
+--E1L24 is password_detector:ra_pwd_detector|Selector3~0 at LCCOMB_X16_Y18_N12
+E1L24 = (E1L1 & (E1L2 & ((E1_prev_state.key1) # (E1_prev_state.wait1))));
+
+
+--E1L16 is password_detector:ra_pwd_detector|process_2~2 at LCCOMB_X17_Y18_N22
+E1L16 = (!A1L11 & (A1L13 & E1L14));
+
+
+--E1L25 is password_detector:ra_pwd_detector|Selector3~1 at LCCOMB_X16_Y18_N10
+E1L25 = (E1L24) # ((E1L2 & (E1_prev_state.wait1 & !E1L16)));
+
+
+--E1L37 is password_detector:ra_pwd_detector|t[1]~3 at LCCOMB_X16_Y18_N4
+E1L37 = (E1L22 & (E1_prev_state.key1 & (E1_prev_state.wait1 $ (!E1L25)))) # (!E1L22 & (!E1_prev_state.key1 & (E1_prev_state.wait1 $ (!E1L25))));
+
+
+--E1L26 is password_detector:ra_pwd_detector|Selector4~0 at LCCOMB_X17_Y18_N16
+E1L26 = (E1_prev_state.wait1) # ((E1_prev_state.key2 & (E1_t[1] & E1_t[0])));
+
+
+--E1L27 is password_detector:ra_pwd_detector|Selector4~1 at LCCOMB_X17_Y18_N30
+E1L27 = (E1_prev_state.key2 & ((E1L23) # ((E1L26 & E1L16)))) # (!E1_prev_state.key2 & (E1L26 & (E1L16)));
+
+
+--E1L38 is password_detector:ra_pwd_detector|t[1]~4 at LCCOMB_X16_Y18_N2
+E1L38 = (E1L37 & (E1L36 & (E1L27 $ (!E1_prev_state.key2))));
+
+
+--E1L17 is password_detector:ra_pwd_detector|Selector0~0 at LCCOMB_X16_Y18_N0
+E1L17 = (E1_prev_state.wait1) # ((E1_prev_state.key2) # ((E1_prev_state.key1) # (E1_prev_state.wait2)));
+
+
+--E1L18 is password_detector:ra_pwd_detector|Selector0~1 at LCCOMB_X16_Y18_N26
+E1L18 = (E1L1 & (((E1L17 & !E1L2)))) # (!E1L1 & (((E1L17 & !E1L2)) # (!E1_prev_state.idle)));
+
+
+--E1L19 is password_detector:ra_pwd_detector|Selector0~2 at LCCOMB_X16_Y18_N22
+E1L19 = (!E1L18 & (((!E1_t[0] & !E1_t[1])) # (!E1_prev_state.unlocked)));
+
+
+--E1L39 is password_detector:ra_pwd_detector|t[1]~5 at LCCOMB_X16_Y18_N20
+E1L39 = (E1_prev_state.unlocked & (E1L31 & (E1_prev_state.idle $ (!E1L19)))) # (!E1_prev_state.unlocked & (!E1L31 & (E1_prev_state.idle $ (!E1L19))));
+
+
+--E1L40 is password_detector:ra_pwd_detector|t[1]~6 at LCCOMB_X16_Y18_N24
+E1L40 = (E1L38 & (E1L39 & ((E1_t[0]) # (E1_t[1]))));
+
+
+--D1L77 is frequency_divider:ra_freq_divider|counter~0 at LCCOMB_X1_Y9_N26
+D1L77 = (!D1L97 & D1L49);
+
+
+--D1L78 is frequency_divider:ra_freq_divider|counter~1 at LCCOMB_X2_Y9_N26
+D1L78 = (!D1L97 & D1L45);
+
+
+--D1L79 is frequency_divider:ra_freq_divider|counter~2 at LCCOMB_X2_Y10_N0
+D1L79 = (D1L1 & !D1L97);
+
+
+--D1L80 is frequency_divider:ra_freq_divider|counter~3 at LCCOMB_X2_Y9_N28
+D1L80 = (!D1L97 & D1L43);
+
+
+--D1L81 is frequency_divider:ra_freq_divider|counter~4 at LCCOMB_X2_Y9_N30
+D1L81 = (!D1L97 & D1L41);
+
+
+--D1L82 is frequency_divider:ra_freq_divider|counter~5 at LCCOMB_X1_Y9_N6
+D1L82 = (D1L39 & !D1L97);
+
+
+--D1L83 is frequency_divider:ra_freq_divider|counter~6 at LCCOMB_X1_Y9_N8
+D1L83 = (D1L37 & !D1L97);
+
+
+--D1L84 is frequency_divider:ra_freq_divider|counter~7 at LCCOMB_X1_Y9_N10
+D1L84 = (D1L33 & !D1L97);
+
+
+--D1L85 is frequency_divider:ra_freq_divider|counter~8 at LCCOMB_X1_Y9_N4
+D1L85 = (!D1L97 & D1L29);
+
+
+--D1L86 is frequency_divider:ra_freq_divider|counter~9 at LCCOMB_X1_Y9_N30
+D1L86 = (D1L27 & !D1L97);
+
+
+--D1L87 is frequency_divider:ra_freq_divider|counter~10 at LCCOMB_X1_Y9_N2
+D1L87 = (D1L25 & !D1L97);
+
+
+--D1L88 is frequency_divider:ra_freq_divider|counter~11 at LCCOMB_X1_Y9_N0
+D1L88 = (!D1L97 & D1L23);
+
+
+--D1L89 is frequency_divider:ra_freq_divider|counter~12 at LCCOMB_X2_Y10_N2
+D1L89 = (!D1L97 & D1L13);
+
+
+--E1L23 is password_detector:ra_pwd_detector|Selector2~4 at LCCOMB_X16_Y18_N14
+E1L23 = (!E1L1 & ((!E1_t[1]) # (!E1_t[0])));
+
+
+--E1L34 is password_detector:ra_pwd_detector|t[0]~7 at LCCOMB_X16_Y18_N30
+E1L34 = (E1L39 & (E1L38 & ((E1_t[1]) # (!E1_t[0]))));
+
+
+--A1L23 is siren~output at IOOBUF_X0_Y20_N9
+A1L23 = OUTPUT_BUFFER.O(.I(C1_prev_state.off), , , , , , , , , , , , , , , , , );
+
+
+--siren is siren at PIN_J1
+siren = OUTPUT();
+
+
+--A1L2 is alarm_on~output at IOOBUF_X0_Y27_N16
+A1L2 = OUTPUT_BUFFER.O(.I(C1_prev_state.disarmed), , , , , , , , , , , , , , , , , );
+
+
+--alarm_on is alarm_on at PIN_B1
+alarm_on = OUTPUT();
+
+
+--A1L19 is sensorA~input at IOIBUF_X0_Y27_N1
+A1L19 = INPUT_BUFFER(.I(sensorA), );
+
+
+--sensorA is sensorA at PIN_H5
+sensorA = INPUT();
+
+
+--A1L17 is rst~input at IOIBUF_X0_Y21_N8
+A1L17 = INPUT_BUFFER(.I(rst), );
+
+
+--rst is rst at PIN_H2
+rst = INPUT();
+
+
+--A1L21 is sensorB~input at IOIBUF_X0_Y24_N1
+A1L21 = INPUT_BUFFER(.I(sensorB), );
+
+
+--sensorB is sensorB at PIN_J6
+sensorB = INPUT();
+
+
+--A1L9 is key[0]~input at IOIBUF_X0_Y25_N15
+A1L9 = INPUT_BUFFER(.I(key[0]), );
+
+
+--key[0] is key[0] at PIN_H7
+key[0] = INPUT();
+
+
+--A1L15 is key[3]~input at IOIBUF_X0_Y25_N1
+A1L15 = INPUT_BUFFER(.I(key[3]), );
+
+
+--key[3] is key[3] at PIN_D2
+key[3] = INPUT();
+
+
+--A1L11 is key[1]~input at IOIBUF_X0_Y26_N8
+A1L11 = INPUT_BUFFER(.I(key[1]), );
+
+
+--key[1] is key[1] at PIN_E3
+key[1] = INPUT();
+
+
+--A1L13 is key[2]~input at IOIBUF_X0_Y26_N1
+A1L13 = INPUT_BUFFER(.I(key[2]), );
+
+
+--key[2] is key[2] at PIN_E4
+key[2] = INPUT();
+
+
+--A1L5 is clk~input at IOIBUF_X41_Y15_N1
+A1L5 = INPUT_BUFFER(.I(clk), );
+
+
+--clk is clk at PIN_G21
+clk = INPUT();
+
+
+
+
+
+
+
+
+
+
+
+
+--D1L100 is frequency_divider:ra_freq_divider|state~clkctrl at CLKCTRL_G1
+D1L100 = cycloneiii_clkctrl(.INCLK[0] = D1_state) WITH (clock_type = "Global Clock", ena_register_mode = "none");
+
+
+--A1L6 is clk~inputclkctrl at CLKCTRL_G9
+A1L6 = cycloneiii_clkctrl(.INCLK[0] = A1L5) WITH (clock_type = "Global Clock", ena_register_mode = "none");
+
+
+--C1L8 is alarm_controller:ra_alarm_controller|prev_state.off~feeder at LCCOMB_X19_Y18_N20
+C1L8 = C1L26;
+
+
+--C1L3 is alarm_controller:ra_alarm_controller|prev_state.armed~feeder at LCCOMB_X19_Y18_N0
+C1L3 = C1L21;
+
+
+--E1L9 is password_detector:ra_pwd_detector|prev_state.unlocked~feeder at LCCOMB_X17_Y18_N8
+E1L9 = E1L31;
+
+
+--D1L101 is frequency_divider:ra_freq_divider|state~feeder at LCCOMB_X1_Y9_N28
+D1L101 = D1L99;
+
+
+--E1L13 is password_detector:ra_pwd_detector|prev_state.wait2~feeder at LCCOMB_X17_Y18_N4
+E1L13 = E1L29;
+
+
+--E1L11 is password_detector:ra_pwd_detector|prev_state.wait1~feeder at LCCOMB_X16_Y18_N8
+E1L11 = E1L25;
+
+
+--E1L6 is password_detector:ra_pwd_detector|prev_state.key2~feeder at LCCOMB_X17_Y18_N12
+E1L6 = E1L27;
+
+

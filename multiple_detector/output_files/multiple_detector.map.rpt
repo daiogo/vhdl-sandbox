@@ -1,5 +1,5 @@
 Analysis & Synthesis report for multiple_detector
-Fri Oct 09 16:44:09 2015
+Wed Jul 06 01:09:34 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -17,7 +17,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   9. Parameter Settings for User Entity Instance: Top-level Entity: |multiple_detector
  10. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
  11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+ 12. Analysis & Synthesis Equations
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +44,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Oct 09 16:44:08 2015           ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 06 01:09:34 2016           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; multiple_detector                               ;
 ; Top-level Entity Name              ; multiple_detector                               ;
 ; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 81                                              ;
-;     Total combinational functions  ; 81                                              ;
+; Total logic elements               ; 33                                              ;
+;     Total combinational functions  ; 33                                              ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 18                                              ;
+; Total pins                         ; 12                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -158,22 +159,22 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                    ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------+---------+
-; multiple_detector.vhd            ; yes             ; User VHDL File               ; D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/multiple_detector.vhd      ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_divide.tdf                            ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/abs_divider.inc                           ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sign_div_unsign.inc                       ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                            ;         ;
-; db/lpm_divide_h8m.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/db/lpm_divide_h8m.tdf      ;         ;
-; db/sign_div_unsign_fkh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/db/sign_div_unsign_fkh.tdf ;         ;
-; db/alt_u_div_93f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/db/alt_u_div_93f.tdf       ;         ;
-; db/add_sub_unc.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/db/add_sub_unc.tdf         ;         ;
-; db/add_sub_vnc.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/Dropbox/2-2015/Lógica Reconfigurável/prova2/multiple_detector/db/add_sub_vnc.tdf         ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                 ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                             ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
+; multiple_detector.vhd            ; yes             ; User VHDL File               ; E:/Dropbox/1-2016/Lógica Programável e VHDL/vhdl-playground/multiple_detector/multiple_detector.vhd      ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_divide.tdf                                         ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/abs_divider.inc                                        ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sign_div_unsign.inc                                    ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                                         ;         ;
+; db/lpm_divide_b8m.tdf            ; yes             ; Auto-Generated Megafunction  ; E:/Dropbox/1-2016/Lógica Programável e VHDL/vhdl-playground/multiple_detector/db/lpm_divide_b8m.tdf      ;         ;
+; db/sign_div_unsign_9kh.tdf       ; yes             ; Auto-Generated Megafunction  ; E:/Dropbox/1-2016/Lógica Programável e VHDL/vhdl-playground/multiple_detector/db/sign_div_unsign_9kh.tdf ;         ;
+; db/alt_u_div_t2f.tdf             ; yes             ; Auto-Generated Megafunction  ; E:/Dropbox/1-2016/Lógica Programável e VHDL/vhdl-playground/multiple_detector/db/alt_u_div_t2f.tdf       ;         ;
+; db/add_sub_unc.tdf               ; yes             ; Auto-Generated Megafunction  ; E:/Dropbox/1-2016/Lógica Programável e VHDL/vhdl-playground/multiple_detector/db/add_sub_unc.tdf         ;         ;
+; db/add_sub_vnc.tdf               ; yes             ; Auto-Generated Megafunction  ; E:/Dropbox/1-2016/Lógica Programável e VHDL/vhdl-playground/multiple_detector/db/add_sub_vnc.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------+
@@ -181,28 +182,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Estimated Total logic elements              ; 81         ;
+; Estimated Total logic elements              ; 33         ;
 ;                                             ;            ;
-; Total combinational functions               ; 81         ;
+; Total combinational functions               ; 33         ;
 ; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 20         ;
-;     -- 3 input functions                    ; 54         ;
-;     -- <=2 input functions                  ; 7          ;
+;     -- 4 input functions                    ; 9          ;
+;     -- 3 input functions                    ; 21         ;
+;     -- <=2 input functions                  ; 3          ;
 ;                                             ;            ;
 ; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 48         ;
-;     -- arithmetic mode                      ; 33         ;
+;     -- normal mode                          ; 21         ;
+;     -- arithmetic mode                      ; 12         ;
 ;                                             ;            ;
 ; Total registers                             ; 0          ;
 ;     -- Dedicated logic registers            ; 0          ;
 ;     -- I/O registers                        ; 0          ;
 ;                                             ;            ;
-; I/O pins                                    ; 18         ;
+; I/O pins                                    ; 12         ;
 ; Embedded Multiplier 9-bit elements          ; 0          ;
-; Maximum fan-out node                        ; b[7]~input ;
-; Maximum fan-out                             ; 11         ;
-; Total fan-out                               ; 264        ;
-; Average fan-out                             ; 2.26       ;
+; Maximum fan-out node                        ; b[4]~input ;
+; Maximum fan-out                             ; 8          ;
+; Total fan-out                               ; 113        ;
+; Average fan-out                             ; 1.98       ;
 +---------------------------------------------+------------+
 
 
@@ -211,11 +212,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                ; Library Name ;
 +----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------+--------------+
-; |multiple_detector                     ; 81 (9)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |multiple_detector                                                                                                 ; work         ;
-;    |lpm_divide:Mod0|                   ; 72 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiple_detector|lpm_divide:Mod0                                                                                 ; work         ;
-;       |lpm_divide_h8m:auto_generated|  ; 72 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiple_detector|lpm_divide:Mod0|lpm_divide_h8m:auto_generated                                                   ; work         ;
-;          |sign_div_unsign_fkh:divider| ; 72 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiple_detector|lpm_divide:Mod0|lpm_divide_h8m:auto_generated|sign_div_unsign_fkh:divider                       ; work         ;
-;             |alt_u_div_93f:divider|    ; 72 (72)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiple_detector|lpm_divide:Mod0|lpm_divide_h8m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_93f:divider ; work         ;
+; |multiple_detector                     ; 33 (6)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |multiple_detector                                                                                                 ; work         ;
+;    |lpm_divide:Mod0|                   ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiple_detector|lpm_divide:Mod0                                                                                 ; work         ;
+;       |lpm_divide_b8m:auto_generated|  ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiple_detector|lpm_divide:Mod0|lpm_divide_b8m:auto_generated                                                   ; work         ;
+;          |sign_div_unsign_9kh:divider| ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiple_detector|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider                       ; work         ;
+;             |alt_u_div_t2f:divider|    ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiple_detector|lpm_divide:Mod0|lpm_divide_b8m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_t2f:divider ; work         ;
 +----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -240,8 +241,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+----------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                     ;
 +----------------+-------+----------------------------------------------------------+
-; N              ; 8     ; Signed Integer                                           ;
-; M              ; 8     ; Signed Integer                                           ;
+; N              ; 5     ; Signed Integer                                           ;
+; M              ; 5     ; Signed Integer                                           ;
 +----------------+-------+----------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -251,14 +252,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+----------------+------------------------+
 ; Parameter Name         ; Value          ; Type                   ;
 +------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 8              ; Untyped                ;
-; LPM_WIDTHD             ; 8              ; Untyped                ;
+; LPM_WIDTHN             ; 5              ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
 ; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
 ; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
 ; LPM_PIPELINE           ; 0              ; Untyped                ;
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_h8m ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_b8m ; Untyped                ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
@@ -274,8 +275,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
+
+
++--------------------------------+
+; Analysis & Synthesis Equations ;
++--------------------------------+
+The equations can be found in E:/Dropbox/1-2016/Lógica Programável e VHDL/vhdl-playground/multiple_detector/output_files/multiple_detector.map.eqn.
 
 
 +-------------------------------+
@@ -284,7 +291,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Oct 09 16:44:04 2015
+    Info: Processing started: Wed Jul 06 01:09:29 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off multiple_detector -c multiple_detector
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file multiple_detector.vhd
@@ -295,16 +302,16 @@ Info (278001): Inferred 1 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0"
 Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0"
 Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTHN" = "8"
-    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_WIDTHN" = "5"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_h8m.tdf
-    Info (12023): Found entity 1: lpm_divide_h8m
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_fkh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_fkh
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_93f.tdf
-    Info (12023): Found entity 1: alt_u_div_93f
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_b8m.tdf
+    Info (12023): Found entity 1: lpm_divide_b8m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9kh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_t2f.tdf
+    Info (12023): Found entity 1: alt_u_div_t2f
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_unc.tdf
     Info (12023): Found entity 1: add_sub_unc
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_vnc.tdf
@@ -312,14 +319,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 99 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 16 input pins
+Info (21057): Implemented 45 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
     Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 81 logic cells
+    Info (21061): Implemented 33 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 503 megabytes
-    Info: Processing ended: Fri Oct 09 16:44:09 2015
+    Info: Peak virtual memory: 497 megabytes
+    Info: Processing ended: Wed Jul 06 01:09:34 2016
     Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Total CPU time (on all processors): 00:00:03
 
 

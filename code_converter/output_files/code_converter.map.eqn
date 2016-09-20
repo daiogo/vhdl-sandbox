@@ -1,0 +1,77 @@
+-- Copyright (C) 1991-2013 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--y[0] is y[0]
+y[0] = OUTPUT(A1L1);
+
+
+--y[1] is y[1]
+y[1] = OUTPUT(A1L2);
+
+
+--y[2] is y[2]
+y[2] = OUTPUT(A1L3);
+
+
+--y[3] is y[3]
+y[3] = OUTPUT(x[2]);
+
+
+--y[4] is y[4]
+y[4] = OUTPUT(A1L4);
+
+
+--y[5] is y[5]
+y[5] = OUTPUT(A1L5);
+
+
+--y[6] is y[6]
+y[6] = OUTPUT(A1L6);
+
+
+--x[2] is x[2]
+x[2] = INPUT();
+
+
+--x[0] is x[0]
+x[0] = INPUT();
+
+
+--x[1] is x[1]
+x[1] = INPUT();
+
+
+--A1L1 is LessThan0~0
+A1L1 = (x[2]) # ((x[0]) # (x[1]));
+
+
+--A1L2 is LessThan1~0
+A1L2 = (x[2]) # (x[1]);
+
+
+--A1L3 is LessThan2~0
+A1L3 = (x[2]) # ((x[0] & x[1]));
+
+
+--A1L4 is LessThan4~0
+A1L4 = (x[2] & ((x[0]) # (x[1])));
+
+
+--A1L5 is LessThan5~0
+A1L5 = (x[2] & x[1]);
+
+
+--A1L6 is LessThan6~0
+A1L6 = (x[2] & (x[0] & x[1]));
+
+

@@ -1,0 +1,10 @@
+
+State Machine - |alarm_controller|prev_state
+Name prev_state.hold_disarm prev_state.off prev_state.wait_in prev_state.armed prev_state.wait_out prev_state.hold_arm prev_state.disarmed 
+prev_state.disarmed 0 0 0 0 0 0 0 
+prev_state.hold_arm 0 0 0 0 0 1 1 
+prev_state.wait_out 0 0 0 0 1 0 1 
+prev_state.armed 0 0 0 1 0 0 1 
+prev_state.wait_in 0 0 1 0 0 0 1 
+prev_state.off 0 1 0 0 0 0 1 
+prev_state.hold_disarm 1 0 0 0 0 0 1 

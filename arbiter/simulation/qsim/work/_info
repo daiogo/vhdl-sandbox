@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\Dropbox\2-2016\Lógica Programável e VHDL\vhdl-playground\arbiter\simulation\qsim
+varbiter
+Z1 IK2PkB>Gf0EZn8ibFa9<:e2
+Z2 VIGdUG;4_CJSY;JFmZ7VIV2
+Z3 dE:\Dropbox\2-2016\Lógica Programável e VHDL\vhdl-playground\arbiter\simulation\qsim
+Z4 w1472523716
+Z5 8arbiter.vo
+Z6 Farbiter.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|arbiter.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 I?@Akdo4DJ25F7U1R4X<A0
+!s85 0
+Z11 !s108 1472523719.055000
+Z12 !s107 arbiter.vo|
+!s101 -O0
+varbiter_vlg_check_tst
+!i10b 1
+Z13 !s100 P:VN@MHRGJ;52TEV]]0Y;2
+Z14 IW?Fle7SOg0;bSdXVEPjnJ2
+Z15 VnmW=7^9<eKYR:YFI9NJg?2
+R3
+Z16 w1472523715
+Z17 8arbiter.vt
+Z18 Farbiter.vt
+L0 61
+R7
+r1
+!s85 0
+31
+Z19 !s108 1472523719.460000
+Z20 !s107 arbiter.vt|
+Z21 !s90 -work|work|arbiter.vt|
+!s101 -O0
+R9
+varbiter_vlg_sample_tst
+!i10b 1
+Z22 !s100 LeRzC49SfMKO6z8_Gfhhl1
+Z23 IngH>[=c_Cb=BIJJ0c0f>>0
+Z24 V5;JfM@g1mGJSf^ll1K]Rf2
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+varbiter_vlg_vec_tst
+!i10b 1
+Z25 !s100 F_UdBEVF[lfY`[0C@Q:l43
+Z26 Ia@z;KF5>mG8^_WMAHJ>K?0
+Z27 VDdL>k<j^4@gmYzFkgH4UY1
+R3
+R16
+R17
+R18
+Z28 L0 191
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9

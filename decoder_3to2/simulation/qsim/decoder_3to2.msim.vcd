@@ -1,0 +1,160 @@
+$comment
+	File created using the following command:
+		vcd file decoder_3to2.msim.vcd -direction
+$end
+$date
+	Wed Jul 06 00:43:31 2016
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module decoder_3to2_vlg_vec_tst $end
+$var reg 3 ! x [2:0] $end
+$var wire 1 " y [1] $end
+$var wire 1 # y [0] $end
+$var wire 1 $ sampler $end
+$scope module i1 $end
+$var wire 1 % gnd $end
+$var wire 1 & vcc $end
+$var wire 1 ' unknown $end
+$var tri1 1 ( devclrn $end
+$var tri1 1 ) devpor $end
+$var tri1 1 * devoe $end
+$var wire 1 + x[0]~input_o $end
+$var wire 1 , y[0]~output_o $end
+$var wire 1 - y[1]~output_o $end
+$var wire 1 . x[1]~input_o $end
+$var wire 1 / x[2]~input_o $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 !
+x#
+x"
+x$
+0%
+1&
+x'
+1(
+1)
+1*
+0+
+x,
+x-
+0.
+0/
+$end
+#5712
+1-
+1"
+#5753
+0,
+0#
+#80000
+b1 !
+1+
+0$
+#160000
+b11 !
+b10 !
+0+
+1$
+#160507
+1.
+#166139
+1,
+1#
+#240000
+b11 !
+1+
+0$
+#320000
+b111 !
+b101 !
+b100 !
+0+
+1$
+#320525
+1/
+#320681
+0.
+#326066
+0-
+0"
+#326434
+0,
+0#
+#400000
+b101 !
+1+
+0$
+#480000
+b111 !
+b110 !
+0+
+1$
+#480507
+1.
+#486139
+1,
+1#
+#560000
+b111 !
+1+
+0$
+#640000
+b11 !
+b1 !
+b0 !
+0+
+1$
+#640681
+0.
+#640698
+0/
+#646410
+1-
+1"
+#646434
+0,
+0#
+#720000
+b1 !
+1+
+0$
+#800000
+b11 !
+b10 !
+0+
+1$
+#800507
+1.
+#806139
+1,
+1#
+#880000
+b11 !
+1+
+0$
+#960000
+b111 !
+b101 !
+b100 !
+0+
+1$
+#960525
+1/
+#960681
+0.
+#966066
+0-
+0"
+#966434
+0,
+0#
+#1000000
